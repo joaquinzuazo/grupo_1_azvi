@@ -42,6 +42,6 @@ _Tomamos como referencia estas distintas webs, dado que encontramos una buena ex
 - [E-bay](https://www.ebay.com/)
 - [Mercado Libre](https://www.mercadolibre.com.ar)
 - [RapiHogar](https://www.rapihogar.com.ar/)
-- [Home-Solution] (https://homesolution.net/ar/?track=)
+- [Home-Solution](https://homesolution.net/ar/?track=)
 
 ---
