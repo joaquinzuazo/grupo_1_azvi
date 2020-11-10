@@ -11,7 +11,7 @@ _Repositorio del grupo 1 para proyecto integrador de Digital House._
 ## ¿Que es AZVI y que brinda? 📋
 
 _AZVI brindará una conexión entre proveedores de servicios y sus potenciales clientes._
-_¿Qué queremos lograr? Reemplazar el boca-en-boca un nuevo paradigma, lograr que nuestros clientes tengan siempre a mano y en cualquier lugar un listado de proveedores de servicios (plomeros, gasistas, electricistas, pintores ¡y muchos más!)_
+_¿Qué queremos lograr? Reemplazar el boca-en-boca por un nuevo paradigma, lograr que nuestros clientes tengan siempre a mano y en cualquier lugar un listado de proveedores de servicios (plomeros, gasistas, electricistas, pintores ¡y muchos más!)_
 _Cada uno con sus respectivas calificaciones por trabajos previos, con comentarios y fotos incluidas, referencias de precios entre distintos proveedores (para poder filtrar búsqueda según presupuesto)_
 
 ##### En resumen:
