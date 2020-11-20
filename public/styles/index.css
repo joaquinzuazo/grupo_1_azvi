@@ -1,0 +1,208 @@
+/* estilos generales
+
+-------------primarios------------
+- backgound header/footer #1F2D3A 
+- backgound body/main #2C3E50 
+
+-------------secundarios------------
+-botones #3F549D
+-card producto/servicio background #FF5252
+
+
+
+tipografia 
+-sacar link de index.html, ya tiene las fuentes importadas de google fonts
+
+
+    font-family: 'Roboto', sans-serif;
+    
+    color: #ffffff white
+
+    font-size : h2 h3 16px
+    font-size : p a li nav  14px
+
+
+*/
+ 
+
+/* ESTILOS GENERALES */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+
+/* HEADER */
+
+.header{
+    background-color: #1F2D3A ;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__logoContainer{
+    display: flex;
+    width: 40%;
+    align-items: center;
+}
+
+.logoContainer__img{
+    width: 40px;
+    height: 30px;
+     
+}
+
+.searchTitle__title{
+    margin-left: 5px;
+}
+
+.searchTitle__icon{
+    width: 10px;
+
+}
+
+.searchTitle__input{
+    width: 80%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-size: 10px;
+}
+.searchTitle__input::placeholder{
+    font-size: 12px;
+}
+
+
+.searchTitle__input:focus{
+    font-size: 12px;
+    
+}
+
+
+
+
+.header__nav{
+    display: flex;
+    align-items: center;
+}
+
+
+.header__navList{
+    display: flex;
+    font-size: 12px;
+      
+}
+
+ 
+
+.header__navList > li {
+    padding: 5px;
+     
+   
+}
+
+.header__navList > li > a {
+    color: white;
+}  
+
+
+/* MAIN */
+
+.main{
+    background-color: #2C3E50;
+    padding: 10px;
+}
+
+.main__container{
+    background-image: url("/images/mainLogo.png");
+    background-position: center;
+     
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 40vh;
+}
+
+.main__title{
+    color: white;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+.main_select{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 8px;
+}
+
+ /* MAIN CARDS CATEGORIES */
+
+ .categories{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-evenly;
+ }
+
+.categories__category{
+    background-color: #FF5252;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 30%;
+}
+.categories__subtitle{
+    display: block;
+    text-align: center;
+    color: white;
+
+}
+
+.categories__icon{
+    width: 55%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* footer */
+
+.footer{
+    background-color: #1F2D3A;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+
+    height: 50px;
+}
+
+.footer__copy{
+    font-size: 10px;
+    align-self: center;
+    color: rgba(255, 255, 255,0.5);
+}
+
+.footer__nav{
+    display: flex;
+    align-items: center;
+}
+
+ 
+
+.footer__links{
+    display: flex;
+     
+}
+
+.footer__links > li{
+    padding: 5px;
+}
