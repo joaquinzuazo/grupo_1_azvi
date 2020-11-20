@@ -1,0 +1,193 @@
+/* ESTILOS GENERALES */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+
+/* HEADER */
+
+.header{
+    background-color: #1F2D3A ;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__logoContainer{
+    display: flex;
+    width: 40%;
+    align-items: center;
+}
+
+.logoContainer__img{
+    width: 40px;
+    height: 30px;
+     
+}
+
+.searchTitle__title{
+    margin-left: 5px;
+}
+
+.searchTitle__icon{
+    width: 10px;
+
+}
+
+.searchTitle__input{
+    width: 80%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-size: 10px;
+}
+.searchTitle__input::placeholder{
+    font-size: 12px;
+}
+
+
+.searchTitle__input:focus{
+    font-size: 12px;
+    
+}
+
+
+
+
+.header__nav{
+    display: flex;
+    align-items: center;
+}
+
+
+.header__navList{
+    display: flex;
+    font-size: 12px;
+      
+}
+
+ 
+
+.header__navList > li {
+    padding: 5px;
+     
+   
+}
+
+.header__navList > li > a {
+    color: white;
+}  
+
+
+
+/* MAIN */
+
+.main{
+    background-color: #2C3E50;
+    padding: 10px;
+}
+
+.main__container{
+    border-bottom: 4px solid black;
+    margin-bottom: 20px;
+}
+
+.main__title{
+    color: white;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+.categories{
+    display: flex;
+    border-bottom: 4px solid black;
+}
+
+.categories__container__button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.categories__container__button_sel{
+    border: 1px solid #FF5252;
+    border-radius: 3px;
+    background-color: #FF5252;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.categories__container__button_sel:hover{
+    background-color: #f3b7b7;
+    border: 1px solid #f3b7b7;
+}
+
+.categories__subscriptions{
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.categories__subscriptions h2{
+    font-size: 16px;
+
+}
+
+.categories__subscriptions p{
+    font-size: 14px;
+}
+
+.payment{
+    color:white;
+    margin-top: 20px;
+}
+.payment__subtitle{
+    font-size: 16px;
+}
+
+
+
+/* footer */
+
+.footer{
+    background-color: #1F2D3A;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+
+    height: 50px;
+}
+
+.footer__copy{
+    font-size: 10px;
+    align-self: center;
+    color: rgba(255, 255, 255,0.5);
+}
+
+.footer__nav{
+    display: flex;
+    align-items: center;
+}
+
+ 
+
+.footer__links{
+    display: flex;
+     
+}
+
+.footer__links > li{
+    padding: 5px;
+}
