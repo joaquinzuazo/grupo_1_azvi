@@ -2,13 +2,12 @@ const express = require('express')
 
 const app = express()
 
-app.use(express.static('../public'))
+app.use(express.static('public'))
 
 // Rutas
 
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/views/index.html')
-	console.log(__dirname)
 })
 
 app.get('/productDetail', (req, res) => {
