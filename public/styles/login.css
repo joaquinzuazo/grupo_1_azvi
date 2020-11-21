@@ -90,6 +90,8 @@
 .article-container-main{
     background-color: #1F2D3A ;
     padding: 30px;
+    
+    
 }
 
 /*Parte de los recuadros*/
@@ -97,6 +99,7 @@
     background-color: #1F2D3A ;
     color: white;
     font-weight: lighter;
+    margin-top: 20%;
     
 }
 
@@ -123,6 +126,7 @@
     text-transform: uppercase;
     padding: 5%;
     border-radius: 7px;
+    margin-bottom: 87%;
 }
 
 /* footer */
@@ -158,9 +162,3 @@
 .footer__links > li{
     padding: 5px;
 }
-
-
-
-
-
-

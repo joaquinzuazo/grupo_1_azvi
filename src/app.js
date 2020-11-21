@@ -29,5 +29,7 @@ app.get('/login', (req, res) => {
 app.get('/register', (req, res) => {
 	res.sendFile(__dirname + '/views/register.html')
 })
+
+
 console.log(__dirname);
 app.listen(3000)
