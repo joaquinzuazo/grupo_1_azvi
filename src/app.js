@@ -8,7 +8,10 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/views/index.html')
-	console.log(__dirname)
+})
+
+app.get('/index', (req, res) => {
+	res.sendFile(__dirname + '/views/index.html')
 })
 
 app.get('/productDetail', (req, res) => {
