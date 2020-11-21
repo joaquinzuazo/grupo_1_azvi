@@ -1,30 +1,3 @@
-/* estilos generales
-
--------------primarios------------
-- backgound header/footer #1F2D3A 
-- backgound body/main #2C3E50 
-
--------------secundarios------------
--botones #3F549D
--card producto/servicio background #FF5252
-
-
-
-tipografia 
--sacar link de index.html, ya tiene las fuentes importadas de google fonts
-
-
-    font-family: 'Roboto', sans-serif;
-    
-    color: #ffffff white
-
-    font-size : h2 h3 16px
-    font-size : p a li nav  14px
-
-
-*/
- 
-
 /* ESTILOS GENERALES */
 
 *{
@@ -115,6 +88,7 @@ tipografia
 }  
 
 
+
 /* MAIN */
 
 .main{
@@ -123,12 +97,8 @@ tipografia
 }
 
 .main__container{
-    background-image: url("/images/mainLogo.png");
-    background-position: center;
-     
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 40vh;
+    border-bottom: 4px solid black;
+    margin-bottom: 20px;
 }
 
 .main__title{
@@ -137,40 +107,55 @@ tipografia
     background-color: transparent;
 }
 
-.main_select{
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-    padding: 8px;
+.categories{
+    display: flex;
+    border-bottom: 4px solid black;
 }
 
- /* MAIN CARDS CATEGORIES */
-
- .categories{
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: space-evenly;
- }
-
-.categories__category{
-    background-color: #FF5252;
-    padding: 5px;
-    border-radius: 5px;
+.categories__container__button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     margin: 10px;
-    width: 30%;
 }
-.categories__subtitle{
-    display: block;
-    text-align: center;
+
+.categories__container__button_sel{
+    border: 1px solid #FF5252;
+    border-radius: 3px;
+    background-color: #FF5252;
     color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.categories__container__button_sel:hover{
+    background-color: #f3b7b7;
+    border: 1px solid #f3b7b7;
+}
+
+.categories__subscriptions{
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.categories__subscriptions h2{
+    font-size: 16px;
 
 }
 
-.categories__icon{
-    width: 55%;
-    display: block;
-    margin: 0 auto;
+.categories__subscriptions p{
+    font-size: 14px;
 }
+
+.payment{
+    color:white;
+    margin-top: 20px;
+}
+.payment__subtitle{
+    font-size: 16px;
+}
+
 
 
 /* footer */
