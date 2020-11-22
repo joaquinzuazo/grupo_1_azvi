@@ -44,4 +44,11 @@ _Tomamos como referencia estas distintas webs, dado que encontramos una buena ex
 - [RapiHogar](https://www.rapihogar.com.ar/)
 - [Home-Solution](https://homesolution.net/ar/?track=)
 
+
+
+## Tablero de trabajo 📖
+
+* [**Trello**](https://trello.com/b/B3IgY5xb/sprint-2)
+
 ---
+
