@@ -153,23 +153,37 @@
 
 .container-service-button{
     display: inline-block;
-    border: 0px solid black;
+    border: 0px solid white;
     border-radius: 5px;
     padding: 5px;
     color: white;
     background-color: black;
 }
 
+.container-service-button:hover{
+    background-color: grey;
+}
+
+
+
 .container-service-button-two{
     display: inline-block;
     margin-left: 50%;
-    border: 0px solid black;
+    border: 0px solid white;
     border-radius: 5px;
     padding: 5px;
     color: white;
     background-color: black;
     
 
+}
+
+.container-service-button-two:hover{
+    background-color: grey;
+}
+
+..container-service-button-two:focus{
+    color: #2C3E50;
 }
 
 .container-opinions{
