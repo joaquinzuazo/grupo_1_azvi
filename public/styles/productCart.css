@@ -149,13 +149,26 @@
 }
 
 .payment{
+    display: flex;
+    flex-direction: column;
     color:white;
     margin-top: 20px;
 }
+
 .payment__subtitle{
     font-size: 16px;
 }
 
+.payment_logo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.payment_logo img {
+    width: 30%;
+}
 
 
 /* footer */
@@ -165,7 +178,7 @@
     font-size: 14px;
     display: flex;
     justify-content: space-evenly;
-    color: white;
+    color: #6486A9;
 
     height: 50px;
 }
