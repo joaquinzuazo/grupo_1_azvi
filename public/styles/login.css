@@ -126,7 +126,14 @@
     text-transform: uppercase;
     padding: 5%;
     border-radius: 7px;
-    margin-bottom: 87%;
+    margin-bottom: 2px;
+}
+
+.article-container-h3{
+color:gray;
+font-size: 65%;
+text-align: center;
+margin-bottom: 83%;
 }
 
 /* footer */
