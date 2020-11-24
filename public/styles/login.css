@@ -130,10 +130,14 @@
 }
 
 .article-container-h3{
-color:gray;
+color: white;
 font-size: 65%;
 text-align: center;
 margin-bottom: 83%;
+}
+
+.article-container-a{
+    color: white;
 }
 
 /* footer */
