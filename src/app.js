@@ -18,6 +18,10 @@ app.get('/productDetail', (req, res) => {
 	res.sendFile(__dirname + '/views/productDetail.html')
 })
 
+app.get('/lenderList', (req, res) => {
+	res.sendFile(__dirname + '/views/lenderList.html')
+})
+
 app.get('/productCart', (req, res) => {
 	res.sendFile(__dirname + '/views/productCart.html')
 })
