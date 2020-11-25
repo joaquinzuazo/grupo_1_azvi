@@ -88,20 +88,20 @@
 /*main*/
 
 .article-container-main{
-    background-color: #1F2D3A ;
+    background-color: #2C3E50 ;
     padding: 30px;
 }
 
 /*Parte de los recuadros*/
 .article-container-titulo{
-    background-color: #1F2D3A ;
+    background-color: #2C3E50 ;
     color: white;
     font-weight: lighter;
     
 }
 
 .article-container-informacion{
-    background-color: #1F2D3A ;
+    background-color:#2C3E50 ;
 }
 
 .article-container-input{
