@@ -35,5 +35,7 @@ app.get('/register', (req, res) => {
 })
 
 
-console.log(__dirname);
-app.listen(3000)
+ 
+app.listen(3000 , ()=>{
+	console.log('Servidor Azvi corriendo en puerto 3000')
+})
