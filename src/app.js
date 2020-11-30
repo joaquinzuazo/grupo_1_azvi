@@ -34,6 +34,15 @@ app.get('/register', (req, res) => {
 	res.sendFile(__dirname + '/views/register.html')
 })
 
+app.get('/adminAdd',(req,res)=>{
+
+	res.sendFile(__dirname + '/views/adminAdd.html' )
+})
+
+app.get('/adminUpdate',(req,res)=>{
+
+	res.sendFile(__dirname + '/views/adminUpdate.html' )
+})
 
  
 app.listen(3000 , ()=>{

@@ -1,0 +1,319 @@
+
+/* ESTILOS GENERALES */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+	list-style: none;
+	text-decoration: none;
+}
+
+/* HEADER */
+
+.header {
+	background-color: #1f2d3a;
+	color: white;
+	padding: 10px;
+	display: flex;
+    justify-content: space-between;
+     /* position: fixed;
+     right: 0;
+     left: 0;
+     top: 0; */
+}
+
+.header__logoContainer {
+	display: flex;
+	width: 40%;
+	align-items: center;
+}
+
+.logoContainer__img {
+	width: 40px;
+	height: 30px;
+}
+
+ .main__container{
+     margin-top: 100px;
+ }
+
+.searchTitle__title {
+    margin-left: 5px;
+    
+}
+
+.searchTitle__icon {
+	width: 10px;
+}
+
+.searchTitle__input {
+	width: 80%;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: white;
+	font-size: 10px;
+}
+.searchTitle__input::placeholder {
+	font-size: 12px;
+}
+
+.searchTitle__input:focus {
+	font-size: 12px;
+}
+
+.header__nav {
+	display: flex;
+	align-items: center;
+}
+
+.header__navList {
+	display: flex;
+	font-size: 12px;
+}
+
+.header__navList > li {
+	padding: 5px;
+}
+
+.header__navList > li > a {
+	color: white;
+}
+
+
+/* main */
+
+.mainAdmin{
+    background-color: #2C3E50;
+    color: white;   
+     
+}
+
+.mainAdmin__title{
+    padding-top: 100px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+    color: #1F2D3A ;
+    
+
+}
+
+.mainAdmin__form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    
+    color:#1F2D3A;
+    font-weight: 900;
+     
+    
+     
+
+}
+
+.mainAdmin__container > input , .mainAdmin__container > select{
+   padding: 5px;
+   /* border-radius: 22px; */
+   outline: none;
+   border: none;
+   margin-top: 5px;
+   background-color:#eee;
+    
+}
+
+.mainAdmin__container > input:focus{
+    background-color: rgb(201, 196, 196);
+}
+ 
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+ 
+    }
+
+
+.mainAdmin__container > input::placeholder {
+    font-size: 10px;
+}
+
+.mainAdmin__container{
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.mainAdmin__subtitle{
+    color: #111920;
+    margin-top: 10px;
+}
+
+.mainAdmin__container--borderOut > input{
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+     
+    max-width: 200px;
+}
+.mainAdmin__container--borderOut > input:focus{
+    
+    background-color: transparent;
+    border-bottom: 1px solid rgb(192, 63, 63);
+
+    
+}
+
+#photo {
+    background-color: transparent;
+    color: white;
+    font-size: 10px;
+     
+}
+
+.mainAdmin__submit{
+    padding: 8px;
+    background-color:#1F2D3A ;
+    border: 0;
+    outline: 0;
+    color: rgb(192, 63, 63);
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 20px;
+}
+
+
+/* footer */
+
+
+.footer {
+	background-color: #1f2d3a;
+	font-size: 14px;
+	display: flex;
+	justify-content: space-evenly;
+	color: white;
+
+	height: 50px;
+}
+
+.footer__copy {
+	font-size: 10px;
+	align-self: center;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__nav {
+	display: flex;
+	align-items: center;
+}
+
+.footer__links {
+	display: flex;
+}
+
+.footer__links > li {
+	padding: 5px;
+}
+
+/* admin update styles */
+
+.mainAdmin__containerSearch > form{
+    padding-top: 100px;
+    width: 170px;
+    margin: 0 auto;
+}
+.mainAdmin__containerSearch input ,
+.mainAdmin__containerSearch label {
+    display: block;
+    margin: 20px 0;
+    color: black;
+    font-weight: 900;
+}
+
+.mainAdmin__containerSearch button {
+    padding: 5px;
+    border: 0;
+    outline: 0;
+    background-color:#1f2d3a ;
+    color: white;
+}
+
+.op-02{
+    opacity: .2;
+}
+
+
+/* MEDIAS QUERIES */
+
+@media (min-width: 680px) {
+
+    
+    /******  HEADER  *****/
+
+    .header__nav{
+        width: 40%;
+         
+    }
+    .header__navList{
+        width: 100%;
+        justify-content: space-evenly;
+        font-size: 14px;
+    }
+
+    /* ***********  MAIN ********* */
+    
+ 
+	 .mainAdmin__form{
+         flex-direction: row;
+         flex-wrap: wrap;
+         margin: 0px auto;
+         max-width: 600px;
+         justify-content: center;
+         height: 90vh;
+     }
+
+     .mainAdmin__container{
+         margin: 20px 20px;
+         width: 40%;
+     }
+
+     .mainAdmin__subtitle{
+         width: 100%;
+         margin-left: 40px;
+     }
+
+    .mainAdmin__container--photo{
+        width: 100%;
+    }
+    #photo{
+        width: 100%;
+        font-size: 15px;
+    }
+     .mainAdmin__submit{
+         width: 80%;
+         font-size: 18px;
+    max-height: 50px;
+
+     }
+
+    /******  FOOTER  *****/
+    
+
+    .footer__nav{
+        width: 70%;
+         
+    }
+    
+
+    
+
+    .footer__links{
+        width: 100%;
+        justify-content: space-evenly;
+        font-size: 16px;
+    }
+}
+
+ 

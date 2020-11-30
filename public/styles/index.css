@@ -42,8 +42,13 @@ tipografia
 	color: white;
 	padding: 10px;
 	display: flex;
-	justify-content: space-between;
+    justify-content: space-between;
+     position: fixed;
+     right: 0;
+     left: 0;
+     top: 0;
 }
+
 
 .header__logoContainer {
 	display: flex;
@@ -56,8 +61,13 @@ tipografia
 	height: 30px;
 }
 
+ .main__container{
+     margin-top: 100px;
+ }
+
 .searchTitle__title {
-	margin-left: 5px;
+    margin-left: 5px;
+    
 }
 
 .searchTitle__icon {
@@ -190,6 +200,7 @@ tipografia
 /* MEDIAS QUERIES */
 
 @media (min-width: 960px) {
+    /******  HEADER  *****/
 
     .header__nav{
         width: 30%;
@@ -200,6 +211,8 @@ tipografia
         justify-content: space-evenly;
         font-size: 16px;
     }
+
+    /* ***********  MAIN ********* */
 	.main__title {
         font-size: 48px;
 		text-align: center;
@@ -214,7 +227,10 @@ tipografia
 	.main_select {
 		width: 60%;
     }
+
+    /******  FOOTER  *****/
     
+
     .footer__nav{
         width: 70%;
          
