@@ -160,7 +160,50 @@
 }
 
 
+@media (min-width: 960px) {
+    /******  HEADER  *****/
 
+    .header__nav{
+        width: 30%;
+         
+    }
+    .header__navList{
+        width: 100%;
+        justify-content: space-evenly;
+        font-size: 16px;
+    }
+
+    /* ***********  MAIN ********* */
+	.main__title {
+        font-size: 48px;
+		text-align: center;
+	}
+
+	.categories {
+		max-width: 60%;
+        margin: 0 auto;
+        font-size: 16px;
+	}
+
+	.main_select {
+		width: 60%;
+    }
+
+    /******  FOOTER  *****/
+    
+
+    .footer__nav{
+        width: 70%;
+         
+    }
+
+
+    .footer__links{
+        width: 100%;
+        justify-content: space-evenly;
+        font-size: 16px;
+    }
+}
 
 
 
