@@ -1,103 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--PARTIALS-->
 
-    <link rel="stylesheet" href="stylesheets/index.css">
-    <link
-			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-			rel="stylesheet"
-    />
-    <link rel="icon" href="images/logoAzvi.png">
-    <title>Azvi</title>
-</head>
-<body>
+<%- include('partials/head')%> <%- include('partials/header')%>
 
-  <header class="header">
-    <div class="header__logoContainer">
-      <img src="images/logoAzvi.png" alt="" class="logoContainer__img">
-      <div class="logoContainer__searchTitle">
-        <h3 class="searchTitle__title">AZVI</h3>
-        <img src="images/searchicon.svg" alt="" class="searchTitle__icon">
-        <input class="searchTitle__input" type="search" name="localidad" id="localidad" placeholder="Localidad">
-      </div>
-    </div>
-    <nav class="header__nav">
-      <ul class="header__navList">
-        <li><a href="index">Inicio</a></li>
-        <li><a href="login">Mi cuenta</a></li>
-        <li><a href="productCart">Unite a la red</a></li>
-      </ul>
-    </nav>
+<main class="main">
+	<div class="main__container">
+		<h1 class="main__title">El servicio que buscas en un solo click</h1>
+	</div>
 
-  </header>
+	<select class="main_select" name="categories" id="main__select">
+		<option value="Carpinteria">Servicios</option>
 
+		<option value="Carpinteria">Carpinteria</option>
+		<option value="Cerrajeria">Cerrajeria</option>
+		<option value="Plomeria">Plomeria</option>
+		<option value="Pintura">Pintura</option>
+		<option value="Mecanica">Mecanica</option>
+		<option value="Aires">Aires</option>
+		<option value="Heladeras">Heladeras</option>
+	</select>
 
-  <main class="main">
-    <div class="main__container">
-      <h1 class="main__title"> El servicio que buscas en un solo click</h1>
-    </div>
+	<section class="categories">
+		<article class="categories__category">
+			<img src="images/categories/carpenter.svg" alt="" class="categories__icon" />
+			<a href="productDetail" class="categories__subtitle">Carpinteria</a>
+		</article>
+		<article class="categories__category">
+			<img src="images/categories/air-conditioner.svg" alt="" class="categories__icon" />
+			<a href="productDetail" class="categories__subtitle">Acc.</a>
+		</article>
+		<article class="categories__category">
+			<img src="images/categories/plumber.svg" alt="" class="categories__icon" />
+			<a href="productDetail" class="categories__subtitle">Plomeria</a>
+		</article>
+		<article class="categories__category">
+			<img src="images/categories/painter.svg" alt="" class="categories__icon" />
+			<a href="productDetail" class="categories__subtitle">Pintura</a>
+		</article>
+		<article class="categories__category">
+			<img src="images/categories/key.svg" alt="" class="categories__icon" />
+			<a href="productDetail" class="categories__subtitle">Cerrajeria</a>
+		</article>
+		<article class="categories__category">
+			<img src="images/categories/washing-machine.svg" alt="" class="categories__icon" />
+			<a href="productDetail" class="categories__subtitle">Lavarropas</a>
+		</article>
+		<article class="categories__category">
+			<img src="images/categories/refrigerator.svg" alt="" class="categories__icon" />
+			<a href="productDetail" class="categories__subtitle">Heladeras</a>
+		</article>
+		<article class="categories__category">
+			<img src="images/categories/mechanic.svg" alt="" class="categories__icon" />
+			<a href="productDetail" class="categories__subtitle">Mecanica</a>
+		</article>
+	</section>
+</main>
 
-    <select class="main_select" name="categories" id="main__select">
-      <option value="Carpinteria">Servicios</option>
-
-      <option value="Carpinteria">Carpinteria</option>
-      <option value="Cerrajeria">Cerrajeria</option>
-      <option value="Plomeria">Plomeria</option>
-      <option value="Pintura">Pintura</option>
-      <option value="Mecanica">Mecanica</option>
-      <option value="Aires">Aires</option>
-      <option value="Heladeras">Heladeras</option>
-    </select>
-
-    <section class="categories">
-      <article class="categories__category">
-        <img src="images/categories/carpenter.svg" alt="" class="categories__icon">
-        <a href="productDetail"  class="categories__subtitle">Carpinteria</a>
-      </article>
-      <article class="categories__category">
-        <img src="images/categories/air-conditioner.svg" alt="" class="categories__icon">
-        <a href="productDetail"  class="categories__subtitle">Acc.</a>
-      </article>
-      <article class="categories__category">
-        <img src="images/categories/plumber.svg" alt="" class="categories__icon">
-        <a href="productDetail"  class="categories__subtitle">Plomeria</a>
-      </article>
-      <article class="categories__category">
-        <img src="images/categories/painter.svg" alt="" class="categories__icon">
-        <a href="productDetail"  class="categories__subtitle">Pintura</a>
-      </article>
-      <article class="categories__category">
-        <img src="images/categories/key.svg" alt="" class="categories__icon">
-        <a href="productDetail"  class="categories__subtitle">Cerrajeria</a>
-      </article>
-      <article class="categories__category">
-        <img src="images/categories/washing-machine.svg" alt="" class="categories__icon">
-        <a href="productDetail"  class="categories__subtitle">Lavarropas</a>
-      </article>
-      <article class="categories__category">
-        <img src="images/categories/refrigerator.svg" alt="" class="categories__icon">
-        <a href="productDetail"  class="categories__subtitle">Heladeras</a>
-      </article>
-      <article class="categories__category">
-        <img src="images/categories/mechanic.svg" alt="" class="categories__icon">
-        <a href="productDetail"  class="categories__subtitle">Mecanica</a>
-      </article>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <p class="footer__copy">Copyright © AZVI </p>
-    <nav class="footer__nav">
-      <ol class="footer__links" >
-        <li><a>Contacto</a></li>
-        <li><a>Preguntas Frecuentes</a></li>
-      </ol>
-    </nav>
-
-  </footer>
-  
-</body>
-</html>
+<%-include('partials/footer')%>

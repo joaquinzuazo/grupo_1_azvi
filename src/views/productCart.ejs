@@ -1,88 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include('partials/head')%> <%- include('partials/header')%>
 
-    <link rel="stylesheet" href="stylesheets/productCart.css">
-    <link
-			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-			rel="stylesheet"
-    />
-    <link rel="icon" href="images/logoAzvi.png">
-    <title>Azvi</title>
-</head>
+<main class="main">
+	<div class="main__container">
+		<h1 class="main__title">Brinda tu servicio y unite a la red de proveedores:</h1>
+	</div>
 
-<body>
+	<section class="categories">
+		<div class="categories__container__text">
+			<article class="categories__subscriptions">
+				<img src="images/pCart_1.svg" alt="" class="img_plan" />
+				<h2 class="categories__subscriptions__subtitle">Plan basico</h2>
+				<p class="categories__subscriptions__text">
+					Mediante este plan podrás anunciar tu servicio en nuestra web, contactarte con tus clientes y ser
+					calificado al terminar un trabajo.
+				</p>
+				<p class="categories__subscriptions__text__desde"><strong>Desde</strong></p>
+				<p class="categories__subscriptions__text__precio"><strong>$450</strong></p>
+				<p class="categories__subscriptions__text__porMes"><strong>por mes</strong></p>
+				<button class="button_plan">Unite</button>
+			</article>
 
-    <header class="header">
-      <div class="header__logoContainer">
-        <img src="images/logoAzvi.png" alt="" class="logoContainer__img">
-        <div class="logoContainer__searchTitle">
-          <h3 class="searchTitle__title">AZVI</h3>
-          <img src="images/searchicon.svg" alt="" class="searchTitle__icon">
-          <input class="searchTitle__input" type="search" name="localidad" id="localidad" placeholder="Localidad">
-        </div>
-      </div>
-      <nav class="header__nav">
-        <ul class="header__navList">
-          <li><a href="index">Inicio</a></li>
-          <li><a href="login">Mi cuenta</a></li>
-          <li><a href="productCart">Unite a la red</a></li>
-        </ul>
-      </nav>
-  
-    </header>
+			<article class="categories__subscriptions">
+				<img src="images/pCart_2.svg" alt="" class="img_plan" />
+				<h2 class="categories__subscriptions__subtitle">Plan intermedio</h2>
+				<p class="categories__subscriptions__text">
+					Ademas de lo mencionado en el plan basico, podrás destacar tus anuncios y así poder llegar a mas
+					clientes.
+				</p>
+				<p class="categories__subscriptions__text__desde"><strong>Desde</strong></p>
+				<p class="categories__subscriptions__text__precio"><strong>$850</strong></p>
+				<p class="categories__subscriptions__text__porMes"><strong>por mes</strong></p>
+				<button class="button_plan">Unite</button>
+			</article>
+			<article class="categories__subscriptions">
+				<img src="images/pCart_3.svg" alt="" class="img_plan" />
+				<h2 class="categories__subscriptions__subtitle">Plan premium</h2>
+				<p class="categories__subscriptions__text">
+					Contaras con un posicionamiento destacado en las busquedas y con nuestra ayuda al momento de crear
+					los anuncios para cada servicio, ademas contaras con publicaciones ilimitadas.
+				</p>
+				<p class="categories__subscriptions__text__desde"><strong>Desde</strong></p>
+				<p class="categories__subscriptions__text__precio"><strong>$1.150</strong></p>
+				<p class="categories__subscriptions__text__porMes"><strong>por mes</strong></p>
+				<button class="button_plan">Unite</button>
+			</article>
+		</div>
+	</section>
+</main>
 
-    <main class="main">
-      <div class="main__container">
-        <h1 class="main__title"> Brinda tu servicio y unite a la red de proveedores:</h1>
-      </div>
-
-      <section class="categories"> 
-        <div class="categories__container__text">
-            <article class="categories__subscriptions">
-              <img src="images/pCart_1.svg" alt="" class="img_plan">
-              <h2 class="categories__subscriptions__subtitle">Plan basico</h2>
-              <p class="categories__subscriptions__text">Mediante este plan podrás anunciar tu servicio en nuestra web, contactarte con tus clientes y ser calificado al terminar un trabajo.</p>
-              <p class="categories__subscriptions__text__desde"><strong>Desde</strong></p>
-              <p class="categories__subscriptions__text__precio"><strong>$450</strong></p>
-              <p class="categories__subscriptions__text__porMes"><strong>por mes</strong></p>
-              <button class="button_plan">Unite</button>
-            </article>
-            <article class="categories__subscriptions">
-              <img src="images/pCart_2.svg" alt="" class="img_plan">
-              <h2 class="categories__subscriptions__subtitle">Plan intermedio</h2>
-              <p class="categories__subscriptions__text">Ademas de lo mencionado en el plan basico, podrás destacar tus anuncios y así poder llegar a mas clientes.
-              </p>
-              <p class="categories__subscriptions__text__desde"><strong>Desde</strong></p>
-              <p class="categories__subscriptions__text__precio"><strong>$850</strong></p>
-              <p class="categories__subscriptions__text__porMes"><strong>por mes</strong></p>
-              <button class="button_plan">Unite</button>
-            </article>
-            <article class="categories__subscriptions">
-              <img src="images/pCart_3.svg" alt="" class="img_plan">
-              <h2 class="categories__subscriptions__subtitle">Plan premium</h2>
-              <p class="categories__subscriptions__text">Contaras con un posicionamiento destacado en las busquedas y con nuestra ayuda al momento de crear los anuncios para cada servicio, ademas contaras con publicaciones ilimitadas.</p>
-              <p class="categories__subscriptions__text__desde"><strong>Desde</strong></p>
-              <p class="categories__subscriptions__text__precio"><strong>$1.150</strong></p>
-              <p class="categories__subscriptions__text__porMes"><strong>por mes</strong></p>
-              <button class="button_plan">Unite</button>
-            </article>
-        </div>
-      </section>
-    </main>
-    
-    <footer class="footer">
-        <p class="footer__copy">Copyright © AZVI </p>
-        <nav class="footer__nav">
-          <ol class="footer__links" >
-            <li><a>Contacto</a></li>
-            <li><a>Preguntas Frecuentes</a></li>
-          </ol>
-        </nav>
-    
-      </footer>
-      
-    </body>
-    </html>
+<%-include('partials/footer')%>
