@@ -91,16 +91,16 @@ BODY
 
 .container-lender-top{
     display: flex;
-    flex-wrap: wrap;
-    color: white;
-    margin-right: 10%;
-    margin-left: 10%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    margin: 0% 8%;
+    padding: 5% 0%;
     border-bottom:5px solid black;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     box-sizing: border-box;
+    display: flex;
+    color: white;
+    padding-top: 15px;
+    align-content: space-between;
 }
 
 
@@ -118,7 +118,8 @@ BODY
 .container-lender-body-1{
     display: flex;
     flex-wrap: wrap;
-    height: 50px;
+    justify-content: space-between;
+    align-content: space-around;
     margin-top: 1%;
     margin-left: 10%;
     margin-right: 10%;
@@ -130,7 +131,8 @@ BODY
 .container-lender-body-2{
     display: flex;
     flex-wrap: wrap;
-    height: 50px;
+    justify-content: space-between;
+    align-content: space-around;
     margin-top: 1%;
     margin-left: 10%;
     margin-right: 10%;
@@ -169,7 +171,13 @@ BODY
 .container-lender-body-1-score{
     display: flex;
     flex-direction: column;
-    margin-left: 20%
+}
+.lender{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: start;
+    align-content: center;
 }
 
 .container-lender-body-1-score-stars{
@@ -239,4 +247,68 @@ footer
 
 .footer__links > li{
     padding: 5px;
+}
+
+
+/*RESPONSIVE
+*/
+
+@media (min-width: 960px){
+    .header__nav{
+        width: 30%;
+         
+    }
+    .header__navList{
+        width: 100%;
+        justify-content: space-evenly;
+        font-size: 16px;
+    }
+
+    /*MAIN
+    */
+    .container-lender-body-1{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+        margin-top: 1%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 1%;
+        border-bottom: 2px solid black;
+        
+    }
+    .container-lender-body-2{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+        margin-top: 1%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 1%;
+        border-bottom: 2px solid black;
+        
+    }
+    .container-lender-body-1-text{
+        justify-content: flex-start;
+    }
+    
+
+
+
+
+    /*FOOTER
+    */
+    .footer__nav{
+        width: 70%;
+         
+    }
+
+
+    .footer__links{
+        width: 100%;
+        justify-content: space-evenly;
+        font-size: 16px;
+    }
 }
