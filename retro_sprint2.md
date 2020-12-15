@@ -6,7 +6,7 @@
 
 # Proyecto del grupo AZVI 🚀
 
-_Retrospectiva de estrella de mar._
+_Retrospectiva estrella de mar - Sprint-2._
 
 
 
