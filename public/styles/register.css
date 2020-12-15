@@ -203,9 +203,8 @@
         justify-content: space-evenly;
         font-size: 16px;
     }
-}
- @media (min-width: 500px){
 
+    
     .article-container-main{
         flex-wrap: wrap;
     }
@@ -221,7 +220,12 @@
         padding: 20px;
         margin-left: 25%;
     }
+
 }
+
+
+
+
 
 
 
