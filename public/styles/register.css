@@ -204,8 +204,7 @@
         font-size: 16px;
     }
 }
-
-@media (min-width:960px){
+ @media (min-width: 500px){
 
     .article-container-main{
         flex-wrap: wrap;
@@ -223,6 +222,9 @@
         margin-left: 25%;
     }
 }
+
+
+
 
 
 
