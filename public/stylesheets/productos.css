@@ -145,6 +145,16 @@
 
 
 }
+.service-text{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.service-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
 
 .container-service-title{
     font-size: 15px;
@@ -204,30 +214,24 @@
     
 }
 
-.container-opinions-cajas-{
-    display: inline-block;
-    max-width: 100%;
+.container-opinions-chat{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
 }
 
-.container-opinions-cajas-one{
-    display: inline-block;
-    max-width: 35%;
-    margin-bottom: 15px;
-    padding: 5px;
-    border-radius: 15px;
-    
-    
-}
-.container-opinions-cajas-two{
-    display: inline-block;
-    max-width: 35%;
-    margin-left: 15%;
-    margin-bottom: 15px;
-    padding: 5px;
-    border-radius: 15px;
-}
+.textarea{
+    background-color: #2C3E50;
+    border: 3px solid black;
+    margin: 3% 0%;
+    text-align: center;
 
-
+}
+::placeholder{
+    color: white;
+    padding: 5%;
+}
 
 /* FOOTER*/
 
@@ -287,11 +291,27 @@
     .container-service{
         display: flex;
     }
-    .buttons{
+    .service-buttons{
         display: flex;
         flex-direction: column;
-    }
 
+    }
+    .container-service-button{
+        padding: 2%;
+        justify-content: center;
+        align-self: center;
+    }
+    .container-opinions h2{
+        margin: 2% 2%;
+    }
+    .opinions{
+        width: 35%;
+        margin: 2% 5%;
+    }
+    
+    .textarea{
+        width: 100%;
+    }
 
 
     /*Footer
@@ -308,3 +328,4 @@
         font-size: 16px;
     }
 }
+

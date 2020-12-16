@@ -145,6 +145,14 @@
 
 
 }
+.service-text{
+    display: flex;
+    flex-direction: column;
+}
+.service-buttons{
+    display: flex;
+    justify-content: space-between;
+}
 
 .container-service-title{
     font-size: 15px;
@@ -160,7 +168,7 @@
 }
 
 .container-service-button{
-    display: inline-block;
+    display: flex;
     border: 0px solid white;
     border-radius: 5px;
     color: white;
@@ -176,7 +184,7 @@
 
 
 .container-service-button-two{
-    display: inline-block;
+    display: flex;
     border: 0px solid white;
     border-radius: 5px;
     color: white;
