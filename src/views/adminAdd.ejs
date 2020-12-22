@@ -4,13 +4,24 @@
 	<h2 class="mainAdmin__title">Agregar nuevo servicio</h2>
 
 	<form action="" method="POST" class="mainAdmin__form">
-		<div class="mainAdmin__container">
+		<h3 class="mainAdmin__subtitle">Datos personales</h3>
+		<div class="mainAdmin__container mainAdmin__container--borderOut">
 			<label for="name" class="mainAdmin__label">Nombre</label>
 			<input type="text" id="name" name="name" placeholder=" Nombre" />
 		</div>
-		<div class="mainAdmin__container">
+		<div class="mainAdmin__container mainAdmin__container--borderOut">
 			<label for="lastname" class="mainAdmin__label">Apellido</label>
 			<input type="text" id="lastname" name="name" placeholder="Apellido" />
+		</div>
+
+		<h3 class="mainAdmin__subtitle">Contacto</h3>
+		<div class="mainAdmin__container mainAdmin__container--borderOut">
+			<label for="phone" class="mainAdmin__label">Celular</label>
+			<input type="number" id="phone" name="phone" placeholder="Ingrese numero" />
+		</div>
+		<div class="mainAdmin__container mainAdmin__container--borderOut">
+			<label for="email" class="mainAdmin__label">Email</label>
+			<input type="text" id="email" name="E-mail" placeholder="email@mail.com" />
 		</div>
 
 		<div class="mainAdmin__container">
@@ -39,17 +50,6 @@
 				<option value="Pintura">La Plata</option>
 			</select>
 		</div>
-
-		<h3 class="mainAdmin__subtitle">Contacto</h3>
-		<div class="mainAdmin__container mainAdmin__container--borderOut">
-			<label for="phone" class="mainAdmin__label">Celular</label>
-			<input type="number" id="phone" name="phone" placeholder="Ingrese numero" />
-		</div>
-		<div class="mainAdmin__container mainAdmin__container--borderOut">
-			<label for="email" class="mainAdmin__label">Email</label>
-			<input type="text" id="email" name="E-mail" placeholder="email@mail.com" />
-		</div>
-
 		<div class="mainAdmin__container mainAdmin__container--photo">
 			<label for="photo" class="mainAdmin__label">Agrega foto</label>
 			<input class="photo" type="file" id="photo" name="photo" placeholder="Apellido" />

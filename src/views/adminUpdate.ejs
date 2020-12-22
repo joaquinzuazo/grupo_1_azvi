@@ -11,15 +11,26 @@
 	<h2 class="mainAdmin__title">Modificar Servicio</h2>
 
 	<form action="" method="POST" class="mainAdmin__form op-02">
-		<div class="mainAdmin__container">
+		<h3 class="mainAdmin__subtitle">Datos personales</h3>
+
+		<div class="mainAdmin__container mainAdmin__container--borderOut">
 			<label for="name" class="mainAdmin__label">Nombre</label>
 			<input readonly type="text" id="name" name="name" placeholder=" Nombre" />
 		</div>
-		<div class="mainAdmin__container">
+		<div class="mainAdmin__container mainAdmin__container--borderOut">
 			<label for="lastname" class="mainAdmin__label">Apellido</label>
 			<input readonly type="text" id="lastname" name="name" placeholder="Apellido" />
 		</div>
 
+		<h3 class="mainAdmin__subtitle">Contacto</h3>
+		<div class="mainAdmin__container mainAdmin__container--borderOut">
+			<label for="phone" class="mainAdmin__label">Celular</label>
+			<input readonly type="number" id="phone" name="phone" placeholder="Ingrese numero" />
+		</div>
+		<div class="mainAdmin__container mainAdmin__container--borderOut">
+			<label for="email" class="mainAdmin__label">Email</label>
+			<input readonly type="text" id="email" name="E-mail" placeholder="email@mail.com" />
+		</div>
 		<div class="mainAdmin__container">
 			<label for="mainAdmin__select" class="mainAdmin__label">Categoria</label>
 			<select class="mainAdmin_select" name="categories" id="mainAdmin__select">
@@ -45,16 +56,6 @@
 				<option value="Plomeria">Cordoba Capital</option>
 				<option value="Pintura">La Plata</option>
 			</select>
-		</div>
-
-		<h3 class="mainAdmin__subtitle">Contacto</h3>
-		<div class="mainAdmin__container mainAdmin__container--borderOut">
-			<label for="phone" class="mainAdmin__label">Celular</label>
-			<input readonly type="number" id="phone" name="phone" placeholder="Ingrese numero" />
-		</div>
-		<div class="mainAdmin__container mainAdmin__container--borderOut">
-			<label for="email" class="mainAdmin__label">Email</label>
-			<input readonly type="text" id="email" name="E-mail" placeholder="email@mail.com" />
 		</div>
 
 		<div class="mainAdmin__container mainAdmin__container--photo">
