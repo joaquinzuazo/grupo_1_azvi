@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, '../public')))
 /*---------------------- ROUTES ---------------------*/
 
 app.use('/', indexRouter)
-app.use('/', productsRouter)
+app.use('/products', productsRouter)
 
 app.use('/', usersRouter)
 
