@@ -177,6 +177,7 @@
     background-color: black;
     padding: 1%;
     margin-top: 2%;
+    font-size: 13px;
 }
 
 .container-service-button:hover{
@@ -205,7 +206,7 @@
 }
 
 .container-opinions{
-    
+
     margin-right: 8%;
     margin-left: 8%;
     border-top: 5px solid black;
@@ -219,6 +220,21 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content: space-around;
+}
+
+.opinions{
+    width: 80%;
+}
+
+.textarea1{
+    display: inline-block;
+    width: 100%;
+    color: white;
+    margin: 3% 0%;
+    background-color: #2C3E50;
+    border: 3px solid black;
+    padding: 10%;
+    text-align: center;
 }
 
 .textarea{
@@ -298,7 +314,7 @@
 
     }
     .container-service-button{
-        padding: 2%;
+        padding: 4%;
         justify-content: center;
         align-self: center;
     }
@@ -310,7 +326,7 @@
         margin: 2% 5%;
     }
     
-    .textarea{
+    .textarea1{
         width: 100%;
     }
 
