@@ -7,6 +7,11 @@
     text-decoration: none;
 }
 
+/*---------------------- main de prueba desp se borra ---------------------*/
+main{
+    height: 100vh;
+}
+
 .header{
     background-color: #1F2D3A ;
     color: white;

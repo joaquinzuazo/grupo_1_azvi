@@ -14,8 +14,6 @@ router.get('/admin/create', (req, res) => {
 	res.render('adminAdd', { style: 'admin' })
 })
 
-router.get('/admin/update', (req, res) => {
-	res.render('adminUpdate', { style: 'admin' })
-})
+ 
 
 module.exports = router

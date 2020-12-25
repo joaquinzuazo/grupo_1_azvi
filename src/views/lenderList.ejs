@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/lenderList.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"
-    />
-    <title>Proveedores</title>
-</head>
-<body>
-    <header class="header">
-        <div class="header__logoContainer">
-          <img src="images/logoAzvi.png" alt="" class="logoContainer__img">
-          <div class="logoContainer__searchTitle">
-            <h3 class="searchTitle__title">AZVI</h3>
-            <img src="images/searchicon.svg" alt="" class="searchTitle__icon">
-            <input class="searchTitle__input" type="search" name="localidad" id="localidad" placeholder="Localidad">
-          </div>
-        </div>
-        <nav class="header__nav">
-          <ul class="header__navList">
-            <li><a href="index">Inicio</a></li>
-            <li><a href="login">Mi cuenta</a></li>
-            <li><a href="productCart">Unite a la red</a></li>
-          </ul>
-        </nav>
-    
-    </header>
+<%- include('partials/head',{title})%> 
+<%- include('partials/header')%>
+
 
 
     <main class="container-lender">
@@ -47,135 +21,14 @@
                 
                 <div class="container-lender-body-1-score">
                     <div class="container-lender-body-1-score-stars">
-                        <img src="images/estrellas.svg" alt="estrellita" class="container-lender-body-1-score-starImg">
+                        <img src="/images/estrellas.svg" alt="estrellita" class="container-lender-body-1-score-starImg">
                         <p>4.4</p>
-                        <button type="button" class="container-lender-body-1-score-button" ><a href="http://localhost:3000/productDetail" class="container-lender-buttom">ADQUIRIR</a></button>
+                        <button type="button" class="container-lender-body-1-score-button" ><a href="/products/detail/1" class="container-lender-buttom">ADQUIRIR</a></button>
                     </div>
                     
                 </div>
                 
-            </div>
-            <div class="container-lender-body-1">
-                <div class="lender">
-                    <img src="/images/categories/plumber.svg" alt="loguito" class="container-lender-body-1-photo">
-                    <div class="container-lender-body-1-text">
-                        <h4 class="container-lender-body-1-text-name">LUIS GARCIA</h4>
-                        <p class="container-lender-body-1-text-opinions"> 12 opiniones</p>
-                    </div>
-                </div>
-                <div class="container-lender-body-1-score">
-                    <div class="container-lender-body-1-score-stars">
-                        <img src="images/estrellas.svg" alt="estrellita" class="container-lender-body-1-score-starImg">
-                        <p>4.4</p>
-                        <button type="button" class="container-lender-body-1-score-button" ><a href="http://localhost:3000/productDetail" class="container-lender-buttom">ADQUIRIR</a></button>
-                    </div>
-                    
-                </div>
-                  
-            </div>
-            <div class="container-lender-body-1">
-                <div class="lender">
-                    <img src="/images/categories/plumber.svg" alt="loguito" class="container-lender-body-1-photo">
-                    <div class="container-lender-body-1-text">
-                        <h4 class="container-lender-body-1-text-name">LUIS GARCIA</h4>
-                        <p class="container-lender-body-1-text-opinions"> 12 opiniones</p>
-                    </div>
-                </div>
-                <div class="container-lender-body-1-score">
-                    <div class="container-lender-body-1-score-stars">
-                        <img src="images/estrellas.svg" alt="estrellita" class="container-lender-body-1-score-starImg">
-                        <p>4.4</p>
-                        <button type="button" class="container-lender-body-1-score-button" ><a href="http://localhost:3000/productDetail" class="container-lender-buttom" >ADQUIRIR</a></button>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="container-lender-body-1">
-                <div class="lender">
-                    <img src="/images/categories/plumber.svg" alt="loguito" class="container-lender-body-1-photo">
-                    <div class="container-lender-body-1-text">
-                        <h4 class="container-lender-body-1-text-name">LUIS GARCIA</h4>
-                        <p class="container-lender-body-1-text-opinions"> 12 opiniones</p>
-                    </div>
-                </div>
-                <div class="container-lender-body-1-score">
-                    <div class="container-lender-body-1-score-stars">
-                        <img src="images/estrellas.svg" alt="estrellita" class="container-lender-body-1-score-starImg">
-                        <p>4.4</p>
-                        <button type="button" class="container-lender-body-1-score-button" ><a href="http://localhost:3000/productDetail" class="container-lender-buttom">ADQUIRIR</a></button>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="container-lender-body-1">
-                <div class="lender">
-                    <img src="/images/categories/plumber.svg" alt="loguito" class="container-lender-body-1-photo">
-                    <div class="container-lender-body-1-text">
-                        <h4 class="container-lender-body-1-text-name">LUIS GARCIA</h4>
-                        <p class="container-lender-body-1-text-opinions"> 12 opiniones</p>
-                    </div>
-                </div>
-                <div class="container-lender-body-1-score">
-                    <div class="container-lender-body-1-score-stars">
-                        <img src="images/estrellas.svg" alt="estrellita" class="container-lender-body-1-score-starImg">
-                        <p>4.4</p>
-                        <button type="button" class="container-lender-body-1-score-button" ><a href="http://localhost:3000/productDetail" class="container-lender-buttom">ADQUIRIR</a></button>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="container-lender-body-1">
-                <div class="lender">
-                    <img src="/images/categories/plumber.svg" alt="loguito" class="container-lender-body-1-photo">
-                    <div class="container-lender-body-1-text">
-                        <h4 class="container-lender-body-1-text-name">LUIS GARCIA</h4>
-                        <p class="container-lender-body-1-text-opinions"> 12 opiniones</p>
-                    </div>
-                </div>
-                <div class="container-lender-body-1-score">
-                    <div class="container-lender-body-1-score-stars">
-                        <img src="images/estrellas.svg" alt="estrellita" class="container-lender-body-1-score-starImg">
-                        <p>4.4</p>
-                        <button type="button" class="container-lender-body-1-score-button" ><a href="http://localhost:3000/productDetail" class="container-lender-buttom">ADQUIRIR</a></button>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="container-lender-body-1">
-                <div class="lender">
-                    <img src="/images/categories/plumber.svg" alt="loguito" class="container-lender-body-1-photo">
-                    <div class="container-lender-body-1-text">
-                        <h4 class="container-lender-body-1-text-name">LUIS GARCIA</h4>
-                        <p class="container-lender-body-1-text-opinions"> 12 opiniones</p>
-                    </div>
-                </div>
-                <div class="container-lender-body-1-score">
-                    <div class="container-lender-body-1-score-stars">
-                        <img src="images/estrellas.svg" alt="estrellita" class="container-lender-body-1-score-starImg">
-                        <p>4.4</p>
-                        <button type="button" class="container-lender-body-1-score-button" ><a href="http://localhost:3000/productDetail" class="container-lender-buttom">ADQUIRIR</a></button>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="container-lender-body-2">
-                <div class="lender">
-                    <img src="/images/categories/plumber.svg" alt="loguito" class="container-lender-body-1-photo">
-                    <div class="container-lender-body-1-text">
-                        <h4 class="container-lender-body-1-text-name">LUIS GARCIA</h4>
-                        <p class="container-lender-body-1-text-opinions"> 12 opiniones</p>
-                    </div>
-                </div>
-                <div class="container-lender-body-1-score">
-                    <div class="container-lender-body-1-score-stars">
-                        <img src="images/estrellas.svg" alt="estrellita" class="container-lender-body-1-score-starImg">
-                        <p>4.4</p>
-                        <button type="button" class="container-lender-body-1-score-button" ><a href="http://localhost:3000/productDetail" class="container-lender-buttom">ADQUIRIR</a></button>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
+             
     </main>
 
   
