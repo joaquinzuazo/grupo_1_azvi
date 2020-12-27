@@ -1,3 +1,10 @@
+const fs = require('fs')
+const path = require('path');
+const productsJson = fs.readFileSync(path.join(__dirname,'../data/products.json'))
+
+const products = JSON.parse(productsJson)
+
+
 const productsController = {
 
 
@@ -12,7 +19,7 @@ const productsController = {
 
 
 
-
+        const productsByCategory = products.filter(product =>product.category==req.params.category)
 
 
 
@@ -29,7 +36,7 @@ const productsController = {
 
 
         res.render('lenderList', { title: `Azvi-${req.params.category}`, 
-        style:'lenderList' })
+        style:'lenderList', products : productsByCategory , titleCategory: req.params.category.toUpperCase() })
     },
 
 

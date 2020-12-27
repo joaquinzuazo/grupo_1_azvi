@@ -6,28 +6,57 @@
     <main class="container-lender">
         
         <div class="container-lender-top">
-            <a href="http://localhost:3000/" class="container-lender-top-link">SERVICIOS </a><p class="container-lender-general-text" >  >> PLOMERIA</p> 
+            <a href="http://localhost:3000/" class="container-lender-top-link">SERVICIOS </a><p class="container-lender-general-text" ><%= titleCategory  %> </p> 
         </div>
 
-        <div class="container-lender-body">
+
+        <% products.forEach(product => {%> 
+
+
+
+
             <div class="container-lender-body-1">
-                <div class="lender">
-                    <img src="/images/categories/plumber.svg" alt="loguito" class="container-lender-body-1-photo">
-                    <div class="container-lender-body-1-text">
-                        <h4 class="container-lender-body-1-text-name">LUIS GARCIA</h4>
-                        <p class="container-lender-body-1-text-opinions"> 12 opiniones</p>
+                
+                <img src="/<%=product.image%> " alt="loguito" class="container-lender-body-1-photo">
+                <div class="container-lender-body-1-text">
+                    <h4 class="container-lender-body-1-text-name"><%=product.name%> </h4>
+                    <div>
+
+                        <% for (let i = 0 ; i< 5;i++){%> 
+
+                            <% if (i < product.score) {%>
+
+                                <i class="score activeScore fas fa-star"></i>
+
+
+<%   } else {%> 
+
+    <i class="score  fas fa-star"></i>
+
+
+<%}%> 
+
+<%   } %> 
+                        
                     </div>
                 </div>
-                
-                <div class="container-lender-body-1-score">
-                    <div class="container-lender-body-1-score-stars">
-                        <img src="/images/estrellas.svg" alt="estrellita" class="container-lender-body-1-score-starImg">
-                        <p>4.4</p>
-                        <button type="button" class="container-lender-body-1-score-button" ><a href="/products/detail/1" class="container-lender-buttom">ADQUIRIR</a></button>
-                    </div>
+                   
+                   <a href="/products/detail/<%=product.id%>" class="container-lender-buttom">Contactar</a> 
+             
+        
+                                        
+                  
+                </div>
+
+
+
+
+<% }) %> 
+        
+         
                     
-                </div>
-                
+              
+           
              
     </main>
 

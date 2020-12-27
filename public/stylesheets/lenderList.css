@@ -7,10 +7,7 @@
     text-decoration: none;
 }
 
-/*---------------------- main de prueba desp se borra ---------------------*/
-main{
-    height: 100vh;
-}
+ 
 
 .header{
     background-color: #1F2D3A ;
@@ -92,6 +89,7 @@ BODY
 
 .container-lender{
     background-color: #2C3E50;
+    padding-bottom: 30px;
 }
 
 .container-lender-top{
@@ -116,36 +114,31 @@ BODY
     margin-left: 2%;
 }
 
-.container-lender-body{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+ 
 
-}
 
 .container-lender-body-1{
     display: flex;
-    width: 100%;
-    margin-top: 1%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 1%;
-    border-bottom: 2px solid black;
+    flex-direction: column;
+    margin: 25px 10px;
+    /* justify-content: space-evenly; */
+    align-items: center;
+     padding: 15px;
+     border: 1px solid #1F2D3A;
+     border-radius: 10px;
+     box-shadow: 1px 1px 1px #1F2D3A;
     
 }
-
-.lender{
-    display: flex;
-    width: 50%;
-    justify-content: space-between;
-    align-items: center;
-}
+ 
 
 
 
 .container-lender-body-1-photo{
-    max-width: 35px;
-    height: auto;
+    max-width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px 0;
 }
 
 .container-lender-body-1-text{
@@ -153,57 +146,40 @@ BODY
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-end;
-    margin-left: 5%;
-    margin-top: 1%;
-    margin-bottom: 2%;
+    
     font-size: 15px;
     color: white;
+    margin: 10px 0;
+
 }
 
 
 
+ 
 
-
-.container-lender-body-1-score{
-    display: flex;
-    width: 50%;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.container-lender-body-1-score-stars{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-size: 15px;
-}
-
-.container-lender-body-1-score-starImg{
-    max-width: 15px;
-}
-.container-lender-body-1-score-stars p{
-    margin-left: 3%;
-    margin-top: 2%;
-}
-
-.container-lender-body-1-score-button{
-    margin-left: 5%;
-    margin-bottom: 5%;
-    margin-right: 5%;
-    border: 0px solid white;
-    border-radius: 5px;
-    padding: 5px;
-    color: white;
-    background-color: black;
-}
+ 
 
 .container-lender-buttom{
     color: white;
+    background-color:#ff5252 ;
+    display: block;
+    padding: 5px;
+    border-radius: 4px;
+    margin: 10px 0;
+
 }
 
-.container-lender-body-1-score-button:hover{
-    background-color: grey;
+/*---------------------- score style ---------------------*/
+
+.score{
+    opacity: .5;
+    color: #888888;
 }
+ .score.activeScore{
+     color: yellow;
+     opacity: 1;
+ }
+ 
 
 
 /*
@@ -240,4 +216,48 @@ footer
 
 .footer__links > li{
     padding: 5px;
+}
+
+/* MEDIAS QUERIES */
+
+@media (min-width: 500px){
+    .container-lender-body-1 {
+        flex-direction: row;
+        justify-content: space-evenly;
+        max-width: 800px;
+        margin: 25px auto ;
+    }
+
+
+}
+
+@media (min-width: 960px) {
+	/******  HEADER  *****/
+
+	.header__nav {
+		width: 30%;
+	}
+	.header__navList {
+		width: 100%;
+		justify-content: space-evenly;
+		font-size: 16px;
+	}
+
+	 
+
+	/******  FOOTER  *****/
+
+	.footer__nav {
+		width: 70%;
+	}
+
+	.footer__links {
+		width: 100%;
+		justify-content: space-evenly;
+		font-size: 16px;
+	}
+}
+
+@media (min-width: 1280px) {
+ 
 }
