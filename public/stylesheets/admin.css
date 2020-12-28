@@ -92,7 +92,7 @@
 	text-transform: uppercase;
 	font-weight: 500;
 	text-align: center;
-	color: rgb(192, 63, 63);
+	color:white;
 }
 
 .mainAdmin__form {
@@ -100,7 +100,7 @@
 	flex-direction: column;
 	padding: 20px;
 
-	color: #dfe3e7;
+	color: white;
 	font-weight: 400;
 }
 
@@ -134,7 +134,7 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .mainAdmin__subtitle {
-	color: #111920;
+	color: #6486A9;
 	margin-top: 10px;
 }
 
@@ -159,13 +159,14 @@ input[type='number']::-webkit-inner-spin-button {
 
 .mainAdmin__submit {
 	padding: 8px;
-	background-color: #1f2d3a;
+	background-color: #6486A9;
 	border: 0;
 	outline: 0;
-	color: rgb(192, 63, 63);
+	color: white;
 	text-transform: uppercase;
 	font-weight: 900;
 	margin-top: 20px;
+	border-radius:5px;
 }
 
 /* footer */
