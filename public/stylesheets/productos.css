@@ -274,14 +274,14 @@ body {
     padding: 5px;
 }
 
-/* Responsive
-*/
 
-/* Header
-*/
 
-@media (min-width: 960px){
-    
+
+/* --- MEDIA TABLET */
+@media (min-width: 768px) {
+
+    /******  HEADER  *****/
+
     .header__nav{
         width: 30%;
          
@@ -289,46 +289,27 @@ body {
     .header__navList{
         width: 100%;
         justify-content: space-evenly;
-        font-size: 16px;
+        font-size: 14px;
     }
 
-    /*MAIN
-    */
 
-    .container-service{
-        display: flex;
-    }
-    .service-buttons{
-        display: flex;
-        flex-direction: column;
-
-    }
-    .container-service-button{
-        padding: 4%;
-        justify-content: center;
-        align-self: center;
-    }
-    .container-opinions h2{
-        margin: 2% 2%;
-    }
-    .opinions{
-        width: 35%;
-        margin: 2% 5%;
-    }
+    /* MAIN */
     
-    .textarea1{
-        width: 100%;
+    .container-opinions, .container-service, .container-lender{
+        margin-left: 60px;
+        margin-right: 60px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
 
-    /*Footer
-    */
+    /******  FOOTER  *****/
+    
     .footer__nav{
         width: 70%;
-         
+                 
     }
-
-
+        
     .footer__links{
         width: 100%;
         justify-content: space-evenly;
@@ -336,3 +317,33 @@ body {
     }
 }
 
+/* --- MEDIA DESK */
+@media (min-width: 1024px) {
+
+    .container-lender-detail-text{
+        font-size: 24px;
+    }
+
+    .service-text{
+        font-size: 18px;
+    }
+
+    .container-service-title{
+        font-size: 24px;
+    }
+
+    .container-service-text{
+        margin-left: 70px;
+        margin-right: 70px;
+        font-size: 20px;
+    }
+
+    .container-opinions, h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .opinions{
+        font-size: 18px;
+    }
+}
