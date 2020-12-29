@@ -34,7 +34,6 @@ const productsController = {
 
 
 
-
         res.render('lenderList', { title: `Azvi-${req.params.category}`, 
         style:'lenderList', products : productsByCategory , titleCategory: req.params.category.toUpperCase() })
     },

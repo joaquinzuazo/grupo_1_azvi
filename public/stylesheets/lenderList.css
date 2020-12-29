@@ -221,11 +221,37 @@ footer
 /* MEDIAS QUERIES */
 
 @media (min-width: 500px){
+    .container-lender{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+         
+    }
+    .container-lender-top{
+        width: 100%;
+    }
     .container-lender-body-1 {
-        flex-direction: row;
-        justify-content: space-evenly;
-        max-width: 800px;
-        margin: 25px auto ;
+        /* flex-direction: row;
+        justify-content: space-evenly; */
+         width: 300px;
+        margin: 25px  ;
+       
+    }
+
+    .container-lender-body-1:hover{
+        background-color: #2f4457;
+        animation: scale .5s ease forwards;
+    }
+
+    @keyframes scale {
+        from{
+            transform:scale(1);
+        }
+        to{
+            transform: scale(1.04);
+        }
+        
     }
 
 
@@ -258,6 +284,8 @@ footer
 	}
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1200px) {
+
+    
  
 }
