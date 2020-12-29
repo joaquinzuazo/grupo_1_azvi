@@ -28,7 +28,6 @@ app.use(express.static(path.join(__dirname, '/data/imagesProfile')))
 
 app.use('/', indexRouter)
 app.use('/products', productsRouter)
-
 app.use('/', usersRouter)
 
 // catch 404 and forward to error handler

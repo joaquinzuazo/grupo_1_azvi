@@ -5,67 +5,59 @@
 		<div class="container-lender-general">
 			<a href="http://localhost:3000/" class="container-lender-general-link">SERVICIOS </a>
 			<p class="container-lender-general-text">>></p>
-			<a href="http://localhost:3000/lenderList" class="container-lender-general-link">PLOMERIA</a>
+			<a href="http://localhost:3000/lenderList" class="container-lender-general-link"><%= titleCategory %></a>
 		</div>
 		<br />
 		<div class="container-lender-detail">
-			<img src="/images/categories/plumber.svg" alt="Plomero" class="container-lender-detail-photo" />
-			<p class="container-lender-detail-text">LUIS GARCIA -Plomeria general</p>
-		</div>
-	</div>
+      <div class="container-lender-detail-cont-img">
+      <img src="/<%=product[0].image%>" alt="Plomero" class="container-lender-detail-photo" />
+      </div>
+      <div class="container-lender-detail-cont-text">
+      <p class="container-lender-detail-text"><strong><%= (product[0].name+" "+product[0].lastname).toUpperCase() %></p></strong>
+      </div>
+      <div class="container-lender-detail-cont-city">
+        <p class="container-lender-detail-city"><strong><%= product[0].localidad %></p></strong>
+        </div>
+      <div class="container-lender-detail-cont-cal">
+      <p class="container-lender-detail-cal"><% for (let i = 0 ; i< 5;i++){%> 
+          <% if (i < product[0].score) {%>
+              <i class="score activeScore fas fa-star"></i>
+          <%   } else {%> 
+            <i class="score  fas fa-star"></i>
+          <%}%> 
+        <%   } %></p>
+      </div>
+    </div>
+  </div>
+  
 	<div class="container-service">
     <div class="service-text">
-      <h3 class="container-service-title">Trabajo minimo plomeria</h3>
+      <h3 class="container-service-title"><%= product[0].description %></h3>
       <p class="container-service-text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse minima eveniet tenetur! Consequuntur
         nisi accusamus natus pariatur soluta!amet consectetur adipisicing elit. Adipisci esse minima eveniet tenetur! Consequuntur
         nisi 
       </p>
     </div>
+
     <div class="service-buttons">
-      <label for="price" class="container-service-button" >$1000-$1500</label>
+          <!-- Faltaría algo para poder iterar varios servicios con sus varios precios -->
       <button type="button" class="container-service-button-two">ADQUIRIR</button>
     </div>
-    
-	</div>
-	<div class="container-service">
-		<div class="service-text">
-      <h3 class="container-service-title">Trabajo medio plomeria</h3>
-      <p class="container-service-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse minima eveniet tenetur! Consequuntur
-        nisi accusamus natus pariatur soluta!amet consectetur adipisicing elit. Adipisci esse minima eveniet tenetur! Consequuntur
-        nisi accusamus natus pariatur soluta
-      </p>
-    </div>
-    <div class="service-buttons">
-      <label for="price" class="container-service-button" >$1500-$2000</label>
-      <button type="button" class="container-service-button-two">ADQUIRIR</button>
-    </div>
-	</div>
-	<div class="container-service">
-		<div class="service-text">
-      <h3 class="container-service-title">Trabajo mayor plomeria</h3>
-      <p class="container-service-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse minima eveniet tenetur! Consequuntur
-        nisi accusamus natus pariatur soluta!amet consectetur adipisicing elit. Adipisci esse minima eveniet tenetur! Consequuntur
-        nisi accusamus natus pariatur solutaamet consectetur adipisicing elit. Adipisci esse minima eveniet tenetur! Consequuntur
-        nisi accusamus natus pariatur soluta
-      </p>
-    </div>
-    <div class="service-buttons">
-      <label for="price" class="container-service-button" >$2000-$2500</label>
-      <button type="button" class="container-service-button-two">ADQUIRIR</button>
-    </div>
-	</div>
+  </div>
+  
+
 	<div class="container-opinions">
-		<h2>Ultimas calificaciones</h2>
+    <h2>Ultimas calificaciones</h2>
+    <div class="container-opinions-chat">
+      <!-- Faltaría en el json informacion sobre los comentarios u calificaciones -->
+      <div class="opinions"><p>Muy buen servicio</p></div>
+      <div class="opinions"><p>Me sorprendio lo puntual de Luis</p></div>
+      <div class="opinions"><p>Un poco lento pero excelente servicio</p></div>
+      <div class="opinions"><p>Totalmente recomendado</p></div>
+    </div>
 	</div>
 
-	<div class="container-opinions-chat">
-		<div class="opinions"><label for="comments" class="textarea1" >Muy buen servicio</label> </div>
-    <div class="opinions"><label for="comments" class="textarea1" >Me sorprendio lo puntual de Luis</label> </div>
-    <div class="opinions"><label for="comments" class="textarea1" >Un poco lento pero excelente servicio</label> </div>
-    <div class="opinions"><label for="comments" class="textarea1" >Totalmente recomendado</label> </div>
-	</div>
+
 </main>
 <%-include('partials/footer')%>

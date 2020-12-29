@@ -45,11 +45,13 @@ const productsController = {
     },
 
 
-    /*----------------------3) tomi ibañez ---------------------*/
+    /*----------------------3) ya esta hechoz ---------------------*/
     //buscar en products.json el id del producto que viene por parametro y llevarlo a productdetail
 
 
     productDetail: (req, res) => {
+        const productId=products.filter(product =>product.id==req.params.id)
+        
 
 
 
@@ -69,7 +71,8 @@ const productsController = {
 
 
 
-        res.render('productDetail', { title: `Azvi ${req.params.id}`, style: 'productos' })
+
+        res.render('productDetail', { title: `Azvi ${req.params.id}`, style: 'productos', product:productId, titleCategory:productId[0].category.toUpperCase() })
     },
 
 
