@@ -91,6 +91,18 @@ body {
 
 /* MAIN*/
 
+/*---------------------- SCORE STYLE ---------------------*/
+
+.score{
+    opacity: .3;
+    color: #888888;
+}
+ .score.activeScore{
+     color: yellow;
+     opacity: .5;
+ }
+ 
+
 .container{
     background-color: #2C3E50;
 
@@ -238,8 +250,10 @@ body {
     padding: 10px;
     color: darkgray;
     font-size: 15px;
+    
 }
 
+ 
 /* FOOTER*/
 
 .footer{

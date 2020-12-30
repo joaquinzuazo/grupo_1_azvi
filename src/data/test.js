@@ -15,9 +15,9 @@ const randoNum = (min,max)=>{
 
 let i = 1
 
-products.forEach(product=>product.id = i++)
-products.forEach(product=>product.score = randoNum(2,6))
-products.forEach(product=>product.image =`user_${randoNum(1,16)}.jpg`)
+// products.forEach(product=>product.id = i++)
+// products.forEach(product=>product.score = randoNum(2,6))
+products.forEach(product=>product.image =`user_${randoNum(1,27)}.jpg`)
 
 const productJson = JSON.stringify(products)
 
