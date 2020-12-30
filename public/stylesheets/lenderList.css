@@ -9,6 +9,8 @@
 
  
 
+ 
+
 .header{
     background-color: #1F2D3A ;
     color: white;
@@ -90,6 +92,7 @@ BODY
 .container-lender{
     background-color: #2C3E50;
     padding: 20px;
+    min-height: 100vh;
 }
 
 .container-lender-top{
@@ -122,6 +125,7 @@ BODY
      border: 1px solid #1F2D3A;
      border-radius: 10px;
      box-shadow: 1px 1px 1px #1F2D3A;
+     align-self: flex-start;
     
 }
  
