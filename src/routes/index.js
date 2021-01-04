@@ -18,7 +18,7 @@ router.get('/', function (req, res, next) {
 
 	})
 	bestServices.length=10
-	console.log(bestServices);
+	// console.log(bestServices);
 
 
 	res.render('index', { title: 'AZVI', style: 'index',bestest:bestServices })

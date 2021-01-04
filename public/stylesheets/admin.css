@@ -8,7 +8,7 @@
 	list-style: none;
 	text-decoration: none;
 }
-
+ 
 /* HEADER */
 
 .header {
@@ -85,7 +85,7 @@
 .mainAdmin {
 	background-color: #2c3e50;
 	color: white;
-	height: 150vh;
+	 min-height: 150vh; 
 }
 
 .mainAdmin__title {
@@ -159,7 +159,7 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .mainAdmin__submit {
-	padding: 8px;
+	padding: 12px;
 	background-color: #6486A9;
 	border: 0;
 	outline: 0;
@@ -239,6 +239,12 @@ input[type='number']::-webkit-inner-spin-button {
 	color: white;
 }
 
+
+.mainAdmin__red{
+	background-color: rgb(230, 31, 31);
+margin: 0;
+}
+
 /* .op-02 {
 	opacity: 0.2;
 } */
@@ -265,7 +271,7 @@ input[type='number']::-webkit-inner-spin-button {
 		margin: 0px auto;
 		max-width: 600px;
 		justify-content: center;
-		height: 90vh;
+		/* height: 90vh; */
 	}
 
 	.mainAdmin__container {
@@ -289,6 +295,7 @@ input[type='number']::-webkit-inner-spin-button {
 		width: 80%;
 		font-size: 18px;
 		max-height: 50px;
+		cursor: pointer;
 	}
 
 	/******  FOOTER  *****/

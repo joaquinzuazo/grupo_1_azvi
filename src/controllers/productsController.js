@@ -71,8 +71,52 @@ Acción de creación (a donde se envía el formulario) ---------------------*/
 	/*---------------------- 6) facu/jaoco /products/ :id (PUT)
 Acción de edición (a donde se envía el formulario): ---------------------*/
 
+
+	update:(req,res)=>{
+
+		console.log(req.files);
+		res.send(req.body)
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	},
+
+
+
+
+
 	/*---------------------- 7) tomi V /products/ :id (DELETE)
 Acción de borrado ---------------------*/
+
+delete:(req,res)=>{
+
+
+
+
+
+
+
+	res.send('eliminado')
+},
 
 	productCart: (req, res, next) => {
 		res.render('productCart', { title: 'AZVI PLANES', style: 'productCart' })
