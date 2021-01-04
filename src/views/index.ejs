@@ -1,13 +1,19 @@
 <!--PARTIALS-->
 
 <%- include('partials/head')%> <%- include('partials/header')%>
+<div class="main__containerMain">
+	
+	<div class="main__container">
+	</div>
+	<div class="main__title">El servicio que buscas en un solo click
+
+		<a href="#categories" class="main__reference">Encontra tu servicio</a>
+	</div>
+</div>
 
 <main class="main">
-	<div class="main__container">
-		<h1 class="main__title">El servicio que buscas en un solo click</h1>
-	</div>
 
-	<select class="main_select" name="categories" id="main__select">
+	<!-- <select class="main_select" name="categories" id="main__select">
 		<option value="Carpinteria">Servicios</option>
 
 		<option value="Carpinteria">Carpinteria</option>
@@ -17,9 +23,51 @@
 		<option value="Mecanica">Mecanica</option>
 		<option value="Aires">Aires</option>
 		<option value="Heladeras">Heladeras</option>
-	</select>
+	</select> -->
 
-	<section class="categories">
+	<div id="categories" class="main__subtitle">Recomendados</div>
+	<section  class="main__recomended">
+
+		<% bestest.forEach(best =>{%> 
+
+			<article class="main__recomendedCard">
+				<a class="main__recomendedA" href="/products/detail/<%=best.id%>">
+				<h4><%=best.name%> </h4>
+				<div class="main__ref"><img class="main__recomendedImage" src="<%=best.image%>" alt="">
+				<img class="main__ref__img" src="/images/categories/<%=best.category%>.svg" alt="">
+				</div>
+
+				<div>
+				
+					<% for (let i = 0 ; i< 5;i++){%> 
+
+						<% if (i < best.score) {%>
+
+							<i class="score activeScore fas fa-star"></i>
+
+
+<%   } else {%> 
+
+<i class="score  fas fa-star"></i>
+
+
+<%}%> 
+
+<%   } %> 
+				
+</div>
+				</a>
+		
+			</article>
+
+	<% 	}) %> 
+
+
+	</section>
+
+	<div id="categories" class="main__subtitle">Todas las categorias</div>
+
+	<section  class="categories">
 		<article class="categories__category">
 			<img src="images/categories/carpinteria.svg" alt="" class="categories__icon" />
 			<a href="products/category/carpinteria" class="categories__subtitle">Carpinteria</a>

@@ -10,9 +10,7 @@ router.get('/register', function (req, res, next) {
 	res.render('register', { title: 'AZVI', style: 'register' })
 })
 
-router.get('/admin/create', (req, res) => {
-	res.render('adminAdd', { style: 'admin' })
-})
+ 
 
  
 
