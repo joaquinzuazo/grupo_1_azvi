@@ -24,9 +24,9 @@ const productsController = {
 	},
 
 	productDetail: (req, res) => {
-		const productId = products.filter((product) => product.id == req.params.id)
+		const productId = products.find((product) => product.id == req.params.id)
 
-		if (productId.length == 0) {
+		if (!productId) {
 			return res.render('error', { title: 'Error', style: 'error' })
 		}
 
@@ -34,7 +34,7 @@ const productsController = {
 			title: `Azvi ${req.params.id}`,
 			style: 'productos',
 			product: productId,
-			titleCategory: productId[0].category.toUpperCase(),
+			titleCategory: productId.category.toUpperCase(),
 		})
 	},
 

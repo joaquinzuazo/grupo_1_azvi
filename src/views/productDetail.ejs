@@ -10,17 +10,17 @@
 		<br />
 		<div class="container-lender-detail">
       <div class="container-lender-detail-cont-img">
-      <img src="/<%=product[0].image%>" alt="Plomero" class="container-lender-detail-photo" />
+      <img src="/<%=product.image%>" alt="Plomero" class="container-lender-detail-photo" />
       </div>
       <div class="container-lender-detail-cont-text">
-      <p class="container-lender-detail-text"><strong><%= (product[0].name+" "+product[0].lastname).toUpperCase() %></p></strong>
+      <p class="container-lender-detail-text"><strong><%= (product.name+" "+product.lastname).toUpperCase() %></p></strong>
       </div>
       <div class="container-lender-detail-cont-city">
-        <p class="container-lender-detail-city"><strong><%= product[0].localidad %></p></strong>
+        <p class="container-lender-detail-city"><strong><%= product.localidad %></p></strong>
         </div>
       <div class="container-lender-detail-cont-cal">
       <p class="container-lender-detail-cal"><% for (let i = 0 ; i< 5;i++){%> 
-          <% if (i < product[0].score) {%>
+          <% if (i < product.score) {%>
               <i class="score activeScore fas fa-star"></i>
           <%   } else {%> 
             <i class="score  fas fa-star"></i>
@@ -32,7 +32,7 @@
   
 	<div class="container-service">
     <div class="service-text">
-      <h3 class="container-service-title"><%= product[0].description %></h3>
+      <h3 class="container-service-title"><%= product.description %></h3>
       <p class="container-service-text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse minima eveniet tenetur! Consequuntur
         nisi accusamus natus pariatur soluta!amet consectetur adipisicing elit. Adipisci esse minima eveniet tenetur! Consequuntur
@@ -51,9 +51,9 @@
     <h2>Ultimas calificaciones  <i class="fas fa-comments"></i></h2>
     <div class="container-opinions-chat">
       <!-- Faltaría en el json informacion sobre los comentarios u calificaciones -->
-      <div class="opinions"><p>Excelente, un grande <%= product[0].name %> lo volvería a contratar</p></div>
-      <div class="opinions"><p>Para destacar la puntualidad de <%= product[0].name %></p></div>
-      <div class="opinions"><p>¡El mejor servicio de <%= product[0].category %>!</p></div>
+      <div class="opinions"><p>Excelente, un grande <%= product.name %> lo volvería a contratar</p></div>
+      <div class="opinions"><p>Para destacar la puntualidad de <%= product.name %></p></div>
+      <div class="opinions"><p>¡El mejor servicio de <%= product.category %>!</p></div>
       <div class="opinions"><p>Totalmente recomendado</p></div>
     </div>
 	</div>
