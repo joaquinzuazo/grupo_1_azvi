@@ -13,7 +13,7 @@ _Retrospectiva estrella de mar - Sprint-4._
 ## Start Doing (comenzar a hacer) 📋
 
 - _Aprovechar el avance de la cursada para implementar nuevas funcionalidades._
-- _Utilizar los conocimientos individuales de cada uno para implementar visuales, funciones u otros adicionales al sprint solicitado._
+- _Utilizar los conocimientos de cada integrante para implementar visuales, funciones u otros adicionales al sprint solicitado._
 
 
 
