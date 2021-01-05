@@ -34,5 +34,6 @@ router.get('/create', productsController.create)
 router.post('/create',upload.any(),productsController.save)
 router.get('/:id/edit',productsController.edit)
 router.put('/:id/edit',upload.any(),productsController.update)
+router.delete('/:id/delete',productsController.delete)
 
 module.exports = router

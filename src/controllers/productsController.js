@@ -86,11 +86,22 @@ Acción de borrado ---------------------*/
 
 	delete: (req, res) => {
 
+		// se almacena el parametro dinamico
+		const idProduct = req.params.id
 
+		//se retorna los que no se quieren eliminar y se almacenan en una variable
+		const productfilter = products.filter(function(product) {
+            return product.id != idProduct
+		})
+		
+		//se modifica el JSON segun el id
+		const productsJSon = JSON.stringify(productFilter)
 
+		fs.writeFileSync(productsFilePath, productsJSon)
 
-
-
+		
+		
+		
 		
 		res.send('eliminado')
 	},
