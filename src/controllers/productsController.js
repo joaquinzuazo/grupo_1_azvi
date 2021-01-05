@@ -8,9 +8,6 @@ const products = JSON.parse(productsJson)
 const productsFilePath = path.join(__dirname, '../data/products.json')
 
 const productsController = {
-	/*----------------------1) facu/joaco ---------------------*/
-	//hay que pasar parametro de procutos para que los pinte en views
-	//hay que filtrar por categoria
 	index: (req, res) => {
 		const productsByCategory = products.filter((product) => product.category == req.params.category)
 
@@ -22,16 +19,16 @@ const productsController = {
 		})
 	},
 
-	/*---------------------- 2) ya esta hecho ---------------------*/
 	create: (req, res) => {
 		res.render('adminAdd', { title: 'Agregar Producto', style: 'admin' })
 	},
 
-	/*----------------------3) ya esta hechoz ---------------------*/
-	//buscar en products.json el id del producto que viene por parametro y llevarlo a productdetail
-
 	productDetail: (req, res) => {
 		const productId = products.filter((product) => product.id == req.params.id)
+
+		if (productId.length == 0) {
+			return res.render('error', { title: 'Error', style: 'error' })
+		}
 
 		res.render('productDetail', {
 			title: `Azvi ${req.params.id}`,
@@ -40,9 +37,6 @@ const productsController = {
 			titleCategory: productId[0].category.toUpperCase(),
 		})
 	},
-
-	/*---------------------- 4)hecho (POST)
-Acción de creación (a donde se envía el formulario) ---------------------*/
 
 	save: (req, res) => {
 		const ids = products.map((product) => product.id)
@@ -58,65 +52,48 @@ Acción de creación (a donde se envía el formulario) ---------------------*/
 		products.push(product)
 
 		const productsJSon = JSON.stringify(products)
-		fs.writeFileSync(productsFilePath,productsJSon)
+		fs.writeFileSync(productsFilePath, productsJSon)
 
 		res.redirect('/')
 	},
 
-	/*---------------------- ya esta heco ---------------------*/
 	edit: (req, res) => {
-		res.render('adminUpdate', { title: 'Editar', style: 'admin' })
+		const id = req.params.id
+
+		const product = products.find((produc) => produc.id == id)
+
+		if (!product) {
+			return res.render('error', { title: 'Error', style: 'error' })
+		}
+
+		res.render('adminUpdate', { title: 'Editar', style: 'admin', id, product })
 	},
 
-	/*---------------------- 6) facu/jaoco /products/ :id (PUT)
-Acción de edición (a donde se envía el formulario): ---------------------*/
+	update: (req, res) => {
+		const keys = Object.keys(req.body)
+		const product = products.find((product) => product.id == req.params.id)
+		keys.forEach((key) => (product[key] = req.body[key]))
+		product.image = req.files[0].filename
 
+		const productsJSon = JSON.stringify(products)
+		fs.writeFileSync(productsFilePath, productsJSon)
 
-	update:(req,res)=>{
-
-		console.log(req.files);
-		res.send(req.body)
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		res.redirect('/')
 	},
-
-
-
-
 
 	/*---------------------- 7) tomi V /products/ :id (DELETE)
 Acción de borrado ---------------------*/
 
-delete:(req,res)=>{
+	delete: (req, res) => {
 
 
 
 
 
 
-
-	res.send('eliminado')
-},
+		
+		res.send('eliminado')
+	},
 
 	productCart: (req, res, next) => {
 		res.render('productCart', { title: 'AZVI PLANES', style: 'productCart' })
