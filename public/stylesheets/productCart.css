@@ -9,6 +9,10 @@
     text-decoration: none;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 
 
 /* HEADER */
@@ -19,6 +23,11 @@
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    position: sticky;
+	right: 0;
+	left: 0;
+	top: 0;
+	z-index: 100;
 }
 
 .header__logoContainer{
@@ -204,7 +213,7 @@
     font-size: 14px;
     display: flex;
     justify-content: space-evenly;
-    color: #6486A9;
+    color: white;
 
     height: 50px;
 }
@@ -246,7 +255,7 @@
     .header__navList{
         width: 100%;
         justify-content: space-evenly;
-        font-size: 14px;
+        font-size: 16px;
     }
     
     

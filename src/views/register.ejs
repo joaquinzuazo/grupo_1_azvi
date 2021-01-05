@@ -1,17 +1,21 @@
 <%- include('partials/head')%> <%- include('partials/header')%>
 
 <main class="article-container-main">
-	<div class="article-container-titulo">Registrate</div>
+	
 
 	<div class="article-container-informacion">
-		<input class="article-container-input" type="Usuario" placeholder="Nombre de Usuario" />
-		<input class="article-container-input" type="Password" placeholder="Contraseña" />
-		<input class="article-container-input" type="Password" placeholder="Confirmar Contraseña" />
-		<input class="article-container-input" type="E-mail" placeholder="Dirección de E-mail" />
-		<input class="article-container-input" type="Name" placeholder="Apellido y Nombre" />
-		<input class="article-container-input" type="Localidad" placeholder="Localidad" />
+		<div class="article-container-titulo">Registrate</div>
+		<form class="article-container-form" action="#">
+			<input class="article-container-input" type="Usuario" placeholder="Nombre de Usuario" />
+			<input class="article-container-input" type="Password" placeholder="Contraseña" />
+			<input class="article-container-input" type="Password" placeholder="Confirmar Contraseña" />
+			<input class="article-container-input" type="E-mail" placeholder="Dirección de E-mail" />
+			<input class="article-container-input" type="Name" placeholder="Apellido y Nombre" />
+			<input class="article-container-input" type="Localidad" placeholder="Localidad" />
+			<button type="submit" class="container-button">Registrar</button>
+		</form>
 	</div>
 
-	<button type="submit" class="container-button">Registrar</button>
+	
 </main>
 <%-include('partials/footer')%>
