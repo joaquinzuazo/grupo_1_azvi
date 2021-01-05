@@ -193,8 +193,8 @@
     
     .article-container-form {
         text-align: center;
-        margin-left: 600px;
-        margin-right: 600px;
+        margin-left: 200px;
+        margin-right: 200px;
     }
 
 	.main__title {
@@ -247,3 +247,21 @@
 }
 
 
+@media (min-width: 1439px) {
+    /******  HEADER  *****/
+    .article-container-form {
+        text-align: center;
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+}
+
+
+@media (min-width: 1600px) {
+    /******  HEADER  *****/
+    .article-container-form {
+        text-align: center;
+        margin-left: 400px;
+        margin-right: 400px;
+    }
+}
