@@ -90,7 +90,7 @@ Acción de borrado ---------------------*/
 		const idProduct = req.params.id
 
 		//se retorna los que no se quieren eliminar y se almacenan en una variable
-		const productfilter = products.filter(function(product) {
+		const productFilter = products.filter(function(product) {
             return product.id != idProduct
 		})
 		
@@ -103,7 +103,7 @@ Acción de borrado ---------------------*/
 		
 		
 		
-		res.send('eliminado')
+		res.redirect('/')
 	},
 
 	productCart: (req, res, next) => {
