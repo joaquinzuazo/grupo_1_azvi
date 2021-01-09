@@ -27,7 +27,7 @@ const productsController = {
 		const productId = products.find((product) => product.id == req.params.id)
 
 		if (!productId) {
-			return res.render('error', { title: 'Error', style: 'error' })
+			return res.render('error2', { title: 'Error', style: 'error' })
 		}
 
 		res.render('productDetail', {
@@ -63,7 +63,7 @@ const productsController = {
 		const product = products.find((produc) => produc.id == id)
 
 		if (!product) {
-			return res.render('error', { title: 'Error', style: 'error' })
+			return res.render('error2', { title: 'Error', style: 'error' })
 		}
 
 		res.render('adminUpdate', { title: 'Editar', style: 'admin', id, product })

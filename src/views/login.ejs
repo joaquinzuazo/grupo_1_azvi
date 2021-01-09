@@ -1,19 +1,32 @@
 <%- include('partials/head')%> <%- include('partials/header')%>
 
 <main class="article-container-main">
-	<div class="article-container-informacion">
-		<div class="article-container-titulo">Ingresa</div>
-		<form class="article-container-form" action="#">
-			<input class="article-container-input" type="Usuario" placeholder="Nombre de Usuario" />
-			<input class="article-container-input" type="Password" placeholder="Contraseña" />
-			<button class="container-button">Ingresa</button>
+	 
+	 
+		 
+		<form class="article-container-form" action="/users/login" method="POST">
+			<div class="form-container-input"><input class="article-container-input" name="email" type="Usuario" placeholder="Email" /><i class="form-icon far fa-envelope"></i></div>
+			<div class="form-container-input"><input class="article-container-input"  name="password" type="Password" placeholder="Contraseña" />
+				<i class="form-icon fas fa-unlock-alt"></i></div>
+
+			<div class="form-container-remember">
+				<label class="form-label" for="remember">Recordame</label><input type="checkbox" name="remember">
+				
+			</div>
+			<button class="container-button">Iniciar Sesion</button>
+
+
 		</form>
 		<div>
 			<h3 class="article-container-h3">
-				¿No tenes cuenta? Click <a class="article-container-a" href="register">acá</a> para registrarte
+				¿No tenes cuenta? Click <a class="article-container-a" href="register">ACA</a> para registrarte
 			</h3>
 		</div>
-	</div>
+	 
 </main>
 
-<%-include('partials/footer')%>
+ 
+ 
+  
+</body>
+</html>

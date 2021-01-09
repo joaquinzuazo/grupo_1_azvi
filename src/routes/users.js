@@ -2,16 +2,15 @@ const express = require('express')
 
 const router = express.Router()
 
-router.get('/login', function (req, res, next) {
-	res.render('login', { title: 'AZVI', style: 'login' })
-})
-
-router.get('/register', function (req, res, next) {
-	res.render('register', { title: 'AZVI', style: 'register' })
-})
-
+const usersController = require('../controllers/usersController');
  
 
- 
+router.get('/login',usersController.loginForm)
+
+router.get('/register', usersController.registerForm)
+
+ router.post('/users/login',usersController.login)
+
+ router.get('/logout',usersController.logout)
 
 module.exports = router

@@ -75,7 +75,7 @@
 .header__navList{
     display: flex;
     font-size: 12px;
-      
+    align-items: center;
 }
 
  
@@ -92,10 +92,46 @@
 
 /*main*/
 
+body{
+    background-color:#2C3E50;
+    position: relative;
+     height: 100vh;
+     overflow-x: hidden;
+}
+.article-container-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .article-container-main{
+    min-width: 250px;
+     
     background-color: #2C3E50 ;
-    padding: 30px;  
+    padding: 10px;  
+    /* margin: 30px; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     
+     
+}
+
+/* container inputs */
+
+.form-container-input{
+    width: 100%;
+    position: relative;
+     
+}
+.form-icon{
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    color: #d15050;
+    transform: translateY(-50%);
+    font-weight: 200;
 }
 
 /*Parte de los recuadros*/
@@ -112,29 +148,37 @@
     background-color: #2C3E50 ;
     display: flex;
     flex-direction: column;
-    margin-top: 200px;
-    margin-bottom: 400px;
+     
 }
 
 .article-container-input{
     /*Primer valor: Grueso del borde, segundo valor: el tipo de borde, el tercer valor: color*/
     border: 3px solid black;
     padding: 15px;
-    width: 60%;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 5px;
+    width: 100%;
+    padding-left: 30px;
+     
+    margin: 8px 0;
 }
 
-.article-container-form {
-    text-align: center;
+.form-label{
+    margin-right: 5px;
+     font-weight: 600;
+     font-size: 14px;
+     color: rgb(180, 179, 179);
+}
+.form-container-remember{
+    margin: 8px 0;
+    width: 100%;
+
 }
 
+ 
 
 /* BUTTON */
 
 .container-button{
-    width: 60%;
+    width: 80%;
     background-color: black;
     color: white;
     /*sirve para transformar el texto*/
@@ -192,65 +236,92 @@
     padding: 5px;
 }
 
-@media (min-width: 960px) {
-    /******  HEADER  *****/
+/* user active styles */
 
-    .header__nav{
-        width: 30%;
+.header_userImage{
+	width: 50px;
+	margin-left: 10px;
+}
+
+.header_floatmenu{
+	display: none;
+}
+
+.header_containerfloat{
+	display: flex;
+	align-items: center;
+}
+
+@media (min-width: 960px) {
+ /******  HEADER  *****/
+
+ .header__navList>li>a:hover{
+    color:#d15050 ;
+}
+
+.header__nav {
+    width: 70%;
+}
+.header__navList {
+    width: 100%;
+    justify-content: space-evenly;
+    font-size: 14px;
+}
+
+/* desplegable menu */
+
+.header_containerfloat {
+    position: relative;
+    z-index: 10;
+}
+.header_containerfloat a {
+    display: block;
+    color: #ff5252;
+
+    width: 100%;
+}
+.header_floatmenu {
+    font-size: 14px;
+    font-weight: 700;
+    position: absolute;
+    display: none;
+    background-color: #1f2d3a;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    min-width: 300px;
+
+}
+.header_floatmenu-item {
+    margin: 10px 0;
+}
+
+.header_containerfloat:hover .header_floatmenu {
+    display: initial;
+    animation: show 0.3s forwards ease;
+    z-index: -1;
+}
+
+@keyframes show {
+    from {
+         
+        top: 0;
+    }
+    to {
+        top: 50%;
          
     }
-    .header__navList{
-        width: 100%;
-        justify-content: space-evenly;
-        font-size: 16px;
-    }
+}
 
-    /* ***********  MAIN ********* */
-	.main__title {
-        font-size: 48px;
-		text-align: center;
-	}
 
-	.categories {
-		max-width: 60%;
-        margin: 0 auto;
-        font-size: 16px;
-	}
 
-	.main_select {
-		width: 60%;
-    }
+  /* FORM */
 
-    .article-container-informacion{
-        background-color: #2C3E50 ;
-        display: flex;
-        flex-direction: column;
-        
-    }
-        
-    .article-container-main{
-        flex-wrap: wrap;
-    }
-
-    .article-container-input{
-        width: 40%;
-        margin-left: 100px;
-        margin-right: 100px;
-        margin-top: 30px;
-    }
-
-    .article-container-form {
-        text-align: center;
-    }
-
-    .container-button{
-        width: 40%;
-        margin-top: 30px;
-        margin-left: 100px;
-        margin-right: 100px;
-
-    }
-
+  .article-container-main{
+      min-width: 500px;
+      padding: 30px;
+      background-color: #1f2d3a;
+      border-radius: 20px;
+  }
 
     /******  FOOTER  *****/
     

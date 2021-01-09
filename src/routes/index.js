@@ -10,6 +10,7 @@ const products = JSON.parse(productsJson)
 /* GET home page. */
 router.get('/', function (req, res, next) {
 
+	 
 	const bestServices = []
 	products.forEach(product => {
 		if(product.score==4||product.score==5){
@@ -18,10 +19,9 @@ router.get('/', function (req, res, next) {
 
 	})
 	bestServices.length=10
-	// console.log(bestServices);
+	 
 
-
-	res.render('index', { title: 'AZVI', style: 'index',bestest:bestServices })
+	res.render('index', { title: 'AZVI', style: 'index',bestest:bestServices  })
 })
 
 module.exports = router
