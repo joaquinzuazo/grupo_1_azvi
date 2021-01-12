@@ -40,11 +40,11 @@ const usersController = {
     
                 res.redirect('/')
             }else{
-                res.redirect('/login')
+                res.render('login', {mensaje:'Credenciales invalidas',style: 'login',title:'AZVI'})
             }
         }else{
              
-            res.redirect('/login')
+            res.render('login',{mensaje:'Credenciales invalidas',style: 'login',title:'AZVI'})
         }
     
      
