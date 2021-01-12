@@ -6,14 +6,17 @@
 	<div class="article-container-informacion">
 		<div class="article-container-titulo">Registrate</div>
 		<form class="article-container-form" action="/register" method="POST">
-			<input class="article-container-input" type="text" name="user" placeholder="Nombre de Usuario" />
-			<input class="article-container-input" type="password" name="pass" placeholder="Contraseña" />
 			<input class="article-container-input" type="email" name="email" placeholder="Dirección de E-mail" />
+			<input class="article-container-input" type="password" name="pass" placeholder="Contraseña" />
 			<input class="article-container-input" type="text" name="name" placeholder="Nombre" />
 			<input class="article-container-input" type="text" name="lastname" placeholder="Apellido" />
 			<input class="article-container-input" type="text" name="city" placeholder="Localidad" />
 			<button type="submit" class="container-button">Registrar</button>
+			<%if(typeof mensaje=="string") {%>
+				<p><%=mensaje%></p>
+			<%}%>
 		</form>
+
 	</div>
 
 	

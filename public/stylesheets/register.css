@@ -267,6 +267,10 @@ body{
         margin-right: 200px;
     }
 
+    .article-container-form, p{
+        color: tomato;
+    }
+
 	.main__title {
         font-size: 48px;
 		text-align: center;
