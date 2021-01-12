@@ -3,7 +3,9 @@
 <main class="article-container-main">
 	 
 	 
-		 
+	<%if(typeof mensaje=="string") {%>
+		<p class="article-container-form-regis"><%=mensaje%></p>
+		<%}%>
 		<form class="article-container-form" action="/users/login" method="POST">
 			<div class="form-container-input"><input class="article-container-input" name="email" type="Usuario" placeholder="Email" /><i class="form-icon far fa-envelope"></i></div>
 			<div class="form-container-input"><input class="article-container-input"  name="password" type="Password" placeholder="Contraseña" />

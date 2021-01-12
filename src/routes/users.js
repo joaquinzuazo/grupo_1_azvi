@@ -9,8 +9,10 @@ router.get('/login',usersController.loginForm)
 
 router.get('/register', usersController.registerForm)
 
- router.post('/users/login',usersController.login)
+router.post('/register', usersController.register)
 
- router.get('/logout',usersController.logout)
+router.post('/users/login',usersController.login)
+
+router.get('/logout',usersController.logout)
 
 module.exports = router

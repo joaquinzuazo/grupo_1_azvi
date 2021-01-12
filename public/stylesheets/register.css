@@ -317,21 +317,16 @@ body{
 }
 
 
-@media (min-width: 1439px) {
-    /******  HEADER  *****/
+@media (min-width: 1024px) {
+    
+    .article-container-titulo{
+        text-align: center;
+    }
+
     .article-container-form {
         text-align: center;
-        margin-left: 300px;
-        margin-right: 300px;
+        margin-left: 35%;
+        margin-right: 35%;
     }
 }
 
-
-@media (min-width: 1600px) {
-    /******  HEADER  *****/
-    .article-container-form {
-        text-align: center;
-        margin-left: 400px;
-        margin-right: 400px;
-    }
-}
