@@ -23,12 +23,10 @@ const usersController = {
             req.body.pass=bcrypt.hashSync(req.body.pass,10)
             users.push(req.body)
             fs.writeFileSync(usersPathFile, JSON.stringify(users))
-            res.render('login', { title: 'AZVI', style: 'login', mensaje:"¡Registrado con exito, ingrese sus datos!" })
+            res.render('login', { title: 'AZVI', style: 'login', mensaje:"¡Registrado con exito, ingrese sus datos!"})
             }else{
-                res.render('register', { title: 'AZVI', style: 'register', mensaje:"¡El email ya se encuentra registrado!" })
+                res.render('register', { title: 'AZVI', style: 'register', mensaje:"El email ya se encuentra registrado."})
             }
-        // Falta agregar que verifique que no exista previamente ese email o usuario registrado
-
     },
     
     login:(req,res)=>{
