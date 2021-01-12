@@ -15,6 +15,7 @@ const usersController = {
     },
 
     register: (req, res) => {
+        // Falta agregar que verifique que no exista previamente ese email o usuario registrado
         req.body["id"]=users.length+1
         req.body["image"]="";
         req.body["admin"]=false;
