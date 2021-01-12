@@ -1,13 +1,12 @@
 <%- include('partials/head')%> <%- include('partials/header')%>
 
 <main class="container">
+  <div class="container-lender-general">
+    <a href="http://localhost:3000/" class="container-lender-general-link">SERVICIOS </a>
+    <p class="container-lender-general-text">>></p>
+    <a href="http://localhost:3000/lenderList" class="container-lender-general-link"><%= titleCategory %></a>
+  </div>
 	<div class="container-lender">
-		<div class="container-lender-general">
-			<a href="http://localhost:3000/" class="container-lender-general-link">SERVICIOS </a>
-			<p class="container-lender-general-text">>></p>
-			<a href="http://localhost:3000/lenderList" class="container-lender-general-link"><%= titleCategory %></a>
-		</div>
-		<br />
 		<div class="container-lender-detail">
       <div class="container-lender-detail-cont-img">
       <img src="/<%=product.image%>" alt="Plomero" class="container-lender-detail-photo" />
@@ -28,9 +27,8 @@
         <%   } %></p>
       </div>
     </div>
-    </div>
-    </div>
-  </div>
+    
+
   
 	<div class="container-service">
     <div class="service-text">
@@ -41,19 +39,23 @@
         nisi 
       </p>
     </div>
+  
 
     <div class="service-buttons">
           <!-- Faltaría algo para poder iterar varios servicios con sus varios precios -->
       <button type="button" class="container-service-button-two">ADQUIRIR</button>
     </div>
   </div>
+</div>
   
 
 	<div class="container-opinions">
+    <div class="container-opinions-subtitle">
     <h2>Ultimas calificaciones  <i class="fas fa-comments"></i></h2>
+    </div>
     <div class="container-opinions-chat">
       <!-- Faltaría en el json informacion sobre los comentarios u calificaciones -->
-      <div class="opinions"><p>Excelente, un grande <%= product.name %> lo volvería a contratar</p></div>
+      <div class="opinions"><p>Excelente <%= product.name %> lo volvería a contratar</p></div>
       <div class="opinions"><p>Para destacar la puntualidad de <%= product.name %></p></div>
       <div class="opinions"><p>¡El mejor servicio de <%= product.category %>!</p></div>
       <div class="opinions"><p>Totalmente recomendado</p></div>

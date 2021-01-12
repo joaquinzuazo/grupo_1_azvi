@@ -112,6 +112,7 @@ body {
 
 .container{
     background-color: #2C3E50;
+    margin-bottom: 10%;
 
 }
 
@@ -127,7 +128,7 @@ body {
 .container-lender-general{
     display: flex;
     color: white;
-    
+    margin-left: 20px;
     padding-top: 15px;
 }
 
@@ -172,7 +173,8 @@ body {
 
 
 .container-service{
-    margin:20px;
+    margin-top:20px;
+    margin-bottom: 20px;
     background-color: white;
     padding: 10px;
     border-radius: 10px;
@@ -378,7 +380,7 @@ body {
 
     /* MAIN */
     
-    .container-opinions, .container-service, .container-lender{
+    .container-opinions, .container-lender, .container-lender-general{
         margin-left: 60px;
         margin-right: 60px;
         margin-top: 30px;
@@ -402,6 +404,37 @@ body {
 
 /* --- MEDIA DESK */
 @media (min-width: 1024px) {
+
+    .container-lender{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 30px;
+    }
+
+    .container-lender-detail{
+        width: 25%;
+    }
+
+    .container-service {
+        width: 70%;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .container-opinions{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .container-opinions-subtitle {
+        width: 40%;
+    }
+
+    .container-opinions-chat {
+        width: 55%;
+    }
 
     .container-lender-detail-text{
         font-size: 24px;
@@ -428,5 +461,42 @@ body {
 
     .opinions{
         font-size: 18px;
+    }
+}
+
+@media (min-width: 1440px) {
+
+    .container-lender{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    .container-lender-detail{
+        width: 25%;
+    }
+
+    .container-service {
+        width: 70%;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .container-opinions{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    .container-opinions-subtitle {
+        width: 40%;
+    }
+
+    .container-opinions-chat {
+        width: 55%;
     }
 }
