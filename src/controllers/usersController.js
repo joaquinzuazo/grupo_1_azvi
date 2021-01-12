@@ -15,8 +15,11 @@ const usersController = {
     },
 
     register: (req, res) => {
-        const hashPass=bcrypt.hashSync(req.body.pass,10)
-        users.push({id:(users.length+1),user:req.body.user,pass:hashPass,email:req.body.email,name:req.body.name,lastname:req.body.lastname,city:req.body.city,image:"",admin:false})
+        req.body["id"]=users.length+1
+        req.body["image"]="";
+        req.body["admin"]=false;
+        req.body.pass=bcrypt.hashSync(req.body.pass,10)
+        users.push(req.body)
         fs.writeFileSync(usersPathFile, JSON.stringify(users))
         res.render('login', { title: 'AZVI', style: 'login', mensaje:"¡Registrado con exito, ingrese sus datos!" })
     },
