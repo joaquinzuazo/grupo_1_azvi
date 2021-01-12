@@ -83,7 +83,9 @@ body{
     align-items: center;
 }
 
- 
+.article-container-form, p{
+    color: tomato;
+}
 
 .header__navList > li {
     padding: 5px;
@@ -267,9 +269,7 @@ body{
         margin-right: 200px;
     }
 
-    .article-container-form, p{
-        color: tomato;
-    }
+   
 
 	.main__title {
         font-size: 48px;
