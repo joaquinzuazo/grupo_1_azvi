@@ -121,6 +121,7 @@ body{
 .categories{
     display: flex;
     border-bottom: 4px solid black;
+    
 }
 
 .categories__container__button{
@@ -321,7 +322,6 @@ body{
          
     }
 }
-}
 
     /* MAIN */
 
@@ -399,6 +399,8 @@ body{
             font-size: 16px;
         }
 
+    }
+    
     /* --- MEDIA DESK */
 @media (min-width: 1024px) {
     /* MAIN */
