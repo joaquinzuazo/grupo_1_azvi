@@ -14,7 +14,7 @@
 			<li><a href="/products/productCart">Unite a la red</a></li>
 			<% if(locals.userLog) {%>
 				<li class="header_containerfloat"><a href="#" class=""><%=userLog.name  %></a>
-					<img class="header_userImage" src="/images/users/<%=userLog.image%>" alt="">
+					<img class="header_userImage" width="25px" src="/images/users/<%=userLog.image%>" alt="">
 				<div class="header_floatmenu"  >
 					<% if(userLog.admin)  {%>
 						<a class="header_floatmenu-item"  href="/products/create">Añadir Servicio</a>

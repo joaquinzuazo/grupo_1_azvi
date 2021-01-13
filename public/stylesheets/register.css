@@ -106,7 +106,7 @@ body{
 
 .article-container-main{
     background-color: #2C3E50 ;
-    padding: 30px;
+    padding: 10px;
 }
 
 /*Parte de los recuadros*/
@@ -126,7 +126,7 @@ body{
 
 .article-container-input{
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 15px;
     /*Primer valor: Grueso del borde, segundo valor: el tipo de borde, el tercer valor: color*/
     border: 3px solid black
@@ -143,7 +143,7 @@ body{
     text-transform: uppercase;
     padding: 15px;
     border-radius: 7px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 /* footer */
@@ -195,6 +195,27 @@ body{
 	display: flex;
 	align-items: center;
 }
+
+/* REGISTER VALIDATIONS STYLES */
+
+.containerValidation{
+    position: relative;
+}
+.validationMessage{
+    position: absolute;
+    color: tomato;
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 2px;
+    /* margin-left: 20px; */
+}
+.validationMessage--i{
+    
+    margin-right: 5px;
+    color: rgb(199, 199, 26);
+
+}
+
 
 @media (min-width: 960px) {
    /******  HEADER  *****/

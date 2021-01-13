@@ -1,4 +1,5 @@
-const express = require('express')
+const express = require('express');
+const validate = require('../controllers/helpers/getValidations');
 
 const router = express.Router()
 
@@ -9,7 +10,7 @@ router.get('/login',usersController.loginForm)
 
 router.get('/register', usersController.registerForm)
 
-router.post('/register', usersController.register)
+router.post('/register',validate() ,usersController.register)
 
 router.post('/users/login',usersController.login)
 

@@ -1,1 +1,61 @@
-[{"id":1,"email":"prueba@gmail.com","pass":"$2b$10$GprdrGr3yVqhvmszQX5K8eaEvrNG12Gbl/Th6lKjsCt75h2w4yFVO","name":"azvi","lastname":"azvi","city":"Capital Federal","image":"adminAzvi.png","admin":true},{"id":2,"email":"user@gmail.com","pass":"$2b$10$GprdrGr3yVqhvmszQX5K8eaEvrNG12Gbl/Th6lKjsCt75h2w4yFVO","name":"Roberto","lastname":"Carlos","image":"user.png","city":"Capital Federal","admin":false}]
+[
+	{
+		"id": 1,
+		"email": "prueba@gmail.com",
+		"password": "$2b$10$GprdrGr3yVqhvmszQX5K8eaEvrNG12Gbl/Th6lKjsCt75h2w4yFVO",
+		"name": "azvi",
+		"lastname": "azvi",
+		"city": "Capital Federal",
+		"image": "adminAzvi.png",
+		"admin": true
+	},
+	{
+		"id": 2,
+		"email": "user@gmail.com",
+		"password": "$2b$10$GprdrGr3yVqhvmszQX5K8eaEvrNG12Gbl/Th6lKjsCt75h2w4yFVO",
+		"name": "Roberto",
+		"lastname": "Carlos",
+		"image": "user.png",
+		"city": "Capital Federal",
+		"admin": false
+	},
+	{
+		"email": "ruben@live.com",
+		"password": "$2b$10$nsk2Z/60f.4fucBh0mmvSu9JKwcAVrdLeVxmaT40SfVCdRWTshvnW",
+		"name": "ruben",
+		"lastname": "ramirez",
+		"id": 3,
+		"image": "",
+		"admin": false
+	},
+	{
+		"email": "prueba1@gmail.com",
+		"password": "$2b$10$rhussPbBlsxxi.eiu2LDDugVg6igKuqw387yJ21gGeKA.nL5KsVc6",
+		"name": "gonzalo",
+		"lastname": "perez",
+		"localidad": "La Plata",
+		"id": 4,
+		"image": "",
+		"admin": false
+	},
+	{
+		"email": "prueba3@gmail.com",
+		"password": "$2b$10$czjrgsW33x.t2heYtkbDsOR1zTbSapa6D2HbWuzHfN7IX9XJUq032",
+		"name": "maria",
+		"lastname": "grishus",
+		"localidad": "Cordoba Capital",
+		"id": 5,
+		"image": "",
+		"admin": false
+	},
+	{
+		"email": "facun90@live.com",
+		"password": "$2b$10$kHC7IXDZLGlvGvGJY7nvX...4y3QW68YFX2Aox0OLUtEaqtPEWgr2",
+		"name": "facundo",
+		"lastname": "aquino",
+		"localidad": "La Plata",
+		"id": 6,
+		"image": "generalAvatar.png",
+		"admin": false
+	}
+]
