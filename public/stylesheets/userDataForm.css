@@ -342,17 +342,24 @@ margin: 0;
 	/* ***********  MAIN ********* */
 
 	.mainAdmin__form {
-		flex-direction: row;
-		flex-wrap: wrap;
+		/* flex-direction: row; */
+		/* flex-wrap: wrap; */
 		margin: 0px auto;
 		max-width: 600px;
-		justify-content: center;
+		/* justify-content: center; */
 		/* height: 90vh; */
+	}
+
+	.mainAdmin__container > input {
+		width: 100%;
 	}
 
 	.mainAdmin__container {
 		margin: 20px 20px;
-		width: 40%;
+	 
+	}
+	.mainAdmin__container--borderOut > input{
+		max-width: 100%;
 	}
 
 	.mainAdmin__subtitle {
@@ -372,6 +379,7 @@ margin: 0;
 		font-size: 18px;
 		max-height: 50px;
 		cursor: pointer;
+		margin: 20px;
 	}
 
 	/******  FOOTER  *****/

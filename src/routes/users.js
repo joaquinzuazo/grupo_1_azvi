@@ -16,4 +16,11 @@ router.post('/users/login',usersController.login)
 
 router.get('/logout',usersController.logout)
 
+router.get('/users/:idUser/data',(req,res)=>{
+
+    res.render('userData',{title:'Mis Datos',style:'userDataForm'})
+
+
+})
+
 module.exports = router
