@@ -3,8 +3,7 @@
 <main class="mainAdmin">
 	<div class="mainAdmin_personalImage">
 		<h2 class="mainAdmin__title">Avatar</h2>
-		<form method="POST" action="/users/<%=session.id%>/data" enctype="multipart/form-data">
-			<label for="name" class="mainAdmin__label">Modificar avatar</label>
+		<form class="mainAdmin_personalImage_form" method="POST" action="/users/<%=session.id%>/data" enctype="multipart/form-data">
 			<input type="file" name="avatar">
 			<button type="submit" class="mainAdmin__submit">Modificar</button>
 		</form>
