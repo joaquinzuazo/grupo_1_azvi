@@ -4,7 +4,8 @@ const usersPathFile = path.join(__dirname, '..', 'data', 'users.json')
 const users = JSON.parse(fs.readFileSync(usersPathFile, { encoding: 'utf-8' }))
 const bcrypt=require('bcrypt');
 const { validationResult } = require('express-validator');
-  
+const session = require('express-session');
+ 
 
 
 
@@ -21,7 +22,6 @@ const usersController = {
 
         const errors = validationResult(req)
         
-
         if(!errors.isEmpty()){
             return res.render('register',{title: 'AZVI', style: 'register',errors:errors.mapped() , body:req.body})
         }
@@ -50,26 +50,35 @@ const usersController = {
             const passwordIsTrue = bcrypt.compareSync(password,user.password)
             if(passwordIsTrue){
                 req.session.user = {...user,password:''}
-                 
-    
                 res.redirect('/')
             }else{
                 res.render('login', {mensaje:'Credenciales invalidas',style: 'login',title:'AZVI'})
             }
         }else{
-             
             res.render('login',{mensaje:'Credenciales invalidas',style: 'login',title:'AZVI'})
         }
-    
-     
-    
      },
-     logout:(req,res)=>{
+    logout:(req,res)=>{
 
         req.session.destroy(err=>{
             res.redirect('/')
         })
-     }
+     },
+    profile:(req,res,next)=>{
+        res.render('userData',{title:'Mis Datos',style:'userDataForm', session:res.locals.userLog})
+    },
+    editProfile:(req,res,next)=>{
+        var user=users.map(function(dato){
+            if(dato.id==res.locals.userLog.id){
+                dato.image=req.files[0].filename
+                return dato
+            }
+            return dato
+        });
+        fs.writeFileSync(usersPathFile, JSON.stringify(user,null,2))
+        res.redirect("/")
+    },
+
 }
 
 module.exports = usersController
