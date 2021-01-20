@@ -28,8 +28,11 @@ router.post('/users/login',  usersController.login)
 
 router.get('/logout',usersController.logout)
 
-router.get('/users/:idUser/data', userCheck.user, usersController.profile)
+router.get('/users/data',userCheck.loged,  usersController.profile)
 
-router.post('/users/:idUser/data',upload.any(),usersController.editProfile)
+router.post('/users/data',upload.any(),usersController.editProfile)
+
+
+router.put('/user/data',usersController.editProfileFields)
 
 module.exports = router

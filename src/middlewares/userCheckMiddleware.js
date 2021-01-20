@@ -1,15 +1,23 @@
 const userCheck = {
  user: (req, res, next) => {
      if (req.session.user){
-        return res.redirect(`/users/${req.session.user.id}/data`)
+        return res.redirect(`/users/data`)
      } 
-     next();
+     return next();
  },
  admin: (req, res, next) =>{
    if(req.session.user.admin){
        return next();
    }
    res.redirect('/');
+ },
+ loged:(req,res,next)=>{
+
+    if(req.session.user){
+        return next()
+    }  
+
+    res.redirect('/login')
  }
    
 

@@ -5,6 +5,7 @@ const authMiddleware  = (req,res,next)=>{
 if(req.session.user){
 
     res.locals.userLog=req.session.user
+     
 }
 next()
 

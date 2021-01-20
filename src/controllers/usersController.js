@@ -47,19 +47,6 @@ const usersController = {
 		}
 	},
 
-<<<<<<< HEAD
-	// if(!user){
-	//     req.body["id"]=users.length+1
-	//     req.body["image"]="generalAvatar.png";
-	//     req.body["admin"]=false;
-	//     req.body.password=bcrypt.hashSync(req.body.password,10)
-	//     users.push(req.body)
-	//     fs.writeFileSync(usersPathFile, JSON.stringify(users,null,2))
-	//     res.render('login', { title: 'AZVI', style: 'login', mensaje:"¡Registrado con exito, ingrese sus datos!"})
-	//     }else{
-	//         res.render('register', { title: 'AZVI', style: 'register', mensaje:"El email ya se encuentra registrado.",body:req.body,errors:{}})
-	//     }
-=======
         // if(!user){
         //     req.body["id"]=users.length+1
         //     req.body["image"]="generalAvatar.png";
@@ -74,15 +61,18 @@ const usersController = {
     
     
     login:(req,res)=>{
+		 console.log(req.body)
+
         const {email,password} = req.body
-        const user = users.find(user=>user.email==email)
+		const user = users.find(user=>user.email==email)
+	 
         if (user){
             const passwordIsTrue = bcrypt.compareSync(password,user.password)
             if(passwordIsTrue){
                 req.session.user = {...user,password:''}
 
                 //cookies
-                if(req.body.remember != undefined){
+                if(req.body.remember ){
                     res.cookie('remember', req.session.user , {maxAge:90000})
                 }
 
@@ -116,7 +106,6 @@ const usersController = {
         fs.writeFileSync(usersPathFile, JSON.stringify(user,null,2))
         res.redirect("/")
     },
->>>>>>> 964b084ac02914ba51be70dba410cad0f7c2a5c0
 
 	login: (req, res) => {
 		const { email, password } = req.body
@@ -152,6 +141,23 @@ const usersController = {
 		fs.writeFileSync(usersPathFile, JSON.stringify(user, null, 2))
 		res.redirect('/')
 	},
+	editProfileFields:(req,res)=>{
+		const userFind = users.find(user=>req.session.user.id == user.id)
+		users.forEach(user=>{
+			if(user.id == req.session.user.id){
+				user.name= req.body.name
+				user.lastname= req.body.lastname
+				user.email= req.body.email
+				user.localidad= req.body.localidad
+			
+			}
+		})
+
+		fs.writeFileSync(usersPathFile, JSON.stringify(users, null, 2))
+		 
+		req.session.user = {...userFind , password:''}
+		res.redirect('/')
+	}
 }
 
 module.exports = usersController

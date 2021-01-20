@@ -13,11 +13,12 @@
     "id": 2,
     "email": "user@gmail.com",
     "password": "$2b$10$GprdrGr3yVqhvmszQX5K8eaEvrNG12Gbl/Th6lKjsCt75h2w4yFVO",
-    "name": "Roberto",
-    "lastname": "Carlos",
-    "image": "avatar-1611016291165.png",
+    "name": "federico",
+    "lastname": "larriaga",
+    "image": "avatar-1611158912143.jpg",
     "city": "Capital Federal",
-    "admin": false
+    "admin": false,
+    "localidad": "Chubut"
   },
   {
     "email": "federico@gmail.com",
