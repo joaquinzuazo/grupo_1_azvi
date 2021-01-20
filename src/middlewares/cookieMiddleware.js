@@ -5,30 +5,21 @@ const users = JSON.parse(fs.readFileSync(usersPathFile, { encoding: 'utf-8' }))
 
 
 function cookieMiddleware (req,res,next){
-    next()
-    if(req.cookie.remember != undefined && req.session.user == undefined){
+    
+    if(req.cookies.remember != undefined && req.session.user == undefined){
 
         
-        var user = users.find(user=>user.email==req.cookie.remember)
-        
+        //var user = users.find(user=>user.email==req.cookie.remember)
+        req.session.user = req.cookies.remember
                     
-            }  req.session.user = req.cookie.remember;
+            }  next()
 
-            /*
-            for (let i = 0; i < users.length ; i ++){
-                if(users[i].email == req.cookie.email){
-                    
-                        var userLog = users[i];
-                        break;
-                
-                }
-            }
-            req.session.userLogin = userLog
-            */
+        
 
 
         }
-           
+         
+    
     
 
 

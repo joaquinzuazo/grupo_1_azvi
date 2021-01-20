@@ -32,8 +32,8 @@ app.use(method('_method'))
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(express.static(path.join(__dirname, '/data/imagesProfile')))
 app.use(session({secret:'azviSecret',resave:false, saveUninitialized:true}))
-app.use(authMiddleware)
 app.use(cookieMiddleware)
+app.use(authMiddleware)
 
 
 /*---------------------- ROUTES ---------------------*/
