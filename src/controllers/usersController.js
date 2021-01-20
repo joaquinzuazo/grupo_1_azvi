@@ -71,7 +71,27 @@ const usersController = {
             const passwordIsTrue = bcrypt.compareSync(password,user.password)
             if(passwordIsTrue){
                 req.session.user = {...user,password:''}
+
+                   /*
+            for (let i = 0; i < users.length ; i ++){
+                if(users[i].email == req.body.email){
+                    if(bcrypt.compareSync(req.body.password, users[i].password)){
+
+                        var userLog = users[i];
+                        break;
+                    }
+                }
+            }
+            req.session.userLogin = userLog
+                */
+                //cookies
+                if(req.body.remember != undefined){
+                    res.cookie('remember', req.session.user.email , {maxAge:90000})
+                }
+
                 res.redirect('/')
+             
+
             }else{
                 res.render('login', {mensaje:'Credenciales invalidas',style: 'login',title:'AZVI'})
             }

@@ -14,6 +14,7 @@ const usersRouter = require('./routes/users')
 
 const productsRouter = require('./routes/products')
 const authMiddleware = require('./middlewares/authMiddleware')
+const cookieMiddleware = require('./middlewares/cookieMiddleware')
 var app = express()
 
 // view engine setup
@@ -32,6 +33,8 @@ app.use(express.static(path.join(__dirname, '../public')))
 app.use(express.static(path.join(__dirname, '/data/imagesProfile')))
 app.use(session({secret:'azviSecret',resave:false, saveUninitialized:true}))
 app.use(authMiddleware)
+app.use(cookieMiddleware)
+
 
 /*---------------------- ROUTES ---------------------*/
 
