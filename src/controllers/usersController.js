@@ -47,6 +47,7 @@ const usersController = {
 		}
 	},
 
+<<<<<<< HEAD
 	// if(!user){
 	//     req.body["id"]=users.length+1
 	//     req.body["image"]="generalAvatar.png";
@@ -58,6 +59,64 @@ const usersController = {
 	//     }else{
 	//         res.render('register', { title: 'AZVI', style: 'register', mensaje:"El email ya se encuentra registrado.",body:req.body,errors:{}})
 	//     }
+=======
+        // if(!user){
+        //     req.body["id"]=users.length+1
+        //     req.body["image"]="generalAvatar.png";
+        //     req.body["admin"]=false;
+        //     req.body.password=bcrypt.hashSync(req.body.password,10)
+        //     users.push(req.body)
+        //     fs.writeFileSync(usersPathFile, JSON.stringify(users,null,2))
+        //     res.render('login', { title: 'AZVI', style: 'login', mensaje:"¡Registrado con exito, ingrese sus datos!"})
+        //     }else{
+        //         res.render('register', { title: 'AZVI', style: 'register', mensaje:"El email ya se encuentra registrado.",body:req.body,errors:{}})
+        //     }
+    
+    
+    login:(req,res)=>{
+        const {email,password} = req.body
+        const user = users.find(user=>user.email==email)
+        if (user){
+            const passwordIsTrue = bcrypt.compareSync(password,user.password)
+            if(passwordIsTrue){
+                req.session.user = {...user,password:''}
+
+                //cookies
+                if(req.body.remember != undefined){
+                    res.cookie('remember', req.session.user , {maxAge:90000})
+                }
+
+                res.redirect('/')
+             
+
+            }else{
+                res.render('login', {mensaje:'Credenciales invalidas',style: 'login',title:'AZVI'})
+            }
+        }else{
+            res.render('login',{mensaje:'Credenciales invalidas',style: 'login',title:'AZVI'})
+        }
+     },
+    logout:(req,res)=>{
+
+        req.session.destroy(err=>{
+            res.redirect('/')
+        })
+     },
+    profile:(req,res,next)=>{
+        res.render('userData',{title:'Mis Datos',style:'userDataForm', session:res.locals.userLog})
+    },
+    editProfile:(req,res,next)=>{
+        var user=users.map(function(dato){
+            if(dato.id==res.locals.userLog.id){
+                dato.image=req.files[0].filename
+                return dato
+            }
+            return dato
+        });
+        fs.writeFileSync(usersPathFile, JSON.stringify(user,null,2))
+        res.redirect("/")
+    },
+>>>>>>> 964b084ac02914ba51be70dba410cad0f7c2a5c0
 
 	login: (req, res) => {
 		const { email, password } = req.body
