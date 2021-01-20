@@ -61,8 +61,6 @@ const usersController = {
     
     
     login:(req,res)=>{
-		 console.log(req.body)
-
         const {email,password} = req.body
 		const user = users.find(user=>user.email==email)
 	 
@@ -73,7 +71,7 @@ const usersController = {
 
                 //cookies
                 if(req.body.remember ){
-                    res.cookie('remember', req.session.user , {maxAge:90000})
+					res.cookie('remember', req.session.user , {maxAge:90000})
                 }
 
                 res.redirect('/')
@@ -87,9 +85,9 @@ const usersController = {
         }
      },
     logout:(req,res)=>{
-
-        req.session.destroy(err=>{
-            res.redirect('/')
+		res.clearCookie("remember")
+        req.session.destroy(err=>{			
+			res.redirect('/')
         })
      },
     profile:(req,res,next)=>{
@@ -107,7 +105,7 @@ const usersController = {
         res.redirect("/")
     },
 
-	login: (req, res) => {
+/*	login: (req, res) => {
 		const { email, password } = req.body
 		const user = users.find((user) => user.email == email)
 		if (user) {
@@ -121,7 +119,7 @@ const usersController = {
 		} else {
 			res.render('login', { mensaje: 'Credenciales invalidas', style: 'login', title: 'AZVI' })
 		}
-	},
+	},*/
 	logout: (req, res) => {
 		req.session.destroy((err) => {
 			res.redirect('/')
