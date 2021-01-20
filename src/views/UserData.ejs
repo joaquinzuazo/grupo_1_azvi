@@ -4,7 +4,7 @@
 	<div class="mainAdmin_personalImage">
 		<h2 class="mainAdmin__title">Avatar</h2>
 		<form class="mainAdmin_personalImage_form" method="POST" action="/users/<%=session.id%>/data" enctype="multipart/form-data">
-			<input type="file" name="avatar">
+			<input type="file" name="avatar" required>
 			<button type="submit" class="mainAdmin__submit">Modificar</button>
 		</form>
 	</div>
