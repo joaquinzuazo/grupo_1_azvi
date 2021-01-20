@@ -45,19 +45,7 @@ const usersController = {
 				errors: {},
 			})
 		}
-	},
-
-        // if(!user){
-        //     req.body["id"]=users.length+1
-        //     req.body["image"]="generalAvatar.png";
-        //     req.body["admin"]=false;
-        //     req.body.password=bcrypt.hashSync(req.body.password,10)
-        //     users.push(req.body)
-        //     fs.writeFileSync(usersPathFile, JSON.stringify(users,null,2))
-        //     res.render('login', { title: 'AZVI', style: 'login', mensaje:"¡Registrado con exito, ingrese sus datos!"})
-        //     }else{
-        //         res.render('register', { title: 'AZVI', style: 'register', mensaje:"El email ya se encuentra registrado.",body:req.body,errors:{}})
-        //     }
+	},       
     
     
     login:(req,res)=>{
@@ -121,7 +109,10 @@ const usersController = {
 		}
 	},*/
 	logout: (req, res) => {
+		res.clearCookie('remember')
 		req.session.destroy((err) => {
+
+
 			res.redirect('/')
 		})
 	},
