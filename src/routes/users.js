@@ -24,7 +24,7 @@ router.get('/register', usersController.registerForm)
 
 router.post('/register',validate() ,usersController.register)
 
-router.post('/users/login',usersController.login)
+router.post('/users/login',  usersController.login)
 
 router.get('/logout',usersController.logout)
 
