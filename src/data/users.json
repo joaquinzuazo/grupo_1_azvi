@@ -49,5 +49,15 @@
     "id": 5,
     "image": "avatar-1611161989416.png",
     "admin": false
+  },
+  {
+    "email": "pepe@gmail.com",
+    "password": "$2b$10$BhG2cU6G8GWlLzZufzXMZu07yVpNLMHN25Qzi3iFAlDBLv0Sdu5q6",
+    "name": "pedro",
+    "lastname": "pedro",
+    "localidad": "Chubut",
+    "id": 6,
+    "image": "generalAvatar.png",
+    "admin": false
   }
 ]
