@@ -1,0 +1,23 @@
+<%- include('partials/head',{title})%> <%- include('partials/header')%>
+
+<main class="main">
+	<div class="main__container">
+		<h1 class="main__title">Brinda tu servicio y unite a la red de proveedores:</h1>
+	</div>
+
+	<section class="categories__contact">
+		<div class="categories__contact__container__text">
+			<article class="categories__contact__subscriptions">
+				<h2 class="categories__contact__subscriptions__subtitle">Termina de unirte completando tu nombre y telefono para ponernos en contacto.</h2>
+				<form class="categories__contact__subscriptions__form" action="productCart/join/unite" method="POST">
+					<input type="text" name="name" id="name" required placeholder="Nombre">
+					<input type="number" name="phone" id="phone" required placeholder="Telefono">
+					<input type="text" name="inputname" value="Plan seleccionado: <%=plan%> por $<%=price%> mensuales" disabled>
+					<button class="button__contact_plan">Contactar</button>
+				</form>
+			</article>
+		</div>
+	</section>
+</main>
+
+<%-include('partials/footer')%>

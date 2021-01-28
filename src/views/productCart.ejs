@@ -17,7 +17,10 @@
 				<p class="categories__subscriptions__text__desde"><strong>Desde</strong></p>
 				<p class="categories__subscriptions__text__precio"><strong>$450</strong></p>
 				<p class="categories__subscriptions__text__porMes"><strong>por mes</strong></p>
-				<button class="button_plan">Unite</button>
+				<form action="productCart" method="POST">
+					<input type="hidden" name="price" value="450">
+					<button type="submit" name="plan" value="Basico" class="button_plan">Unite</button>
+				</form>
 			</article>
 
 			<article class="categories__subscriptions">
@@ -30,7 +33,10 @@
 				<p class="categories__subscriptions__text__desde"><strong>Desde</strong></p>
 				<p class="categories__subscriptions__text__precio"><strong>$850</strong></p>
 				<p class="categories__subscriptions__text__porMes"><strong>por mes</strong></p>
-				<button class="button_plan">Unite</button>
+				<form action="productCart" method="POST">
+					<input type="hidden" name="price" value="850">
+					<button type="submit" name="plan" value="Intermedio" class="button_plan">Unite</button>
+				</form>
 			</article>
 			<article class="categories__subscriptions">
 				<img src="/images/pCart_3.svg" alt="" class="img_plan" />
@@ -42,7 +48,10 @@
 				<p class="categories__subscriptions__text__desde"><strong>Desde</strong></p>
 				<p class="categories__subscriptions__text__precio"><strong>$1.150</strong></p>
 				<p class="categories__subscriptions__text__porMes"><strong>por mes</strong></p>
-				<button class="button_plan">Unite</button>
+				<form action="productCart" method="POST">
+					<input type="hidden" name="price" value="1150">
+					<button type="submit" name="plan" value="Premium" class="button_plan">Unite</button>
+				</form>
 			</article>
 		</div>
 	</section>

@@ -109,6 +109,9 @@ Acción de borrado ---------------------*/
 	productCart: (req, res, next) => {
 		res.render('productCart', { title: 'AZVI PLANES', style: 'productCart' })
 	},
+	productCartJoin:(req, res, next) => {
+		res.render('productCartContact', { title: 'AZVI PLANES', style: 'productCart', plan:req.body.plan, price:req.body.price})
+	},
 }
 
 module.exports = productsController

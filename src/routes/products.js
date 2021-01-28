@@ -26,6 +26,8 @@ const upload = multer({ storage: storage })
 
 
 router.get('/productCart',productsController.productCart )
+router.post('/productCart',productsController.productCartJoin )
+router.post('/productCart/join',productsController.productCartJoin )
 
 router.get('/detail/:id',userCheck.loged, productsController.productDetail)
 
