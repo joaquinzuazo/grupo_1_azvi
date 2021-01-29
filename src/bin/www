@@ -27,9 +27,8 @@ var server = http.createServer(app);
  */
 
 server.listen(port,()=>{
-  console.log(chalk.red('Server on port 3000 =>  http://localhost:3000/'));
-  console.log(chalk.blue('Admin create => http://localhost:3000/products/create'));
-  console.log(chalk.blue('Admin update => http://localhost:3000/products/:id/edit'));
+  console.log(chalk.bold('Server on port 3000 =>  http://localhost:3000/'));
+   
 });
 server.on('error', onError);
 server.on('listening', onListening);
