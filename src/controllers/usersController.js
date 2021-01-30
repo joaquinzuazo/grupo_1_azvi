@@ -4,7 +4,10 @@ const usersPathFile = path.join(__dirname, '..', 'data', 'users.json')
 const users = JSON.parse(fs.readFileSync(usersPathFile, { encoding: 'utf-8' }))
 const bcrypt = require('bcrypt')
 const { validationResult } = require('express-validator')
-const session = require('express-session')
+
+/*----------------------  db required---------------------*/
+
+const db = require('../database/models')
 
 const usersController = {
 	loginForm: (req, res) => {
@@ -45,74 +48,35 @@ const usersController = {
 				errors: {},
 			})
 		}
-	},       
-    
-    
-    login:(req,res)=>{
-        const {email,password} = req.body
-		const user = users.find(user=>user.email==email)
-	 
-        if (user){
-            const passwordIsTrue = bcrypt.compareSync(password,user.password)
-            if(passwordIsTrue){
-                req.session.user = {...user,password:''}
+	},
 
-                //cookies
-                if(req.body.remember ){
-					res.cookie('remember', req.session.user , {maxAge:90000})
-                }
-
-                res.redirect('/')
-             
-
-            }else{
-                res.render('login', {mensaje:'Credenciales invalidas',style: 'login',title:'AZVI'})
-            }
-        }else{
-            res.render('login',{mensaje:'Credenciales invalidas',style: 'login',title:'AZVI'})
-        }
-     },
-    logout:(req,res)=>{
-		res.clearCookie("remember")
-        req.session.destroy(err=>{			
-			res.redirect('/')
-        })
-     },
-    profile:(req,res,next)=>{
-        res.render('userData',{title:'Mis Datos',style:'userDataForm', session:res.locals.userLog})
-    },
-    editProfile:(req,res,next)=>{
-        var user=users.map(function(dato){
-            if(dato.id==res.locals.userLog.id){
-                dato.image=req.files[0].filename
-                return dato
-            }
-            return dato
-        });
-        fs.writeFileSync(usersPathFile, JSON.stringify(user,null,2))
-        res.redirect("/")
-    },
-
-/*	login: (req, res) => {
+	login: (req, res) => {
 		const { email, password } = req.body
-		const user = users.find((user) => user.email == email)
-		if (user) {
-			const passwordIsTrue = bcrypt.compareSync(password, user.password)
-			if (passwordIsTrue) {
-				req.session.user = { ...user, password: '' }
-				res.redirect('/')
+		// const user = users.find(user=>user.email==email)
+
+		db.users.findOne({ where: { email } }).then((user) => {
+			//falta implementar el hash en register  , esto es una prueba
+
+			if (user) {
+				console.log(user['dataValues'])
+				const passIsTrue = user.password == password
+				if (passIsTrue) {
+					req.session.user = { ...user['dataValues'], password: '' }
+					if (req.body.remember) {
+						res.cookie('remember', req.session.user, { maxAge: 90000 })
+					}
+					res.redirect('/')
+				} else {
+					res.render('login', { mensaje: 'Credenciales invalidas', style: 'login', title: 'AZVI' })
+				}
 			} else {
 				res.render('login', { mensaje: 'Credenciales invalidas', style: 'login', title: 'AZVI' })
 			}
-		} else {
-			res.render('login', { mensaje: 'Credenciales invalidas', style: 'login', title: 'AZVI' })
-		}
-	},*/
+		})
+	},
 	logout: (req, res) => {
 		res.clearCookie('remember')
 		req.session.destroy((err) => {
-
-
 			res.redirect('/')
 		})
 	},
@@ -130,23 +94,43 @@ const usersController = {
 		fs.writeFileSync(usersPathFile, JSON.stringify(user, null, 2))
 		res.redirect('/')
 	},
-	editProfileFields:(req,res)=>{
-		const userFind = users.find(user=>req.session.user.id == user.id)
-		users.forEach(user=>{
-			if(user.id == req.session.user.id){
-				user.name= req.body.name
-				user.lastname= req.body.lastname
-				user.email= req.body.email
-				user.localidad= req.body.localidad
-			
+
+	logout: (req, res) => {
+		res.clearCookie('remember')
+		req.session.destroy((err) => {
+			res.redirect('/')
+		})
+	},
+	profile: (req, res, next) => {
+		res.render('userData', { title: 'Mis Datos', style: 'userDataForm', session: res.locals.userLog })
+	},
+	editProfile: (req, res, next) => {
+		var user = users.map(function (dato) {
+			if (dato.id == res.locals.userLog.id) {
+				dato.image = req.files[0].filename
+				return dato
+			}
+			return dato
+		})
+		fs.writeFileSync(usersPathFile, JSON.stringify(user, null, 2))
+		res.redirect('/')
+	},
+	editProfileFields: (req, res) => {
+		const userFind = users.find((user) => req.session.user.id == user.id)
+		users.forEach((user) => {
+			if (user.id == req.session.user.id) {
+				user.name = req.body.name
+				user.lastname = req.body.lastname
+				user.email = req.body.email
+				user.localidad = req.body.localidad
 			}
 		})
 
 		fs.writeFileSync(usersPathFile, JSON.stringify(users, null, 2))
-		 
-		req.session.user = {...userFind , password:''}
+
+		req.session.user = { ...userFind, password: '' }
 		res.redirect('/')
-	}
+	},
 }
 
 module.exports = usersController

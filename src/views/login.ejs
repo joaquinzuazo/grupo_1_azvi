@@ -4,7 +4,7 @@
 	 
 	 
 	<%if(typeof mensaje=="string") {%>
-		<p class="article-container-form-regis"><%=mensaje%></p>
+		<p class="article-container-form-regis"><i class="fas fa-exclamation-circle" style="color: rgb(231, 231, 23);"> </i>  <%=mensaje%></p>
 		<%}%>
 		<form class="article-container-form" action="/users/login" method="POST">
 			<div class="form-container-input"><input class="article-container-input" name="email" type="Usuario" placeholder="Email" /><i class="form-icon far fa-envelope"></i></div>

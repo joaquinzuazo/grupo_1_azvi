@@ -16,7 +16,7 @@
 				<li class="header_containerfloat"><a href="#" class=""><%=userLog.name  %></a>
 					<img class="header_userImage" width="35px" src="/images/users/<%=userLog.image%>" alt="">
 				<div class="header_floatmenu"  >
-					<% if(userLog.admin)  {%>
+					<% if(userLog.role)  {%>
 						<a class="header_floatmenu-item"  href="/products/create">Añadir Servicio</a>
 						<a class="header_floatmenu-item"  href="/products/4/edit">Modificar Servicio</a>
 						
