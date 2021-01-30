@@ -158,6 +158,10 @@ i {
 	color: darkgray;
 }
 
+.answer:hover{
+	box-shadow: -5px 5px 5px rgb(182, 181, 181);
+}
+
 .answer h4{
 	margin: 2% 2%;
 }
