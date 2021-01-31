@@ -7,12 +7,8 @@ module.exports = (sequelize, dataTypes) => {
 		},
 		name: dataTypes.STRING(100),
 
-        phone: dataTypes.STRING(100),
-		 
-
-        
- 
-	},{timestamps:false})
+		phone: dataTypes.STRING(100),
+	})
 
 	return Message
 }

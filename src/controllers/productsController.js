@@ -7,9 +7,9 @@ const products = JSON.parse(productsJson)
 
 const productsFilePath = path.join(__dirname, '../data/products.json')
 
-/*---------------------- db required ---------------------*/
-
+/*---------------------- db and sequelize required ---------------------*/
 const db = require('../database/models')
+const sequelize = db.sequelize
 
 const productsController = {
 	index: (req, res) => {
@@ -120,8 +120,21 @@ const productsController = {
 		res.locals.success=true
 		res.render('productCartContact',{ title: 'AZVI PLANES', style: 'productCart' })
 	},
-	messages:(req,res)=>{
-		res.render('messages',{ title: 'Admin mensajes', style: 'admin' })
+	messages: async(req,res)=>{
+
+		const messages = await db.messages.findAll({
+			attributes:['id','name','phone',[sequelize.fn('DATE_FORMAT',sequelize.col('createdAt'),'%d-%m-%Y %T'),'dates']]
+		})
+		console.log(messages);
+
+
+
+		res.render('messages',{ title: 'Admin mensajes', style: 'admin' , messages :messages })
+	},
+	messageDeleted:(req,res)=>{
+
+		db.messages.destroy({where:{id:req.params.messageId}})
+		.then(mgs=>res.redirect('/products/contact'))
 	}
 }
 

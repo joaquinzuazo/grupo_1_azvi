@@ -29,7 +29,7 @@ router.get('/productCart',productsController.productCart )
 router.post('/productCart',productsController.productCartJoin )
 router.post('/productCart/join/unite',productsController.productCartJoinForm )
 
-router.get('/detail/:id',userCheck.loged, productsController.productDetail)
+router.get('/detail/:id',  productsController.productDetail)
 
 router.get('/category/:category',productsController.index )
 
@@ -41,5 +41,6 @@ router.put('/:id/edit',upload.any(),productsController.update)
 router.delete('/:id/delete',productsController.delete)
 
 router.get('/contact',userCheck.admin , productsController.messages)
+router.get('/contact/:messageId',userCheck.admin , productsController.messageDeleted)
 
 module.exports = router
