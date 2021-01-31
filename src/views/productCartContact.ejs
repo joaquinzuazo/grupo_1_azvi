@@ -5,19 +5,37 @@
 		<h1 class="main__title">Brinda tu servicio y unite a la red de proveedores:</h1>
 	</div>
 
+	<% if(locals.success) {%>
+
+	<div class="successContainer">
+		<h2 class="categories__contact__subscriptions__subtitle">  TE CONTACTAREMOS A LA BREVEDAD</h2>
+		<a class="button__contact_plan" href="/">Volver</a>
+	</div>
+
+	<%} else{ %>
+
 	<section class="categories__contact">
 		<div class="categories__contact__container__text">
 			<article class="categories__contact__subscriptions">
-				<h2 class="categories__contact__subscriptions__subtitle">Termina de unirte completando tu nombre y telefono para ponernos en contacto.</h2>
+				<h2 class="categories__contact__subscriptions__subtitle">
+					Termina de unirte completando tu nombre y telefono para ponernos en contacto.
+				</h2>
 				<form class="categories__contact__subscriptions__form" action="productCart/join/unite" method="POST">
-					<input type="text" name="name" id="name" required placeholder="Nombre">
-					<input type="tel" name="phone" id="phone" required placeholder="Telefono">
-					<input type="text" name="inputname" value="Plan seleccionado: <%=plan%> por $<%=price%> mensuales" disabled>
+					<input type="text" name="name" id="name" required placeholder="Nombre" />
+					<input type="tel" name="phone" id="phone" required placeholder="Telefono" />
+					<input
+						type="text"
+						name="inputname"
+						value="Plan seleccionado: <%=plan%> por $<%=price%> mensuales"
+						disabled
+					/>
 					<button class="button__contact_plan">Contactar</button>
 				</form>
 			</article>
 		</div>
 	</section>
+
+	<%} %>
 </main>
 
 <%-include('partials/footer')%>

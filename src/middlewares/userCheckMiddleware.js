@@ -6,7 +6,7 @@ const userCheck = {
      return next();
  },
  admin: (req, res, next) =>{
-   if(req.session.user.admin){
+   if(req.session.user.role){
        return next();
    }
    res.redirect('/');

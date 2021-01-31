@@ -27,7 +27,7 @@ const upload = multer({ storage: storage })
 
 router.get('/productCart',productsController.productCart )
 router.post('/productCart',productsController.productCartJoin )
-router.post('/productCart/join',productsController.productCartJoin )
+router.post('/productCart/join/unite',productsController.productCartJoinForm )
 
 router.get('/detail/:id',userCheck.loged, productsController.productDetail)
 
@@ -39,5 +39,7 @@ router.post('/create',upload.any(),productsController.save)
 router.get('/:id/edit', userCheck.admin, productsController.edit)
 router.put('/:id/edit',upload.any(),productsController.update)
 router.delete('/:id/delete',productsController.delete)
+
+router.get('/contact',userCheck.admin , productsController.messages)
 
 module.exports = router

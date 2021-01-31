@@ -7,6 +7,10 @@ const products = JSON.parse(productsJson)
 
 const productsFilePath = path.join(__dirname, '../data/products.json')
 
+/*---------------------- db required ---------------------*/
+
+const db = require('../database/models')
+
 const productsController = {
 	index: (req, res) => {
 		const productsByCategory = products.filter((product) => product.category == req.params.category)
@@ -81,37 +85,44 @@ const productsController = {
 		res.redirect('/')
 	},
 
-	/*---------------------- 7) tomi V /products/ :id (DELETE)
-Acción de borrado ---------------------*/
-
 	delete: (req, res) => {
-
 		// se almacena el parametro dinamico
 		const idProduct = req.params.id
 
 		//se retorna los que no se quieren eliminar y se almacenan en una variable
-		const productFilter = products.filter(function(product) {
-            return product.id != idProduct
+		const productFilter = products.filter(function (product) {
+			return product.id != idProduct
 		})
-		
+
 		//se modifica el JSON segun el id
 		const productsJSon = JSON.stringify(productFilter)
 
 		fs.writeFileSync(productsFilePath, productsJSon)
 
-		
-		
-		
-		
 		res.redirect('/')
 	},
 
 	productCart: (req, res, next) => {
 		res.render('productCart', { title: 'AZVI PLANES', style: 'productCart' })
 	},
-	productCartJoin:(req, res, next) => {
-		res.render('productCartContact', { title: 'AZVI PLANES', style: 'productCart', plan:req.body.plan, price:req.body.price})
+	productCartJoin: (req, res, next) => {
+		res.render('productCartContact', {
+			title: 'AZVI PLANES',
+			style: 'productCart',
+			plan: req.body.plan,
+			price: req.body.price,
+		})
 	},
+
+	productCartJoinForm:(req,res)=>{
+
+		db.messages.create(req.body)
+		res.locals.success=true
+		res.render('productCartContact',{ title: 'AZVI PLANES', style: 'productCart' })
+	},
+	messages:(req,res)=>{
+		res.render('messages',{ title: 'Admin mensajes', style: 'admin' })
+	}
 }
 
 module.exports = productsController

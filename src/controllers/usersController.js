@@ -5,6 +5,8 @@ const users = JSON.parse(fs.readFileSync(usersPathFile, { encoding: 'utf-8' }))
 const bcrypt = require('bcrypt')
 const { validationResult } = require('express-validator')
 
+ 
+
 /*----------------------  db required---------------------*/
 
 const db = require('../database/models')
@@ -58,10 +60,11 @@ const usersController = {
 			//falta implementar el hash en register  , esto es una prueba
 
 			if (user) {
-				console.log(user['dataValues'])
+				// console.log(user['dataValues'])
 				const passIsTrue = user.password == password
 				if (passIsTrue) {
 					req.session.user = { ...user['dataValues'], password: '' }
+
 					if (req.body.remember) {
 						res.cookie('remember', req.session.user, { maxAge: 90000 })
 					}

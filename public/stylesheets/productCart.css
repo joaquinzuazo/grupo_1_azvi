@@ -15,7 +15,30 @@ html {
 
 body{
 	overflow-x: hidden;
+  position: relative;
+}
 
+/*---------------------- sussecs productContact ---------------------*/
+
+.successContainer{
+    /* width: 300px; */
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.successContainer > h2{
+    margin-bottom: 20px;
+    color: white;
+    font-size: 18px;
+    
+}
+.successContainer > a{
+    width: 100px;
+   display: block;
+   margin: 0 auto;
+   text-align: center;
+    
 }
 
 
@@ -105,6 +128,7 @@ body{
 .main{
     background-color: #2C3E50;
     padding: 10px;
+    min-height: 100vh;
 }
 
 .main__container{
