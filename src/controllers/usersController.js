@@ -61,7 +61,8 @@ const usersController = {
 
 			if (user) {
 				// console.log(user['dataValues'])
-				const passIsTrue = user.password == password
+
+				const passIsTrue = bcrypt.compareSync(password, user.password);
 				if (passIsTrue) {
 					req.session.user = { ...user['dataValues'], password: '' }
 
