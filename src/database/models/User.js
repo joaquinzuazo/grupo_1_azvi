@@ -13,7 +13,6 @@ module.exports = (sequelize, dataTypes) => {
         role: dataTypes.STRING ,
         image: dataTypes.STRING(100),
 
-        
  
 	})
 

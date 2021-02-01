@@ -213,3 +213,8 @@ insert into services (id, title, description, providerId) values (98, 'Lavarropa
 insert into services (id, title, description, providerId) values (99, 'Lavarropas', 'Mantenimiento general y reparación de equipos.', 80);
 insert into services (id, title, description, providerId) values (100, 'Reparaciones en general', 'Realizo reparaciones en general de cualquier tipo de mueble del hogar, también en puertas o ventanas de madera.', 12);
 insert into services (id, title, description, providerId) values (101, 'Reparaciones en general', 'Reparación de aires a domicilio', 101);
+insert into messages (id, name, phone) values (1, 'Bud', '(125) 9457986');
+insert into messages (id, name, phone) values (2, 'Edithe', '(214) 2843483');
+insert into messages (id, name, phone) values (3, 'Camellia', '(822) 4659970');
+insert into messages (id, name, phone) values (4, 'Charla', '(265) 1435567');
+insert into messages (id, name, phone) values (5, 'Arvin', '(427) 9390741');
