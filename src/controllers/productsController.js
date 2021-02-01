@@ -117,6 +117,7 @@ const productsController = {
 
 	productCartJoinForm: (req, res) => {
 		db.messages.create(req.body)
+		// console.log(req.body)
 		res.locals.success = true
 		res.render('productCartContact', { title: 'AZVI PLANES', style: 'productCart' })
 	},
@@ -127,10 +128,13 @@ const productsController = {
 				'name',
 				'phone',
 				[sequelize.fn('DATE_FORMAT', sequelize.col('createdAt'), '%d-%m-%Y %T'), 'dates'],
+				'plan'
 			],
 		})
-		 
-
+		   if(messages.length!=0){
+			   messages.forEach(mgs=>mgs.plan=mgs.plan.replace('Plan seleccionado:',''))
+		   }
+console.log(messages);
 		res.render('messages', { title: 'Admin mensajes', style: 'admin', messages: messages })
 	},
 	messageDeleted: (req, res) => {

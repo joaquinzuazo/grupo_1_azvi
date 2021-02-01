@@ -8,6 +8,7 @@ module.exports = (sequelize, dataTypes) => {
 		name: dataTypes.STRING(100),
 
 		phone: dataTypes.STRING(100),
+		plan: dataTypes.STRING(200),
 	})
 
 	return Message

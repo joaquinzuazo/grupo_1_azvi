@@ -14,9 +14,6 @@ module.exports = (sequelize, dataTypes) => {
         categorieId: dataTypes.INTEGER,
         location: dataTypes.STRING(100),
         image: dataTypes.STRING(100), 
-    },{
-        tableName:"providers",
-        timestamps:true
     })
 /*
     Provider.associate=function(models){

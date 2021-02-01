@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
 		email: dataTypes.STRING(100),
 		providerId: dataTypes.INTEGER,       
     },{
-        tableName:"services",
+        
         timestamps:false
     })
 /*
