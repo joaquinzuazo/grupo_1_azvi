@@ -36,9 +36,10 @@ router.get('/category/:category',productsController.index )
 
 router.get('/create', userCheck.admin, productsController.create)
 router.post('/create',upload.any(),productsController.save)
-router.get('/:id/edit', userCheck.admin, productsController.edit)
+router.get('/edit', userCheck.admin, productsController.edit)
 router.put('/:id/edit',upload.any(),productsController.update)
 router.delete('/:id/delete',productsController.delete)
+router.post('/edit',productsController.searchProducts)
 
 router.get('/contact',userCheck.admin , productsController.messages)
 router.get('/contact/:messageId',userCheck.admin , productsController.messageDeleted)

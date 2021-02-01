@@ -62,15 +62,16 @@ const productsController = {
 	},
 
 	edit: (req, res) => {
-		const id = req.params.id
+		// const id = req.params.id
 
-		const product = products.find((produc) => produc.id == id)
+		// const product = products.find((produc) => produc.id == id)
 
-		if (!product) {
-			return res.render('error2', { title: 'Error', style: 'error' })
-		}
+		// if (!product) {
+		// 	return res.render('error2', { title: 'Error', style: 'error' })
+		// }
 
-		res.render('adminUpdate', { title: 'Editar', style: 'admin', id, product })
+		// res.render('adminUpdate', { title: 'Editar', style: 'admin', id, product })
+		res.render('adminUpdate' ,{ title: 'Editar', style: 'admin'})
 	},
 
 	update: (req, res) => {
@@ -114,27 +115,34 @@ const productsController = {
 		})
 	},
 
-	productCartJoinForm:(req,res)=>{
-
+	productCartJoinForm: (req, res) => {
 		db.messages.create(req.body)
-		res.locals.success=true
-		res.render('productCartContact',{ title: 'AZVI PLANES', style: 'productCart' })
+		res.locals.success = true
+		res.render('productCartContact', { title: 'AZVI PLANES', style: 'productCart' })
 	},
-	messages: async(req,res)=>{
-
+	messages: async (req, res) => {
 		const messages = await db.messages.findAll({
-			attributes:['id','name','phone',[sequelize.fn('DATE_FORMAT',sequelize.col('createdAt'),'%d-%m-%Y %T'),'dates']]
+			attributes: [
+				'id',
+				'name',
+				'phone',
+				[sequelize.fn('DATE_FORMAT', sequelize.col('createdAt'), '%d-%m-%Y %T'), 'dates'],
+			],
 		})
-		console.log(messages);
+		 
 
-
-
-		res.render('messages',{ title: 'Admin mensajes', style: 'admin' , messages :messages })
+		res.render('messages', { title: 'Admin mensajes', style: 'admin', messages: messages })
 	},
-	messageDeleted:(req,res)=>{
+	messageDeleted: (req, res) => {
+		db.messages.destroy({ where: { id: req.params.messageId } }).then((mgs) => res.redirect('/products/contact'))
+	},
+	searchProducts:(req,res)=>{
+		// fix => temporal probando con users para la modificacion de products/services
+		console.log(req.body);
 
-		db.messages.destroy({where:{id:req.params.messageId}})
-		.then(mgs=>res.redirect('/products/contact'))
+		const {Op}=db.Sequelize
+
+		db.users.findAll({where:{lastname:{[Op.like]:`%${req.body.lastname}%`}}}).then(console.log)
 	}
 }
 

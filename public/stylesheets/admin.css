@@ -292,6 +292,23 @@ margin: 0;
 	border-radius: 3px;
 }
 
+/* edit form search admin styles */
+
+.mainAdminContainerForm{
+	display: flex;
+	justify-content: center;
+}
+
+.mainAdminContainerForm__button{
+	padding: 5px;
+	color: white;
+	background-color: #6486A9;
+	border-radius: 5px;
+	margin: 30px 0;
+	border: 0;
+	outline: 0;
+}
+
 /* MEDIAS QUERIES */
 
 @media (min-width: 680px) {

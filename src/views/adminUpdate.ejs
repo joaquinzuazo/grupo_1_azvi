@@ -1,81 +1,18 @@
 <%- include('partials/head')%> <%- include('partials/header')%>
 
 <main class="mainAdmin">
-	<!-- <div class="mainAdmin__containerSearch">
-		<form action="" method="post">
-			<label for="id">ID</label>
-			<input type="number" />
-			<button type="submit">BUSCAR</button>
+	 <div class="mainAdminContainerForm">
+
+		<form action="/products/edit" method="POST">
+
+			<div class="mainAdmin__container mainAdmin__container--borderOut">
+				<label for="name" class="mainAdmin__label">Buscar</label>
+				<input   type="text" id="name" name="lastname" placeholder=" Apellido" value=""/>
+				<button class="mainAdminContainerForm__button">Ir</button>
+			</div>
 		</form>
-	</div> -->
-	<h2 class="mainAdmin__title">Modificar Servicio</h2>
-
-	<form action="/products/<%=id%>/edit?_method=PUT" method="POST" class="mainAdmin__form op-02" enctype="multipart/form-data">
-		<h3 class="mainAdmin__subtitle">Datos personales</h3>
-
-		<div class="mainAdmin__container mainAdmin__container--borderOut">
-			<label for="name" class="mainAdmin__label">Nombre</label>
-			<input   type="text" id="name" name="name" placeholder=" Nombre" value="<%=product.name%> "/>
-		</div>
-		<div class="mainAdmin__container mainAdmin__container--borderOut">
-			<label for="lastname" class="mainAdmin__label">Apellido</label>
-			<input   type="text" id="lastname" name="lastname" placeholder="Apellido" value="<%=product.lastname%>" />
-		</div>
-
-		<h3 class="mainAdmin__subtitle">Contacto</h3>
-		<div class="mainAdmin__container mainAdmin__container--borderOut">
-			<label for="phone" class="mainAdmin__label">Celular</label>
-			<input   type="tel"  name="phone" placeholder="Ingrese numero" value="<%=product.phone%>"/>
-		</div>
-		<div class="mainAdmin__container mainAdmin__container--borderOut">
-			<label for="email" class="mainAdmin__label">Email</label>
-			<input   type="text" id="email" name="email" placeholder="email@mail.com" value="<%=product.email%>" />
-		</div>
-		<div class="mainAdmin__container">
-			<label for="mainAdmin__select" class="mainAdmin__label">Categoria</label>
-			<select class="mainAdmin_select" name="category" id="mainAdmin__select">
-				<option value="Carpinteria">Servicios</option>
-
-				<option value="carpinteria">Carpinteria</option>
-				<option value="cerrajeria">Cerrajeria</option>
-				<option value="plomeria">Plomeria</option>
-				<option value="pintura">Pintura</option>
-				<option value="mecanica">Mecanica</option>
-				<option value="acc">Aires</option>
-				<option value="heladeras">Heladeras</option>
-			</select>
-		</div>
-
-		<div class="mainAdmin__container">
-			<label for="mainAdmin__select" class="mainAdmin__label">Localidad</label>
-			<select class="mainAdmin_select" name="localidad" id="mainAdmin__select">
-				<option value="Carpinteria">Servicios</option>
-
-				<option value="Carpinteria">Chubut</option>
-				<option value="Cerrajeria">Rawson</option>
-				<option value="Plomeria">Cordoba Capital</option>
-				<option value="Pintura">La Plata</option>
-			</select>
-		</div>
-		<div class="mainAdmin__textarea">
-			<label for="description">Descripcion</label>
-			<textarea name="description" id="description" cols="30" rows="5" maxlength="200" ><%=product.description%>
-			
-			</textarea>
-		</div>
-
-		<div class="mainAdmin__container mainAdmin__container--photo">
-			<label for="photo" class="mainAdmin__label">Agrega foto</label>
-			<input readonly class="photo" type="file" id="photo" name="photo" placeholder="Apellido" />
-		</div>
-
-		<button class="mainAdmin__submit">Modificar</button>
-	</form>
-	<form class="mainAdmin__form" action="/products/<%=product.id%>/delete?_method=DELETE" method="POST">
-		<button class="mainAdmin__submit mainAdmin__red">Eliminar </button>
+	 </div>
 	
-	</form>
-
 </main>
 
 <%-include('partials/footer')%>

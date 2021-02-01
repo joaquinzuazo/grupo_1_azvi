@@ -1,6 +1,6 @@
 <header class="header">
 	<div class="header__logoContainer">
-	<a href="/">	<img src="/images/logoAzvi.png" alt="" class="logoContainer__img" /></a>
+		<a href="/"> <img src="/images/logoAzvi.png" alt="" class="logoContainer__img" /></a>
 		<div class="logoContainer__searchTitle">
 			<h3 class="searchTitle__title">AZVI</h3>
 			<img src="/images/searchicon.svg" alt="" class="searchTitle__icon" />
@@ -13,24 +13,38 @@
 			<li><a href="/login">Mi cuenta</a></li>
 			<li><a href="/products/productCart">Unite a la red</a></li>
 			<% if(locals.userLog) {%>
-				<li class="header_containerfloat"><a href="#" class=""><%=userLog.name  %></a>
-					<img class="header_userImage" width="35px" src="/images/users/<%=userLog.image%>" alt="">
-				<div class="header_floatmenu"  >
-					<% if(userLog.role=='admin')  {%>
-						<a class="header_floatmenu-item"  href="/products/create">Añadir Servicio</a>
-						<a class="header_floatmenu-item"  href="/products/4/edit">Modificar Servicio</a>
-						<a class="header_floatmenu-item"  href="/products/contact">Mensages <i class="header_message" style=" padding: 5px; border-radius: 3px;   color: white; background-color:#ff5252; margin-left: 5px; display: inline-block; text-align: center; font-size: 12px;"><%=userLog.messages%> </i></a>
-						
-						
-						<% }%>
-						<a class="header_floatmenu-item"  href="/users/data">Mis datos</a>
+			<li class="header_containerfloat">
+				<a href="#" class=""><%=userLog.name %></a>
+				<img class="header_userImage" width="35px" src="/images/users/<%=userLog.image%>" alt="" />
+				<div class="header_floatmenu">
+					<% if(userLog.role=='admin') {%>
+					<a class="header_floatmenu-item" href="/products/create">Añadir Servicio</a>
+					<a class="header_floatmenu-item" href="/products/edit">Modificar Servicio</a>
+					<a class="header_floatmenu-item" href="/products/contact"
+						>Mensages
+						<i
+							class="header_message"
+							style="
+								padding: 5px;
+								border-radius: 3px;
+								color: white;
+								background-color: #ff5252;
+								margin-left: 5px;
+								display: inline-block;
+								text-align: center;
+								font-size: 12px;
+							"
+							><%=userLog.messages%>
+						</i></a
+					>
 
-						<a class="header_floatmenu-item"  href="/logout">Cerrar sesion</a>
+					<% }%>
+					<a class="header_floatmenu-item" href="/users/data">Mis datos</a>
+
+					<a class="header_floatmenu-item" href="/logout">Cerrar sesion</a>
 				</div>
-				
-				
-				</li>
-				<% 	} %> 
+			</li>
+			<% } %>
 		</ul>
 	</nav>
 </header>
