@@ -5,11 +5,14 @@ const users = JSON.parse(fs.readFileSync(usersPathFile, { encoding: 'utf-8' }))
 const bcrypt = require('bcrypt')
 const { validationResult } = require('express-validator')
 
+const db=require('../database/models'); // PARA SEQUELIZE
+
+
  
 
 /*----------------------  db required---------------------*/
 
-const db = require('../database/models')
+
 
 const usersController = {
 	loginForm: (req, res) => {
@@ -26,12 +29,27 @@ const usersController = {
 		if (!errors.isEmpty()) {
 			return res.render('register', { title: 'AZVI', style: 'register', errors: errors.mapped(), body: req.body })
 		}
-
-		if (!errors.isEmpty()) {
-			return res.render('register', { title: 'AZVI', style: 'register', errors: errors.mapped(), body: req.body })
-		}
-
 		const user = users.find((user) => user.email == req.body.email)
+
+		/* Funciona ok el buscado del registro y el guardado
+		// sequelize -------------
+		let usuario = db.Users.findOne({where:{email:req.body.email}}).then((data)=>{
+			console.log(data)
+		}).catch((error) => {
+			console.log(error)
+		});
+		// -------------
+
+		if(usuario){
+			let pass=bcrypt.hashSync(req.body.password, 10)
+			db.Users.create({name:req.body.name,lastname:req.body.lastname,email:req.body.email,password:pass,role:"user",image:"generalAvatar.png"}).then((data)=>{
+				console.log(data)
+			}).catch((error)=>{
+				console.log(error)
+			});
+		}
+		*/
+
 
 		if (!user) {
 			req.body['id'] = users.length + 1
