@@ -1,5 +1,6 @@
 
 module.exports = (sequelize, dataTypes) =>{
+
         const Category = sequelize.define('categories',{
             id:{
                 autoIncrement: true,
@@ -7,19 +8,23 @@ module.exports = (sequelize, dataTypes) =>{
                 type: dataTypes.INTEGER,
             },
             name: dataTypes.STRING(100)
-        },{
+            },{
             timestamps: false
-        })
+            });
 
-/*
-        Category.associate =  function(models){
-            Category.hasMany(models.Provider,{
+    
+
+
+        Category.associate =  function(models) {
+
+            Category.hasMany(models.providers,{
+
                 as:"providers",
                 foreignKey: "categorieId"
             })
         }
               
-*/
+
         return Category;
 }
 

@@ -23,12 +23,15 @@ module.exports = (sequelize, dataTypes) => {
             
         });
         Provider.belongsTo(Category,{
-            as: "category",
+            as: "categories",
             foreignKey: "categorieId"
+
         });
-    
-    
+
     }
-*/
+    
+*/    
+    
+
 	return Provider
 }
