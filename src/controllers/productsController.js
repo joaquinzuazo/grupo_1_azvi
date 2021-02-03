@@ -51,7 +51,7 @@ const productsController = {
 			email:req.body.email,
 			cellphone:req.body.phone,
 			location:req.body.localidad,
-			score:1,
+			score:3,
 			categorieId:req.body.category,
 			image:req.files[0].filename
 		}).then((data)=>{
@@ -62,34 +62,11 @@ const productsController = {
 					providerId:user.id
 				}).then((service) => {
 					res.redirect('/')	
-				}).catch((error)=>{
-					console.log(error)			
 				})
-			}).catch((error)=>{
-				console.log(error)
-			});	
+			})
 		}).catch((error)=>{
-			console.log(error)
-		});
-
-
-
-		const ids = products.map((product) => product.id)
-		const id = getID(ids)
-
-		const product = {
-			...req.body,
-			id,
-			image: req.files[0].filename,
-			score: 3,
-		}
-
-		products.push(product)
-
-		const productsJSon = JSON.stringify(products)
-		fs.writeFileSync(productsFilePath, productsJSon)
-
-		res.redirect('/')
+			console.log(error);
+		})
 	},
 
 	edit: (req, res) => {
