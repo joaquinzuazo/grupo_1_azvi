@@ -29,7 +29,7 @@ const usersController = {
 		let usuario = db.Users.findOne({where:{email:req.body.email}}).then((data)=>{
 			if(data==null){
 				let pass=bcrypt.hashSync(req.body.password, 10)
-				db.Users.create({name:req.body.name,lastname:req.body.lastname,email:req.body.email,password:pass,role:"user",image:"generalAvatar.png"}).then((data)=>{
+				db.services.create({name:req.body.name,lastname:req.body.lastname,email:req.body.email,password:pass,role:"user",image:"generalAvatar.png"}).then((data)=>{
 					res.render('login', { title: 'AZVI', style: 'login', mensaje: '¡Registrado con exito, ingrese sus datos!' })
 				}).catch((error)=>{
 					console.log(error)

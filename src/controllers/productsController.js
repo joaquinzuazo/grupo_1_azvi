@@ -9,7 +9,7 @@ const productsFilePath = path.join(__dirname, '../data/products.json')
 
 /*---------------------- db and sequelize required ---------------------*/
 /*---------------------- Op required for operations ---------------------*/
-const db = require('../database/models')
+const db=require('../database/models');
 const sequelize = db.sequelize
 const { Op } = db.Sequelize
 
@@ -45,6 +45,35 @@ const productsController = {
 	},
 
 	save: (req, res) => {
+		db.providers.create({
+			name:req.body.name,
+			lastname:req.body.lastname,
+			email:req.body.email,
+			cellphone:req.body.phone,
+			location:req.body.localidad,
+			score:1,
+			categorieId:req.body.category,
+			image:req.files[0].filename
+		}).then((data)=>{
+			db.providers.findOne({where:{email:req.body.email}}).then((user) => {
+				db.services.create({
+					title:req.body.title,
+					description:req.body.description,
+					providerId:user.id
+				}).then((service) => {
+					res.redirect('/')	
+				}).catch((error)=>{
+					console.log(error)			
+				})
+			}).catch((error)=>{
+				console.log(error)
+			});	
+		}).catch((error)=>{
+			console.log(error)
+		});
+
+
+
 		const ids = products.map((product) => product.id)
 		const id = getID(ids)
 

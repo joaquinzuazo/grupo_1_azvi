@@ -1,7 +1,7 @@
 <%- include('partials/head')%> <%- include('partials/header')%>
 
 <main class="mainAdmin">
-	<h2 class="mainAdmin__title">Agregar nuevo servicio</h2>
+	<h2 class="mainAdmin__title">Agregar nuevo proveedor</h2>
 
 	<form action="" method="POST" class="mainAdmin__form" enctype="multipart/form-data">
 		<h3 class="mainAdmin__subtitle">Datos personales</h3>
@@ -29,13 +29,13 @@
 			<select class="mainAdmin_select" name="category" id="mainAdmin__select">
 				<option value="Carpinteria">Servicios</option>
 
-				<option value="carpinteria">Carpinteria</option>
-				<option value="cerrajeria">Cerrajeria</option>
-				<option value="plomeria">Plomeria</option>
-				<option value="pintura">Pintura</option>
-				<option value="mecanica">Mecanica</option>
-				<option value="acc">Aires</option>
-				<option value="heladeras">Heladeras</option>
+				<option value="1">Carpinteria</option>
+				<option value="4">Cerrajeria</option>
+				<option value="2">Plomeria</option>
+				<option value="3">Pintura</option>
+				<option value="6">Mecanica</option>
+				<option value="7">Lavarropas</option>
+				<option value="8">Acc</option>
 			</select>
 		</div>
 
@@ -50,15 +50,18 @@
 				<option value="La Plata">La Plata</option>
 			</select>
 		</div>
-		<div class="mainAdmin__textarea">
-			<label for="description">Descripcion</label>
-			<textarea name="description" id="description" cols="30" rows="5" maxlength="200"></textarea>
-		</div>
-
 		<div class="mainAdmin__container mainAdmin__container--photo">
 			<label for="photo" class="mainAdmin__label">Agrega foto</label>
 			<input required class="photo" type="file" id="photo" name="image" placeholder="Apellido" />
 		</div>
+		<div class="mainAdmin__textarea">
+			<label for="title" class="mainAdmin__label">Titulo</label>
+			<input required type="text" id="title" name="title" placeholder="Titulo" />
+			<label for="description">Descripcion</label>
+			<textarea name="description" id="description" cols="30" rows="5" maxlength="200"></textarea>
+		</div>
+
+
 
 		<button class="mainAdmin__submit">Agregar</button>
 	</form>

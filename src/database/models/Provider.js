@@ -12,7 +12,6 @@ module.exports = (sequelize, dataTypes) => {
         location: dataTypes.STRING(100),
         score: dataTypes.INTEGER,
         categorieId: dataTypes.INTEGER,
-        location: dataTypes.STRING(100),
         image: dataTypes.STRING(100), 
     },{paranoid:false})
  

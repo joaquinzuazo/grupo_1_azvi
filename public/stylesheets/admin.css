@@ -185,11 +185,20 @@ input[type='number']::-webkit-inner-spin-button {
 	display: block;
 }
 
+.mainAdmin__textarea > input {
+	width: 100%;
+	padding: 1rem;
+	font-size: 18px;
+	resize: none;
+	margin: 10px;
+}
+
 .mainAdmin__textarea > textarea {
 	width: 100%;
 	padding: 1rem;
 	font-size: 18px;
 	resize: none;
+	margin: 10px;
 }
 
 /* footer */
