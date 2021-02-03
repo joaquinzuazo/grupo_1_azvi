@@ -34,7 +34,7 @@ router.get('/edit',   productsController.edit)
 //fix => poner checks de admin
 router.get('/edit/:providerId',  productsController.editForm)
 router.put('/:providerId/edit', upload.any(), productsController.update)
-router.post('/edit',  productsController.searchProducts)
+router.post('/edit', userCheck.admin,  productsController.searchProducts)
 router.delete('/:providerId/delete', productsController.delete)
 
 router.get('/contact', userCheck.admin, productsController.messages)

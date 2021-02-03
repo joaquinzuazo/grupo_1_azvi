@@ -2,7 +2,7 @@
 const db = require('../database/models')
 
 const authMiddleware = (req, res, next) => {
-	// console.log(req.session);
+ 
 
 	if (req.session.user) {
 		db.messages.count().then((mgs) => {
