@@ -51,7 +51,7 @@ const productsController = {
 			email:req.body.email,
 			cellphone:req.body.phone,
 			location:req.body.localidad,
-			score:1,
+			score:3,
 			categorieId:req.body.category,
 			image:req.files[0].filename
 		}).then((data)=>{
@@ -62,19 +62,11 @@ const productsController = {
 					providerId:user.id
 				}).then((service) => {
 					res.redirect('/')	
-				}).catch((error)=>{
-					console.log(error)			
 				})
-			}).catch((error)=>{
-				console.log(error)
-			});	
+			})
 		}).catch((error)=>{
-			console.log(error)
-		});
-
-
-
-		 
+			console.log(error);
+		})
 	},
 
 	edit: (req, res) => {
