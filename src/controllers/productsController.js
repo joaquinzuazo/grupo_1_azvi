@@ -8,8 +8,10 @@ const products = JSON.parse(productsJson)
 const productsFilePath = path.join(__dirname, '../data/products.json')
 
 /*---------------------- db and sequelize required ---------------------*/
+/*---------------------- Op required for operations ---------------------*/
 const db = require('../database/models')
 const sequelize = db.sequelize
+const { Op } = db.Sequelize
 
 const productsController = {
 	index: (req, res) => {
@@ -71,7 +73,7 @@ const productsController = {
 		// }
 
 		// res.render('adminUpdate', { title: 'Editar', style: 'admin', id, product })
-		res.render('adminUpdate' ,{ title: 'Editar', style: 'admin'})
+		res.render('adminUpdate', { title: 'Editar', style: 'admin' })
 	},
 
 	update: (req, res) => {
@@ -128,26 +130,38 @@ const productsController = {
 				'name',
 				'phone',
 				[sequelize.fn('DATE_FORMAT', sequelize.col('createdAt'), '%d-%m-%Y %T'), 'dates'],
-				'plan'
+				'plan',
 			],
 		})
-		   if(messages.length!=0){
-			   messages.forEach(mgs=>mgs.plan=mgs.plan.replace('Plan seleccionado:',''))
-		   }
-console.log(messages);
+		if (messages.length != 0) {
+			messages.forEach((mgs) => (mgs.plan = mgs.plan.replace('Plan seleccionado:', '')))
+		}
+
 		res.render('messages', { title: 'Admin mensajes', style: 'admin', messages: messages })
 	},
 	messageDeleted: (req, res) => {
 		db.messages.destroy({ where: { id: req.params.messageId } }).then((mgs) => res.redirect('/products/contact'))
 	},
-	searchProducts:(req,res)=>{
-		// fix => temporal probando con users para la modificacion de products/services
-		console.log(req.body);
+	searchProducts: async (req, res) => {
+		try {
+			const providersFind = await db.providers.findAll({
+				include: {
+					association: 'categories',
+				},
+				where: { lastname: { [Op.like]: `%${req.body.lastname}%` } },
+			})
+			if (providersFind.length != 0) {
+				res.locals.providers = providersFind
+			} else {
+				res.locals.notFoundMessage = req.body.lastname
+			}
 
-		const {Op}=db.Sequelize
-
-		db.users.findAll({where:{lastname:{[Op.like]:`%${req.body.lastname}%`}}}).then(console.log)
-	}
+			res.render('adminUpdate', { title: 'Editar', style: 'admin' })
+		} catch (e) {
+			res.render('error2', { title: 'Error', style: 'error' })
+			console.log(e)
+		}
+	},
 }
 
 module.exports = productsController

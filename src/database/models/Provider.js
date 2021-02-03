@@ -15,14 +15,14 @@ module.exports = (sequelize, dataTypes) => {
         location: dataTypes.STRING(100),
         image: dataTypes.STRING(100), 
     })
-/*
+ 
     Provider.associate=function(models){
-        Provider.belongsTo(models.User,{
-            as:"",
-            foreignKey:"",
+        // Provider.belongsTo(models.User,{
+        //     as:"",
+        //     foreignKey:"",
             
-        });
-        Provider.belongsTo(Category,{
+        // });
+        Provider.belongsTo(models.categories,{
             as: "categories",
             foreignKey: "categorieId"
 
@@ -30,8 +30,7 @@ module.exports = (sequelize, dataTypes) => {
 
     }
     
-*/    
-    
+ 
 
 	return Provider
 }

@@ -1,18 +1,41 @@
 <%- include('partials/head')%> <%- include('partials/header')%>
 
 <main class="mainAdmin">
-	 <div class="mainAdminContainerForm">
-
+	<div class="mainAdminContainerForm">
 		<form action="/products/edit" method="POST">
-
-			<div class="mainAdmin__container mainAdmin__container--borderOut">
-				<label for="name" class="mainAdmin__label">Buscar</label>
-				<input   type="text" id="name" name="lastname" placeholder=" Apellido" value=""/>
-				<button class="mainAdminContainerForm__button">Ir</button>
+			<div class="maindAdmin__containerUpdated">
+				<label for="name" class="mainAdmin__labelUpdate">Buscar</label>
+				<input
+					autocomplete="off"
+					type="text"
+					id="name"
+					name="lastname"
+					placeholder=" Apellido"
+					value="<%=locals.notFoundMessage%>"
+				/>
+				<button class="mainAdminContainerForm__button">IR</button>
+				<% if(locals.notFoundMessage){%>
+				<p>Usuario no encontrado</p>
+				<%} %>
 			</div>
 		</form>
-	 </div>
-	
+		<% if(locals.providers && locals.providers.length != 0){%>
+		<div class="mainAdminContainerUsers">
+			<% providers.forEach(provider=>{ %>
+
+			<div class="mainAdminUser">
+				<div class="mainAdminUser__text">Nombre: <i><%=provider.name %> </i></div>
+				<div class="mainAdminUser__text">Apellido: <i><%=provider.lastname %></i></div>
+				<div class="mainAdminUser__text">Email: <i><%=provider.email %></i></div>
+				<div class="mainAdminUser__text">Categoria: <i><%=provider.categories.name %></i></div>
+				<a href="/<%=provider.id%>" class="maindAdminUser__button">Editar</a>
+			</div>
+
+			<% }) %>
+		</div>
+
+		<% } %>
+	</div>
 </main>
 
 <%-include('partials/footer')%>

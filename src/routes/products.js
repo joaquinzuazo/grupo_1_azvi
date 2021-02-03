@@ -36,7 +36,8 @@ router.get('/category/:category',productsController.index )
 
 router.get('/create', userCheck.admin, productsController.create)
 router.post('/create',upload.any(),productsController.save)
-router.get('/edit', userCheck.admin, productsController.edit)
+// router.get('/edit', userCheck.admin, productsController.edit) fix => temporal para que se refresquen cambios sin login
+router.get('/edit' , productsController.edit)
 router.put('/:id/edit',upload.any(),productsController.update)
 router.delete('/:id/delete',productsController.delete)
 router.post('/edit',productsController.searchProducts)
