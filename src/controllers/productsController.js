@@ -64,45 +64,53 @@ const productsController = {
 	},
 
 	edit: (req, res) => {
-		// const id = req.params.id
-
-		// const product = products.find((produc) => produc.id == id)
-
-		// if (!product) {
-		// 	return res.render('error2', { title: 'Error', style: 'error' })
-		// }
-
-		// res.render('adminUpdate', { title: 'Editar', style: 'admin', id, product })
 		res.render('adminUpdate', { title: 'Editar', style: 'admin' })
 	},
 
-	update: (req, res) => {
-		const keys = Object.keys(req.body)
-		const product = products.find((product) => product.id == req.params.id)
-		keys.forEach((key) => (product[key] = req.body[key]))
-		product.image = req.files[0].filename
+	update: async (req, res) => {
+		const providerId = req.params.providerId
+		const { name, lastname, email, location, cellphone, description, categoryId } = req.body
+		const image = req.files[0].filename
+		const updateTotal = { name, lastname, email, location, cellphone, image, categoryId }
 
-		const productsJSon = JSON.stringify(products)
-		fs.writeFileSync(productsFilePath, productsJSon)
+		try {
+			await db.providers.update(updateTotal, {
+				where: {
+					id: providerId,
+				},
+			})
+			await db.services.update(
+				{ description },
+				{
+					where: {
+						id: providerId,
+					},
+				}
+			)
 
-		res.redirect('/')
+			res.locals.adminMessage = 'Usuario modificado con exito'
+			res.redirect('/products/edit')
+		} catch (e) {
+			res.render('error2', { title: 'Error', style: 'error' })
+			console.log(e)
+		}
 	},
 
-	delete: (req, res) => {
-		// se almacena el parametro dinamico
-		const idProduct = req.params.id
+	delete: async (req, res) => {
+		const providerId = req.params.providerId
 
-		//se retorna los que no se quieren eliminar y se almacenan en una variable
-		const productFilter = products.filter(function (product) {
-			return product.id != idProduct
-		})
+		
+		try{
+		await db.services.destroy({where:{providerId:providerId}})
 
-		//se modifica el JSON segun el id
-		const productsJSon = JSON.stringify(productFilter)
+			await db.providers.destroy({ where: { id: providerId } })
 
-		fs.writeFileSync(productsFilePath, productsJSon)
+		}catch(error){
+			console.log(error);
+		}
+		 
 
-		res.redirect('/')
+		res.redirect('/products/edit')
 	},
 
 	productCart: (req, res, next) => {
@@ -153,7 +161,7 @@ const productsController = {
 			if (providersFind.length != 0) {
 				res.locals.providers = providersFind
 			} else {
-				res.locals.notFoundMessage = req.body.lastname
+				res.locals.adminMessage = req.body.lastname
 			}
 
 			res.render('adminUpdate', { title: 'Editar', style: 'admin' })
@@ -161,6 +169,25 @@ const productsController = {
 			res.render('error2', { title: 'Error', style: 'error' })
 			console.log(e)
 		}
+	},
+
+	editForm: async (req, res) => {
+		const providerId = req.params.providerId
+
+		const provider = await db.providers.findByPk(providerId, {
+			// include: {
+			// 	association: 'categories',
+			// },
+			include: {
+				association: 'services',
+			},
+		})
+		// 	const providerTotal =await provider.getCategories()
+		console.log(provider)
+		res.locals.categories = await db.categories.findAll()
+		res.locals.provider = provider
+
+		res.render('adminUpdateForm', { title: 'Edit', style: 'admin' })
 	},
 }
 

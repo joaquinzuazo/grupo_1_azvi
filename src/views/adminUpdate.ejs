@@ -11,11 +11,11 @@
 					id="name"
 					name="lastname"
 					placeholder=" Apellido"
-					value="<%=locals.notFoundMessage%>"
+					value="<%=locals.adminMessage%>"
 				/>
 				<button class="mainAdminContainerForm__button">IR</button>
-				<% if(locals.notFoundMessage){%>
-				<p>Usuario no encontrado</p>
+				<% if(locals.adminMessage){%>
+				<p>Usuario no encontrado </p>
 				<%} %>
 			</div>
 		</form>
@@ -28,7 +28,7 @@
 				<div class="mainAdminUser__text">Apellido: <i><%=provider.lastname %></i></div>
 				<div class="mainAdminUser__text">Email: <i><%=provider.email %></i></div>
 				<div class="mainAdminUser__text">Categoria: <i><%=provider.categories.name %></i></div>
-				<a href="/<%=provider.id%>" class="maindAdminUser__button">Editar</a>
+				<a href="/products/edit/<%=provider.id%>" class="maindAdminUser__button">Editar</a>
 			</div>
 
 			<% }) %>

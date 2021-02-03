@@ -14,14 +14,13 @@ module.exports = (sequelize, dataTypes) => {
         categorieId: dataTypes.INTEGER,
         location: dataTypes.STRING(100),
         image: dataTypes.STRING(100), 
-    })
+    },{paranoid:false})
  
     Provider.associate=function(models){
-        // Provider.belongsTo(models.User,{
-        //     as:"",
-        //     foreignKey:"",
-            
-        // });
+        Provider.hasOne(models.services,{
+            as:'services',
+            foreignKey:'providerId'
+        })
         Provider.belongsTo(models.categories,{
             as: "categories",
             foreignKey: "categorieId"
