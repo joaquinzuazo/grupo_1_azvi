@@ -74,22 +74,7 @@ const productsController = {
 
 
 
-		const ids = products.map((product) => product.id)
-		const id = getID(ids)
-
-		const product = {
-			...req.body,
-			id,
-			image: req.files[0].filename,
-			score: 3,
-		}
-
-		products.push(product)
-
-		const productsJSon = JSON.stringify(products)
-		fs.writeFileSync(productsFilePath, productsJSon)
-
-		res.redirect('/')
+		 
 	},
 
 	edit: (req, res) => {

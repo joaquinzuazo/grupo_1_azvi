@@ -30,7 +30,7 @@ router.get('/category/:category', productsController.index)
 router.get('/create', userCheck.admin, productsController.create)
 router.post('/create', upload.any(), productsController.save)
 
-router.get('/edit',   productsController.edit)
+router.get('/edit',userCheck.admin,   productsController.edit)
 //fix => poner checks de admin
 router.get('/edit/:providerId',  productsController.editForm)
 router.put('/:providerId/edit', upload.any(), productsController.update)
