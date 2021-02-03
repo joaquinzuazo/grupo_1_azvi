@@ -49,12 +49,9 @@ const usersController = {
 	},
 
 	login: (req, res) => {
-		const { email, password } = req.body
-		// const user = users.find(user=>user.email==email)
-
-		db.Users.findOne({ where: { email } }).then((user) => {
+		db.Users.findOne({ where: {email:req.body.email}}).then((user) => {
 			if (user) {
-				const passIsTrue = bcrypt.compareSync(password, user.password);
+				const passIsTrue = bcrypt.compareSync(req.body.password, user.password);
 				if (passIsTrue) {
 					req.session.user = { ...user['dataValues'], password: '' }
 					if (req.body.remember) {
@@ -79,52 +76,32 @@ const usersController = {
 		res.render('userData', { title: 'Mis Datos', style: 'userDataForm', session: res.locals.userLog })
 	},
 	editProfile: (req, res, next) => {
-		var user = users.map(function (dato) {
-			if (dato.id == res.locals.userLog.id) {
-				dato.image = req.files[0].filename
-				return dato
-			}
-			return dato
-		})
-		fs.writeFileSync(usersPathFile, JSON.stringify(user, null, 2))
-		res.redirect('/')
+		db.Users.update({image:req.files[0].filename},{where:{id:req.session.user.id}})
+		.then((dato)=>{
+			db.Users.findOne({ where: {email:req.session.user.email}}).then((user) => {
+				req.session.user = { ...user['dataValues'], password: '' }
+				res.redirect('/')
+			}).catch((error)=>{
+				console.log(error)
+			});
+		}).catch((error)=>{
+			console.log(error)
+		});
 	},
+	
 
-	logout: (req, res) => {
-		res.clearCookie('remember')
-		req.session.destroy((err) => {
-			res.redirect('/')
-		})
-	},
-	profile: (req, res, next) => {
-		res.render('userData', { title: 'Mis Datos', style: 'userDataForm', session: res.locals.userLog })
-	},
-	editProfile: (req, res, next) => {
-		var user = users.map(function (dato) {
-			if (dato.id == res.locals.userLog.id) {
-				dato.image = req.files[0].filename
-				return dato
-			}
-			return dato
-		})
-		fs.writeFileSync(usersPathFile, JSON.stringify(user, null, 2))
-		res.redirect('/')
-	},
 	editProfileFields: (req, res) => {
-		const userFind = users.find((user) => req.session.user.id == user.id)
-		users.forEach((user) => {
-			if (user.id == req.session.user.id) {
-				user.name = req.body.name
-				user.lastname = req.body.lastname
-				user.email = req.body.email
-				user.localidad = req.body.localidad
-			}
-		})
-
-		fs.writeFileSync(usersPathFile, JSON.stringify(users, null, 2))
-
-		req.session.user = { ...userFind, password: '' }
-		res.redirect('/')
+		db.Users.update({name:req.body.name,lastname:req.body.lastname,email:req.body.email,localidad:req.body.localidad},{where:{id:req.session.user.id}})
+		.then((dato)=>{
+			db.Users.findOne({ where: {email:req.session.user.email}}).then((user) => {
+				req.session.user = { ...user['dataValues'], password: '' }
+				res.redirect('/')
+			}).catch((error)=>{
+				console.log(error)
+			});
+		}).catch((error)=>{
+			console.log(error)
+		});
 	},
 }
 
