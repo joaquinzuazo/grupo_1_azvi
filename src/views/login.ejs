@@ -7,8 +7,8 @@
 		<p class="article-container-form-regis"><i class="fas fa-exclamation-circle" style="color: rgb(231, 231, 23);"> </i>  <%=mensaje%></p>
 		<%}%>
 		<form class="article-container-form" action="/users/login" method="POST">
-			<div class="form-container-input"><input class="article-container-input" name="email" type="Usuario" placeholder="Email" /><i class="form-icon far fa-envelope"></i></div>
-			<div class="form-container-input"><input class="article-container-input"  name="password" type="Password" placeholder="Contraseña" />
+			<div class="form-container-input"><input class="containerForm__input" name="email" type="Usuario" placeholder="Email" /><i class="form-icon far fa-envelope"></i></div>
+			<div class="form-container-input"><input class="containerForm__input"  name="password" type="Password" placeholder="Contraseña" />
 				<i class="form-icon fas fa-unlock-alt"></i></div>
 
 			<div class="form-container-remember">
@@ -19,9 +19,9 @@
 
 
 		</form>
-		<div>
+		<div class="containerData__register">
 			<h3 class="article-container-h3">
-				 <a class="article-container-a" href="/register">¿No tenes cuenta? Click ACÁ para registrarte</a> 
+				 <a class="article-container-a" href="/register">¿No tenes cuenta? Click <p class="article-container-p">ACÁ</p> para registrarte</a> 
 			</h3>
 		</div>
 	 

@@ -1,6 +1,6 @@
 <!--PARTIALS-->
 
-<%- include('partials/head')%> <%- include('partials/header')%>
+<%- include('../partials/head')%> <%- include('../partials/header')%>
 <div class="main__containerMain">
 	
 	<div class="main__container">
@@ -13,17 +13,7 @@
 
 <main class="main">
 
-	<!-- <select class="main_select" name="categories" id="main__select">
-		<option value="Carpinteria">Servicios</option>
-
-		<option value="Carpinteria">Carpinteria</option>
-		<option value="Cerrajeria">Cerrajeria</option>
-		<option value="Plomeria">Plomeria</option>
-		<option value="Pintura">Pintura</option>
-		<option value="Mecanica">Mecanica</option>
-		<option value="Aires">Aires</option>
-		<option value="Heladeras">Heladeras</option>
-	</select> -->
+ 
 
 	<div id="categories" class="main__subtitle">RECOMENDADOS</div>
 	<section  class="main__recomended">
@@ -34,7 +24,7 @@
 				<a class="main__recomendedA" href="/products/detail/<%=best.id%>">
 				<h4><%=best.name%> </h4>
 				<div class="main__ref"><img class="main__recomendedImage" src="<%=best.image%>" alt="">
-				<img class="main__ref__img" src="/images/categories/<%=best.category%>.svg" alt="">
+				<img class="main__ref__img" src="/images/categories/<%=best.categories.name%>.svg" alt="">
 				</div>
 
 				<div>
@@ -97,10 +87,10 @@
 			<a href="products/category/heladeras" class="categories__subtitle">Heladeras</a>
 		</article>
 		<article class="categories__category">
-			<img src="images/categories/mecanica.svg" alt="" class="categories__icon" />
+			<img src="images/categories/Mecanico.svg" alt="" class="categories__icon" />
 			<a href="products/category/mecanica" class="categories__subtitle">Mecanica</a>
 		</article>
 	</section>
 </main>
 
-<%-include('partials/footer')%>
+<%-include('../partials/footer')%>

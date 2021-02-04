@@ -9,19 +9,27 @@ const products = JSON.parse(productsJson)
 const db = require('../database/models')
 
 const indexController = {
-	index: function (req, res, next) {
+	index: async (req, res, next) =>{
+
+		const providersFind = await db.providers.findAll({
+			include:{
+				association:'categories'
+			}
+		})
+
+
 		const bestServices = []
-		products.forEach((product) => {
-			if (product.score == 4 || product.score == 5) {
-				bestServices.push(product)
+		providersFind.forEach((provider) => {
+			if (provider.score == 4 || provider.score == 5) {
+				bestServices.push(provider)
 			}
 		})
 		bestServices.length = 10
-
-		res.render('index', { title: 'AZVI', style: 'index', bestest: bestServices })
+		// res.send(bestServices)
+		res.render('home/index', { title: 'AZVI', style: 'index', bestest: bestServices })
 	},
 	help: function (req, res, next) {
-		res.render('help', { title: 'help', style: 'help' })
+		res.render('home/help', { title: 'help', style: 'help' })
 	},
 }
 
