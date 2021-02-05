@@ -82,7 +82,7 @@ const usersController = {
 		})
 	},
 	profile: (req, res, next) => {
-		res.render('userData', { title: 'Mis Datos', style: 'userDataForm', session: res.locals.userLog })
+		res.render('users/userData', { title: 'Mis Datos', style: 'userDataForm', session: res.locals.userLog })
 	},
 	editProfile: (req, res, next) => {
 		db.Users.update({ image: req.files[0].filename }, { where: { id: req.session.user.id } })

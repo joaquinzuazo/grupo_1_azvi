@@ -9,7 +9,7 @@ const productsFilePath = path.join(__dirname, '../data/products.json')
 
 /*---------------------- db and sequelize required ---------------------*/
 /*---------------------- Op required for operations ---------------------*/
-const db=require('../database/models');
+const db = require('../database/models')
 const sequelize = db.sequelize
 const { Op } = db.Sequelize
 
@@ -33,7 +33,7 @@ const productsController = {
 		const productId = products.find((product) => product.id == req.params.id)
 
 		if (!productId) {
-			return res.render('error2', { title: 'Error', style: 'error' })
+			return res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
 		}
 
 		res.render('productDetail', {
@@ -45,28 +45,33 @@ const productsController = {
 	},
 
 	save: (req, res) => {
-		db.providers.create({
-			name:req.body.name,
-			lastname:req.body.lastname,
-			email:req.body.email,
-			cellphone:req.body.phone,
-			location:req.body.localidad,
-			score:3,
-			categorieId:req.body.category,
-			image:req.files[0].filename
-		}).then((data)=>{
-			db.providers.findOne({where:{email:req.body.email}}).then((user) => {
-				db.services.create({
-					title:req.body.title,
-					description:req.body.description,
-					providerId:user.id
-				}).then((service) => {
-					res.redirect('/')	
+		db.providers
+			.create({
+				name: req.body.name,
+				lastname: req.body.lastname,
+				email: req.body.email,
+				cellphone: req.body.phone,
+				location: req.body.localidad,
+				score: 3,
+				categorieId: req.body.category,
+				image: req.files[0].filename,
+			})
+			.then((data) => {
+				db.providers.findOne({ where: { email: req.body.email } }).then((user) => {
+					db.services
+						.create({
+							title: req.body.title,
+							description: req.body.description,
+							providerId: user.id,
+						})
+						.then((service) => {
+							res.redirect('/')
+						})
 				})
 			})
-		}).catch((error)=>{
-			console.log(error);
-		})
+			.catch((error) => {
+				console.log(error)
+			})
 	},
 
 	edit: (req, res) => {
@@ -97,7 +102,7 @@ const productsController = {
 			res.locals.adminMessage = 'Usuario modificado con exito'
 			res.redirect('/products/edit')
 		} catch (e) {
-			res.render('error2', { title: 'Error', style: 'error' })
+			res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
 			console.log(e)
 		}
 	},
@@ -105,16 +110,13 @@ const productsController = {
 	delete: async (req, res) => {
 		const providerId = req.params.providerId
 
-		
-		try{
-		await db.services.destroy({where:{providerId:providerId}})
+		try {
+			await db.services.destroy({ where: { providerId: providerId } })
 
 			await db.providers.destroy({ where: { id: providerId } })
-
-		}catch(error){
-			console.log(error);
+		} catch (error) {
+			console.log(error)
 		}
-		 
 
 		res.redirect('/products/edit')
 	},
@@ -159,9 +161,12 @@ const productsController = {
 	searchProducts: async (req, res) => {
 		try {
 			const providersFind = await db.providers.findAll({
-				include: {
-					association: 'categories',
-				},
+				include: [
+					{
+						association: 'categories',
+					},
+				],
+
 				where: { lastname: { [Op.like]: `%${req.body.lastname}%` } },
 			})
 			if (providersFind.length != 0) {
@@ -169,10 +174,9 @@ const productsController = {
 			} else {
 				res.locals.adminMessage = req.body.lastname
 			}
-
 			res.render('adminUpdate', { title: 'Editar', style: 'admin' })
 		} catch (e) {
-			res.render('error2', { title: 'Error', style: 'error' })
+			res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
 			console.log(e)
 		}
 	},

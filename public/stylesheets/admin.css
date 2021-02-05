@@ -311,7 +311,7 @@ margin: 0;
 }
 .mainAdminContainerForm  input{
 	border: .5px solid #6487a9bb;
-	padding: 5px;
+	padding: 15px;
 	background-color: transparent;
 	margin-top: 5px;
 	font-weight: 400;
@@ -341,7 +341,7 @@ margin: 0;
 }
 
 .mainAdminContainerForm__button{
-	padding: 5px;
+	padding: 15px;
 	color: white;
 	background-color: #6486A9;
 	border-radius: 5px;
