@@ -18,7 +18,7 @@ const userCheck = {
         return next()
     }  
 
-    res.redirect('/login')
+    res.redirect('/users/login')
  }
    
 

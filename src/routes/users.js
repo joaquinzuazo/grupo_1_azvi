@@ -22,7 +22,7 @@ router.get('/users/login', userCheck.user, usersController.loginForm);
 
 router.get('/register', userCheck.user, usersController.registerForm)
 
-router.post('/register',validate() ,usersController.register)
+router.post('/register',validate() ,usersController.register , usersController.login)
 
 router.post('/users/login',  usersController.login)
 

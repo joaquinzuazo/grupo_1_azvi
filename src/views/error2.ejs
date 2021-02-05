@@ -1,10 +1,11 @@
 <%- include('partials/head')%> <%- include('partials/header')%>
 
-
-  <div class="errorcontainer">
-      
-    
-    <img src="/images/error.png" alt="" class="error404"/>
-    
+<div class="errorcontainer">
+	<div class="errorcontainer__img">
+     
+    <p class="errorcontainer__message"><%=message%></p>
+    <img src="/images/error.png" alt="" class="error404" />
+    <a class="errorcontainer__return" href="/">Volver</a>
   </div>
-  <%-include('partials/footer')%>
+</div>
+<%-include('partials/footer')%>
