@@ -15,14 +15,42 @@ const { Op } = db.Sequelize
 
 const productsController = {
 	index: (req, res) => {
+		
+		//json
+
 		const productsByCategory = products.filter((product) => product.category == req.params.category)
 
+		/*
+		//database
+
+		db.providers.findOne( { 
+			
+			include: [ {
+				 assosiation : 'categories'
+				} ],
+			
+			where:{
+				categorieId: { [ Op.like ]: `%${req.params.id}%` }          
+			}
+
+			
+		}).then(function(category){
+			res.render('lenderList', {category:category, title: 'lenderList', style: 'lenderList'})
+		}).catch(function(err){
+			console.log(err)
+		})
+		//
+		*/			
+
+		
 		res.render('lenderList', {
 			title: `Azvi-${req.params.category}`,
 			style: 'lenderList',
 			products: productsByCategory,
 			titleCategory: req.params.category.toUpperCase(),
 		})
+		
+		
 	},
 
 	create: (req, res) => {
