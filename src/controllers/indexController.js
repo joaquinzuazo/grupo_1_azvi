@@ -20,7 +20,7 @@ const indexController = {
 
 		const bestServices = []
 		providersFind.forEach((provider) => {
-			if (provider.score == 4 || provider.score == 5) {
+			if ( provider.score == 5) {
 				bestServices.push(provider)
 			}
 		})

@@ -10,7 +10,7 @@
 					type="text"
 					id="name"
 					name="lastname"
-					placeholder=" Apellido"
+					placeholder="Nombre Apellido"
 					value="<%=locals.adminMessage%>"
 				/>
 				<button class="mainAdminContainerForm__button">IR</button>
@@ -28,6 +28,7 @@
 				<div class="mainAdminUser__text">Apellido: <i><%=provider.lastname %></i></div>
 				<div class="mainAdminUser__text">Email: <i><%=provider.email %></i></div>
 				<div class="mainAdminUser__text">Categoria: <i><%=provider.categories.name %></i></div>
+				<div class="mainAdminUser__text">Localidad: <i><%=provider.location%></i></div>
 				<a href="/products/edit/<%=provider.id%>" class="maindAdminUser__button">Editar</a>
 			</div>
 

@@ -37,7 +37,6 @@ app.use(authMiddleware)
 
 
 /*---------------------- ROUTES ---------------------*/
-
 app.use('/', indexRouter)
 app.use('/products', productsRouter)
 app.use('/', usersRouter)
@@ -71,5 +70,6 @@ app.use(function (err, req, res, next) {
 	res.status(err.status || 500)
 	res.render('error')
 })
+
 
 module.exports = app

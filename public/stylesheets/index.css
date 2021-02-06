@@ -180,6 +180,7 @@ body {
 	justify-content: center;
 }
 .main__recomendedCard {
+	position: relative;
 	margin: 30px;
 	display: flex;
 	flex-direction: column;
@@ -205,6 +206,14 @@ body {
 
 a {
 	color: white;
+}
+.main__recomendedi {
+	color:#6486A9;
+	font-size: 12px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: translateY(-105%);
 }
 .main__recomendedA {
 	color: white;

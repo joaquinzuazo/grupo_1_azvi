@@ -10,12 +10,15 @@ const productsFilePath = path.join(__dirname, '../data/products.json')
 /*---------------------- db and sequelize required ---------------------*/
 /*---------------------- Op required for operations ---------------------*/
 const db = require('../database/models')
+const { locals } = require('../app')
 const sequelize = db.sequelize
 const { Op } = db.Sequelize
 
+/*---------------------- array de localidades para persistir la data en los forms ---------------------*/
+const LOCATION_USERS_PROVIDERS = ['Rawson', 'Chubut', 'Cordoba Capital', 'La Plata']
+
 const productsController = {
 	index: (req, res) => {
-		
 		//json
 
 		const productsByCategory = products.filter((product) => product.category == req.params.category)
@@ -40,17 +43,14 @@ const productsController = {
 			console.log(err)
 		})
 		//
-		*/			
+		*/
 
-		
 		res.render('lenderList', {
 			title: `Azvi-${req.params.category}`,
 			style: 'lenderList',
 			products: productsByCategory,
 			titleCategory: req.params.category.toUpperCase(),
 		})
-		
-		
 	},
 
 	create: (req, res) => {
@@ -108,9 +108,9 @@ const productsController = {
 
 	update: async (req, res) => {
 		const providerId = req.params.providerId
-		const { name, lastname, email, location, cellphone, description, categoryId } = req.body
+		const { name, lastname, email, location, cellphone, description, categoryId, score, title } = req.body
 		const image = req.files[0].filename
-		const updateTotal = { name, lastname, email, location, cellphone, image, categoryId }
+		const updateTotal = { name, lastname, email, location, cellphone, image, categoryId, score }
 
 		try {
 			await db.providers.update(updateTotal, {
@@ -119,15 +119,14 @@ const productsController = {
 				},
 			})
 			await db.services.update(
-				{ description },
+				{ description, title },
 				{
 					where: {
-						id: providerId,
+						providerId,
 					},
 				}
 			)
 
-			res.locals.adminMessage = 'Usuario modificado con exito'
 			res.redirect('/products/edit')
 		} catch (e) {
 			res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
@@ -139,7 +138,7 @@ const productsController = {
 		const providerId = req.params.providerId
 
 		try {
-			await db.services.destroy({ where: { providerId: providerId } })
+			await db.services.destroy({ where: { providerId } })
 
 			await db.providers.destroy({ where: { id: providerId } })
 		} catch (error) {
@@ -195,7 +194,14 @@ const productsController = {
 					},
 				],
 
-				where: { lastname: { [Op.like]: `%${req.body.lastname}%` } },
+				where: {
+					[Op.or]: [
+						{
+							lastname: { [Op.like]: `%${req.body.lastname}%` },
+						},
+						{ name: { [Op.like]: `%${req.body.lastname}%` } },
+					],
+				},
 			})
 			if (providersFind.length != 0) {
 				res.locals.providers = providersFind
@@ -224,7 +230,7 @@ const productsController = {
 		console.log(provider)
 		res.locals.categories = await db.categories.findAll()
 		res.locals.provider = provider
-
+		res.locals.locations = LOCATION_USERS_PROVIDERS
 		res.render('adminUpdateForm', { title: 'Edit', style: 'admin' })
 	},
 }

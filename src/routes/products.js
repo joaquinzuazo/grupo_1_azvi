@@ -30,12 +30,13 @@ router.get('/category/:category', productsController.index)
 router.get('/create', userCheck.admin, productsController.create)
 router.post('/create', upload.any(), productsController.save)
 
-router.get('/edit',userCheck.admin,   productsController.edit)
+/* ADMIN PAGES */
 //fix => poner checks de admin
-router.get('/edit/:providerId',  productsController.editForm)
+router.get('/edit', userCheck.admin, productsController.edit)
+router.get('/edit/:providerId',userCheck.admin,  productsController.editForm)
 router.put('/:providerId/edit', upload.any(), productsController.update)
 router.post('/edit', userCheck.admin,  productsController.searchProducts)
-router.delete('/:providerId/delete', productsController.delete)
+router.delete('/:providerId/delete',userCheck.admin, productsController.delete)
 
 router.get('/contact', userCheck.admin, productsController.messages)
 router.get('/contact/:messageId', userCheck.admin, productsController.messageDeleted)
