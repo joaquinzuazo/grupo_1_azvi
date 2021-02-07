@@ -2,9 +2,8 @@
 
 <main class="container">
   <div class="container-lender-general">
-    <a href="http://localhost:3000/" class="container-lender-general-link">SERVICIOS </a>
-    <p class="container-lender-general-text">>></p>
-    <a href="http://localhost:3000/lenderList" class="container-lender-general-link"><%= titleCategory %></a>
+     <img src="/images/categories/<%=product.categories.name%>.svg" alt="">
+     <p class="container-description"><%=product.categories.name%></p>
   </div>
 	<div class="container-lender">
 		<div class="container-lender-detail">
@@ -15,7 +14,7 @@
       <p class="container-lender-detail-text"><strong><%= (product.name+" "+product.lastname).toUpperCase() %></p></strong>
       </div>
       <div class="container-lender-detail-cont-city">
-        <p class="container-lender-detail-city"><strong><%= product.localidad %></p></strong>
+        <p class="container-lender-detail-city"><strong><%= product.location %></p></strong>
         </div>
       <div class="container-lender-detail-cont-cal">
       <p class="container-lender-detail-cal"><% for (let i = 0 ; i< 5;i++){%> 
@@ -32,19 +31,16 @@
   
 	<div class="container-service">
     <div class="service-text">
-      <h3 class="container-service-title"><%= product.description %></h3>
+      <h3 class="container-service-title"><%= product.services.title %></h3>
       <p class="container-service-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse minima eveniet tenetur! Consequuntur
-        nisi accusamus natus pariatur soluta!amet consectetur adipisicing elit. Adipisci esse minima eveniet tenetur! Consequuntur
-        nisi 
+        <%= product.services.description %> 
       </p>
     </div>
   
 
-    <div class="service-buttons">
-          <!-- Faltaría algo para poder iterar varios servicios con sus varios precios -->
-      <button type="button" class="container-service-button-two">ADQUIRIR</button>
-    </div>
+    
+      <a type="button" class="container-service-button-two">Contratar</a>
+     
   </div>
 </div>
   

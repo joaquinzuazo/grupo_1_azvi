@@ -57,19 +57,45 @@ const productsController = {
 		res.render('adminAdd', { title: 'Agregar Producto', style: 'admin' })
 	},
 
-	productDetail: (req, res) => {
-		const productId = products.find((product) => product.id == req.params.id)
-
-		if (!productId) {
-			return res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
+	productDetail: async (req, res) => {
+		try {
+			const providerId = req.params.id
+			const providerFind = await db.providers.findByPk(providerId, {
+				include: [{ association: 'categories' }, { association: 'services' }],
+			})
+			if (providerFind) {
+				res.render('productDetail', {
+					title: `Azvi ${req.params.id}`,
+					style: 'productos',
+					product: providerFind,
+					 
+				})
+			} else {
+				return res.render('error2', {
+					title: 'Error',
+					style: 'error',
+					message: 'Lo sentimos no encontramos tu provedor',
+				})
+			}
+		} catch (error) {
+			res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
+			console.log(error)
 		}
 
-		res.render('productDetail', {
-			title: `Azvi ${req.params.id}`,
-			style: 'productos',
-			product: productId,
-			titleCategory: productId.category.toUpperCase(),
-		})
+		// return res.send(providerFind)
+
+		// const productId = products.find((product) => product.id == req.params.id)
+
+		// if (!productId) {
+		// 	return res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
+		// }
+
+		// res.render('productDetail', {
+		// 	title: `Azvi ${req.params.id}`,
+		// 	style: 'productos',
+		// 	product: productId,
+		// 	titleCategory: productId.category.toUpperCase(),
+		// })
 	},
 
 	save: (req, res) => {
