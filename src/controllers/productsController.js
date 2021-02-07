@@ -18,39 +18,37 @@ const { Op } = db.Sequelize
 const LOCATION_USERS_PROVIDERS = ['Rawson', 'Chubut', 'Cordoba Capital', 'La Plata']
 
 const productsController = {
-	index: (req, res) => {
+	index:  (req, res)  => {
 		//json
 
-		const productsByCategory = products.filter((product) => product.category == req.params.category)
+		//const productsByCategory = products.filter((product) => product.category == req.params.category)
 
-		/*
 		//database
 
-		db.providers.findOne( { 
-			
-			include: [ {
-				 assosiation : 'categories'
-				} ],
-			
-			where:{
-				categorieId: { [ Op.like ]: `%${req.params.id}%` }          
-			}
-
-			
-		}).then(function(category){
-			res.render('lenderList', {category:category, title: 'lenderList', style: 'lenderList'})
-		}).catch(function(err){
-			console.log(err)
-		})
+		const categoryName = req.params.category
+		db.categories.findOne({
+            	where: {name: categoryName},
+            	include : [{association: 'providers'}]
+			})
+			.then(function(category){
+				res.render('lenderList', {
+					category:category ,
+					title: `Azvi-${req.params.category}`,
+					style: 'lenderList',
+				})
+			})
+			.catch(function(err){
+				console.log(err)
+			})
 		//
-		*/
+		
 
-		res.render('lenderList', {
-			title: `Azvi-${req.params.category}`,
-			style: 'lenderList',
-			products: productsByCategory,
-			titleCategory: req.params.category.toUpperCase(),
-		})
+		// res.render('lenderList', {
+		// 	title: `Azvi-${req.params.category}`,
+		// 	style: 'lenderList',
+		// 	products: productsByCategory,
+		// 	titleCategory: req.params.category.toUpperCase(),
+		// })
 	},
 
 	create: (req, res) => {

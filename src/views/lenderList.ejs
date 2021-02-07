@@ -1,3 +1,4 @@
+
 <%- include('partials/head',{title})%> 
 <%- include('partials/header')%>
 
@@ -6,55 +7,55 @@
     <main class="container-lender">
         
         <div class="container-lender-top">
-         <img src="/images/categories/<%=titleCategory.toLowerCase()%>.svg " alt="" class="container-lender-top-img">   <p class="container-lender-general-text" ><%= titleCategory  %> </p> 
+            <h3> <%= category.name%> </h3> 
         </div>
+        
 
+        <% for(let i = 0 ; i < category.providers.length ; i++) {%>
 
-        <% products.forEach(product => {%> 
-
-
-
-
-            <div class="container-lender-body-1">
-                
-                <img src="/<%=product.image%> " alt="loguito" class="container-lender-body-1-photo">
-                <div class="container-lender-body-1-text">
-                    <h4 class="container-lender-body-1-text-name"><%=product.name%> </h4>
-                    <div>
-
-                        <% for (let i = 0 ; i< 5;i++){%> 
-
-                            <% if (i < product.score) {%>
-
-                                <i class="score activeScore fas fa-star"></i>
-
-
-<%   } else {%> 
-
-    <i class="score  fas fa-star"></i>
-
-
-<%}%> 
-
-<%   } %> 
-                        
+            <div class="box-lender">
+                <div  class="container-lender-body-1" >
+                    <img src="/<%=category.providers[i].image%>" alt="<%= category.name%>"  class="container-lender-body-1-photo">
+                    <div class="container-lender-body-1-text" >
+                        <h4 class="container-lender-body-1-text-name"> <%= category.providers[i].name %> </h4>
                     </div>
+                </div  >
+
+                <div class="stars-contact" >
+
+                    <div class="stars" >
+                        <% for (let i = 0 ; i< 5;i++){%> 
+    
+                            <% if (i < category.providers[i].score) {%>
+    
+                                <i class="score activeScore fas fa-star"></i>
+    
+    
+                                <%   } else {%> 
+    
+                                <i class="score  fas fa-star"></i>
+    
+    
+                            <%}%> 
+                        <%}%> 
+    
+                    </div>
+    
+                       
+    
+                        <a href="/products/detail/<%=category.providers[i].id%>" class="container-lender-buttom">Contactar</a> 
+
                 </div>
-                   
-                   <a href="/products/detail/<%=product.id%>" class="container-lender-buttom">Contactar</a> 
-             
+                
+                
+
+            </div>
+
+        <%}%>
+
+
         
-                                        
-                  
-                </div>
-
-
-
-
-<% }) %> 
         
-         
-                    
               
            
              
@@ -62,16 +63,4 @@
 
   
 
-    <footer class="footer">
-        <p class="footer__copy">Copyright © AZVI </p>
-        <nav class="footer__nav">
-          <ol class="footer__links" >
-            <li><a>Contacto</a></li>
-            <li><a>Preguntas Frecuentes</a></li>
-          </ol>
-        </nav>
-    
-      </footer>
-    
-</body>
-</html>
+<%- include('partials/footer') %>
