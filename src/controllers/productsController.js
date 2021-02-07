@@ -68,7 +68,6 @@ const productsController = {
 					title: `Azvi ${req.params.id}`,
 					style: 'productos',
 					product: providerFind,
-					 
 				})
 			} else {
 				return res.render('error2', {
@@ -258,6 +257,15 @@ const productsController = {
 		res.locals.provider = provider
 		res.locals.locations = LOCATION_USERS_PROVIDERS
 		res.render('adminUpdateForm', { title: 'Edit', style: 'admin' })
+	},
+
+	buy: async (req, res) => {
+		const providerId = req.params.providerId
+		const userId = res.locals.userLog.id
+
+		const result = await db.Shopping.create({ userId, providerId })
+		// fix=> hacer pagina de compras/historial?
+		res.redirect(result)
 	},
 }
 

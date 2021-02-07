@@ -26,6 +26,14 @@ module.exports = (sequelize, dataTypes) => {
 
         });
 
+        Provider.belongsToMany(models.Users, {
+            as:'users',
+			through: 'shoppinghistory',
+			foreignKey: 'providerId',
+			otherKey: 'userId',
+			timestamps: false,
+		})
+
     }
     
  

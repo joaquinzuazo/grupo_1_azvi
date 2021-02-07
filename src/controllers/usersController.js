@@ -68,10 +68,10 @@ const usersController = {
 					}
 					res.redirect('/')
 				} else {
-					res.render('login', { mensaje: 'Credenciales invalidas', style: 'login', title: 'AZVI' })
+					res.render('users/login', { mensaje: 'Credenciales invalidas', style: 'login', title: 'AZVI' })
 				}
 			} else {
-				res.render('login', { mensaje: 'Credenciales invalidas', style: 'login', title: 'AZVI' })
+				res.render('users/login', { mensaje: 'Credenciales invalidas', style: 'login', title: 'AZVI' })
 			}
 		})
 	},
