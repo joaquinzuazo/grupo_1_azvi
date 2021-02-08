@@ -91,7 +91,7 @@ body{
 .mainAdmin {
 	background-color: #2c3e50;
 	color: white;
-	min-height: 150vh; 
+	min-height: 90vh; 
 	display: flex;
 	flex-direction: column;
 }
@@ -101,18 +101,36 @@ body{
 	flex-direction: column;
 }
 
-.mainAdmin_personalImage_form, .mainAdmin__form{
+.mainAdmin__avatarImg{
+	border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+	align-self: center;
+}
+
+.mainAdmin_personalImage_form {
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
+	 
+	max-width: 350px;
+    align-self: center;
+}
+.mainAdmin__form{
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+ 
 }
 
 .mainAdmin__title {
-	padding-top: 100px;
 	text-transform: uppercase;
-	font-weight: 500;
-	text-align: center;
-	color:white;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+    max-width: 400px;
+	align-self: center;
 }
 
 .mainAdmin__container > input,
@@ -125,9 +143,7 @@ body{
 	background-color: #eee;
 }
 
-.mainAdmin__container > input:focus {
-	background-color: rgb(201, 196, 196);
-}
+ 
 
 input[type='number']::-webkit-inner-spin-button {
 	-webkit-appearance: none;
@@ -138,10 +154,11 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .mainAdmin__container {
-	margin: 10px 0;
+	margin-bottom: 10px;
 	display: flex;
 	flex-direction: column;
 	max-width: 400px;
+	position: relative;
 }
 
 .mainAdmin__subtitle {
@@ -150,16 +167,42 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .mainAdmin__container--borderOut > input {
-	border: 0;
-	background-color: transparent;
-	border-bottom: 1px solid #eee;
-	font-weight: 600;
+	border: 0.5px solid #6487a9bb;
+    background-color: transparent;
+    font-weight: 400;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    padding-left: 30px;
+  
+    border-radius: 4px;
+}
+.mainAdmin__container--borderOut > input:focus{
+	border: 0.5px solid #2981d8ec;
+
+    outline: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	color: white;
+	box-shadow: 0 0 0 30px #2c3e50ee inset !important;
+    -webkit-text-fill-color: white !important;
+   
 }
 
-.mainAdmin__container--borderOut > input:focus {
-	background-color: transparent;
-	border-bottom: 1px solid rgb(192, 63, 63);
+.form-icon {
+	position: absolute;
+	left: 8px;
+	top: 50%;
+    font-size: 12px;
+	color: #d15050;
+	transform: translateY(-50%);
+	font-weight: 200;
 }
+
+
+ 
 
 #photo {
 	background-color: transparent;
@@ -344,26 +387,14 @@ margin: 0;
 
 	/* ***********  MAIN ********* */
 
-	.mainAdmin_personalImage, .mainAdmin_personalInfo {
-		display: flex;
-		flex-direction: column;
-	}
-	
-	.mainAdmin_personalImage_form, .mainAdmin__form{
-		display: flex;
-		flex-direction: column;
-		padding: 40px;
-	}
+	 
 	
 
 	.mainAdmin__container > input {
 		width: 100%;
 	}
 
-	.mainAdmin__container {
-		margin: 20px 20px;
-	 
-	}
+ 
 	.mainAdmin__container--borderOut > input{
 		max-width: 100%;
 	}
@@ -381,7 +412,7 @@ margin: 0;
 		font-size: 15px;
 	}
 	.mainAdmin__submit {
-		width: 80%;
+		 
 		font-size: 18px;
 		max-height: 50px;
 		cursor: pointer;
@@ -406,6 +437,7 @@ margin: 0;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
+		align-items: center;
 	}
 
 	.mainAdmin_personalImage, .mainAdmin_personalInfo {

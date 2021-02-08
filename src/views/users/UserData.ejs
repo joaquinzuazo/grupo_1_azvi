@@ -4,25 +4,29 @@
 <main class="mainAdmin">
 	<div class="mainAdmin_personalImage">
 		<h2 class="mainAdmin__title">Avatar</h2>
+		<img class="mainAdmin__avatarImg" src="/images/users/<%=userLog.image%>" alt="">
 		<form class="mainAdmin_personalImage_form" method="POST" action="/users/data" enctype="multipart/form-data">
 			<input type="file" name="avatar" required>
 			<button type="submit" class="mainAdmin__submit">Modificar</button>
 		</form>
 	</div>
 	<div class="mainAdmin_personalInfo">
-		<h2 class="mainAdmin__title">Datos personales</h2>
 		<form action="/user/data?_method=PUT" method="POST" class="mainAdmin__form"  ">
+			<h2 class="mainAdmin__title">Datos personales</h2>
+			<label for="name" class="mainAdmin__label">Nombre</label>
 			<div class="mainAdmin__container mainAdmin__container--borderOut">
-				<label for="name" class="mainAdmin__label">Nombre</label>
 				<input required type="text" id="name" name="name" placeholder=" Nombre"  value=<%=userLog.name%>   />
+				<i class=" form-icon fas fa-user"></i>
 			</div>
+			<label for="lastname" class="mainAdmin__label">Apellido</label>
 			<div class="mainAdmin__container mainAdmin__container--borderOut">
-				<label for="lastname" class="mainAdmin__label">Apellido</label>
 				<input required type="text" id="lastname" name="lastname" placeholder="Apellido" value=<%=userLog.lastname%> />
+				<i class=" form-icon fas fa-user"></i>
 			</div>		 
+			<label for="email" class="mainAdmin__label">Email</label>
 			<div class="mainAdmin__container mainAdmin__container--borderOut">
-				<label for="email" class="mainAdmin__label">Email</label>
 				<input required type="text" id="email" name="email" placeholder="email@mail.com" value=<%=userLog.email%> />
+				<i class="form-icon far fa-envelope"></i>
 			</div>
 
 			<div class="mainAdmin__container">
@@ -35,8 +39,8 @@
 					<option value="Cordoba Capital">Cordoba Capital</option>
 					<option value="La Plata">La Plata</option>
 				</select>
+				<button class="mainAdmin__submit">Modificar</button>
 			</div>
-			<button class="mainAdmin__submit">Modificar</button>
 		</form>
 	</div>
 </main>

@@ -106,8 +106,10 @@ body{
 }
 
 .article-container-main{
+    min-height: 90vh;
     background-color: #2C3E50 ;
     padding: 10px;
+    position: relative;
 }
 
 /*Parte de los recuadros*/
@@ -329,8 +331,14 @@ input:-webkit-autofill:active {
 
     /* ***********  MAIN ********* */
     .article-container-informacion{
-        margin-top: 50px;
-        margin-bottom: 150px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 300px;
+
+        /* margin-top: 50px;
+        margin-bottom: 150px; */
     }
     
     

@@ -18,7 +18,7 @@ const { Op } = db.Sequelize
 const LOCATION_USERS_PROVIDERS = ['Rawson', 'Chubut', 'Cordoba Capital', 'La Plata']
 
 const productsController = {
-	index:  (req, res)  => {
+	index: (req, res) => {
 		//json
 
 		//const productsByCategory = products.filter((product) => product.category == req.params.category)
@@ -26,23 +26,22 @@ const productsController = {
 		//database
 
 		const categoryName = req.params.category
-		db.categories.findOne({
-            	where: {name: categoryName},
-            	include : [{association: 'providers'}]
+		db.categories
+			.findOne({
+				where: { name: categoryName },
+				include: [{ association: 'providers' }],
 			})
-			.then(function(category){
-				 
+			.then(function (category) {
 				res.render('lenderList', {
-					category:category ,
+					category: category,
 					title: `Azvi-${req.params.category}`,
 					style: 'lenderList',
 				})
 			})
-			.catch(function(err){
+			.catch(function (err) {
 				console.log(err)
 			})
 		//
-		
 
 		// res.render('lenderList', {
 		// 	title: `Azvi-${req.params.category}`,
@@ -133,15 +132,22 @@ const productsController = {
 	update: async (req, res) => {
 		const providerId = req.params.providerId
 		const { name, lastname, email, location, cellphone, description, categoryId, score, title } = req.body
-		const image = req.files[0].filename
-		const updateTotal = { name, lastname, email, location, cellphone, image, categoryId, score }
-
+		const updateTotal = { name, lastname, email, location, cellphone, categoryId, score }
 		try {
-			await db.providers.update(updateTotal, {
-				where: {
-					id: providerId,
-				},
-			})
+			if (req.files[0]) {
+				const image = req.files[0].filename
+				await db.providers.update({...updateTotal, image}, {
+					where: {
+						id: providerId,
+					},
+				})
+			} else {
+				await db.providers.update(updateTotal, {
+					where: {
+						id: providerId,
+					},
+				})
+			}
 			await db.services.update(
 				{ description, title },
 				{
@@ -199,9 +205,7 @@ const productsController = {
 				[sequelize.fn('DATE_FORMAT', sequelize.col('createdAt'), '%d-%m-%Y %T'), 'dates'],
 				'plan',
 			],
-			order:[
-				['createdAt','DESC']
-			]
+			order: [['createdAt', 'DESC']],
 		})
 		if (messages.length != 0) {
 			messages.forEach((mgs) => (mgs.plan = mgs.plan.replace('Plan seleccionado:', '')))
@@ -246,13 +250,11 @@ const productsController = {
 		const providerId = req.params.providerId
 
 		const provider = await db.providers.findByPk(providerId, {
-			 
 			include: {
 				association: 'services',
 			},
 		})
-		 
-		console.log(provider)
+
 		res.locals.categories = await db.categories.findAll()
 		res.locals.provider = provider
 		res.locals.locations = LOCATION_USERS_PROVIDERS
