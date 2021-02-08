@@ -34,7 +34,8 @@ router.post('/create', upload.any(), productsController.save)
 /* ADMIN PAGES */
  
 router.get('/edit', userCheck.admin, productsController.edit)
-router.get('/edit/:providerId',userCheck.admin,  productsController.editForm)
+router.get('/edit/:providerId',   productsController.editForm)
+// router.get('/edit/:providerId',userCheck.admin,  productsController.editForm)
 router.put('/:providerId/edit', upload.any(), productsController.update)
 router.post('/edit', userCheck.admin,  productsController.searchProducts)
 router.delete('/:providerId/delete',userCheck.admin, productsController.delete)

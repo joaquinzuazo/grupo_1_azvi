@@ -39,29 +39,32 @@
 			</select>
 		</div>
 
-		<div class="mainAdmin__container">
-			<label for="mainAdmin__select" class="mainAdmin__label">Localidad</label>
-			<select class="mainAdmin_select" name="localidad" id="mainAdmin__select">
-				<option value="Carpinteria">Servicios</option>
-
-				<option value="Chubut">Chubut</option>
-				<option value="Rawson">Rawson</option>
-				<option value="Cordoba Capital">Cordoba Capital</option>
-				<option value="La Plata">La Plata</option>
-			</select>
+		<div class="mainAdmin__blockCreated">
+			<div class="mainAdmin__container">
+				<label for="mainAdmin__select" class="mainAdmin__label">Localidad</label>
+				<select class="mainAdmin_select" name="localidad" id="mainAdmin__select">
+					<option value="Carpinteria">Servicios</option>
+	
+					<option value="Chubut">Chubut</option>
+					<option value="Rawson">Rawson</option>
+					<option value="Cordoba Capital">Cordoba Capital</option>
+					<option value="La Plata">La Plata</option>
+				</select>
+			</div>
+			
+			<div class="mainAdmin__textarea">
+				<label for="title" class="mainAdmin__label">Titulo</label>
+				<input required type="text" id="title" name="title" placeholder="Titulo" />
+				<label for="description">Descripcion</label>
+				<textarea name="description" id="description" cols="30" rows="5" maxlength="200"></textarea>
+			</div>
+			<div class="mainAdmin__container mainAdmin__container--photo">
+				<label for="photo" class="mainAdmin__label">Agrega foto</label>
+				<input required class="photo" type="file" id="photo" name="image" placeholder="Apellido" />
+			</div>
+	
+			<button class="mainAdmin__submit">Agregar</button>
 		</div>
-		<div class="mainAdmin__container mainAdmin__container--photo">
-			<label for="photo" class="mainAdmin__label">Agrega foto</label>
-			<input required class="photo" type="file" id="photo" name="image" placeholder="Apellido" />
-		</div>
-		<div class="mainAdmin__textarea">
-			<label for="title" class="mainAdmin__label">Titulo</label>
-			<input required type="text" id="title" name="title" placeholder="Titulo" />
-			<label for="description">Descripcion</label>
-			<textarea name="description" id="description" cols="30" rows="5" maxlength="200"></textarea>
-		</div>
-
-		<button class="mainAdmin__submit">Agregar</button>
 	</form>
 </main>
 

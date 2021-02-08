@@ -57,33 +57,33 @@
 			<%}%> <% }) %>
 		</select>
 	</div>
-	<div class="mainAdmin__textarea">
-		<label for="mainAdmin__select" class="mainAdmin__label">Score</label>
-		<select class="mainAdmin_select" name="score" id="mainAdmin__select">
-			<%for(let i = 1 ; i <= 5 ; i++){ %> <% if (i == provider.score) {%>
-
-			<option value="<%=i%>" selected><%=i%></option>
-
-			<% }else{%>
-			<option value="<%=i%>"><%=i%></option>
-
-			<% } %> <% } %>
-		</select>
-
-		<label for="title" class="mainAdmin__label">Titulo</label>
-		<input required type="text" id="title" name="title" placeholder="Titulo" value="<%=provider.services.title%>" />
-		<label for="description">Descripcion</label>
-		<textarea name="description" id="description" cols="30" rows="5" maxlength="200">
-<%=provider.services.description %></textarea
-		>
+	<div class="mainAdmin__block">
+		<div class="mainAdmin__textarea">
+			<label for="mainAdmin__select" class="mainAdmin__label">Score</label>
+			<select class="mainAdmin_select--score" name="score" id="mainAdmin__select">
+				<%for(let i = 1 ; i <= 5 ; i++){ %> <% if (i == provider.score) {%>
+	
+				<option value="<%=i%>" selected><%=i%></option>
+	
+				<% }else{%>
+				<option value="<%=i%>"><%=i%></option>
+	
+				<% } %> <% } %>
+			</select>
+	
+			<label for="title" class="mainAdmin__label">Titulo</label>
+			<input required type="text" id="title" name="title" placeholder="Titulo" value="<%=provider.services.title%>" />
+			<label for="description">Descripcion</label>
+			<textarea name="description" id="description" cols="30" rows="5" maxlength="200"><%=provider.services.description %></textarea>
+		</div>
+	
+		<div class="mainAdmin__container mainAdmin__container--photo">
+			<label for="photo" class="mainAdmin__label">Agrega foto</label>
+			<input readonly class="photo" type="file" id="photo" name="photo" placeholder="Apellido" />
+		</div>
+	
+		<button class="mainAdmin__submit">Modificar</button>
 	</div>
-
-	<div class="mainAdmin__container mainAdmin__container--photo">
-		<label for="photo" class="mainAdmin__label">Agrega foto</label>
-		<input readonly class="photo" type="file" id="photo" name="photo" placeholder="Apellido" />
-	</div>
-
-	<button class="mainAdmin__submit">Modificar</button>
 </form>
 <!-- fix=> arreglar el metodo de delete para que responda por la ruta -->
 <form class="mainAdmin__form" action="/products/<%=provider.id%>/delete?_method=DELETE" method="POST">
