@@ -20,7 +20,7 @@ const usersController = {
 		const errors = validationResult(req)
 
 		if (!errors.isEmpty()) {
-			return res.render('register', { title: 'AZVI', style: 'register', errors: errors.mapped(), body: req.body })
+			return res.render('users/register', { title: 'AZVI', style: 'register', errors: errors.mapped(), body: req.body })
 		}
 		// sequelize -------------
 		db.Users.findOne({ where: { email: req.body.email } })

@@ -13,20 +13,20 @@
 
         <% for(let i = 0 ; i < category.providers.length ; i++) {%>
 
-            <div class="box-lender">
+            
                 <div  class="container-lender-body-1" >
                     <img src="/<%=category.providers[i].image%>" alt="<%= category.name%>"  class="container-lender-body-1-photo">
                     <div class="container-lender-body-1-text" >
                         <h4 class="container-lender-body-1-text-name"> <%= category.providers[i].name %> </h4>
                     </div>
-                </div  >
+                
 
                 <div class="stars-contact" >
 
                     <div class="stars" >
-                        <% for (let i = 0 ; i< 5;i++){%> 
+                        <% for (let j = 0 ; j< 5;j++){%> 
     
-                            <% if (i < category.providers[i].score) {%>
+                            <% if (j < category.providers[i].score) {%>
     
                                 <i class="score activeScore fas fa-star"></i>
     
@@ -49,8 +49,8 @@
                 
                 
 
-            </div>
-
+           
+            </div  >
         <%}%>
 
 

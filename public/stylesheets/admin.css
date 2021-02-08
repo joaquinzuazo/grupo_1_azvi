@@ -384,8 +384,8 @@ position: relative;
 	border-radius: 2px;
 	 
 	position: absolute;
-	top: 2px;
-	right: 2px;
+	top: 6px;
+	right: 6px;
 }
 /* MEDIAS QUERIES */
 
@@ -418,6 +418,11 @@ position: relative;
 	 border-radius: 8px;
 }
 
+.maindAdminUser__button{
+	text-align: center;
+	width: 100px;
+	padding: 8px;
+}
 
 	/******  HEADER  *****/
 

@@ -31,6 +31,7 @@ const productsController = {
             	include : [{association: 'providers'}]
 			})
 			.then(function(category){
+				 
 				res.render('lenderList', {
 					category:category ,
 					title: `Azvi-${req.params.category}`,
@@ -198,6 +199,9 @@ const productsController = {
 				[sequelize.fn('DATE_FORMAT', sequelize.col('createdAt'), '%d-%m-%Y %T'), 'dates'],
 				'plan',
 			],
+			order:[
+				['createdAt','DESC']
+			]
 		})
 		if (messages.length != 0) {
 			messages.forEach((mgs) => (mgs.plan = mgs.plan.replace('Plan seleccionado:', '')))
@@ -242,14 +246,12 @@ const productsController = {
 		const providerId = req.params.providerId
 
 		const provider = await db.providers.findByPk(providerId, {
-			// include: {
-			// 	association: 'categories',
-			// },
+			 
 			include: {
 				association: 'services',
 			},
 		})
-		// 	const providerTotal =await provider.getCategories()
+		 
 		console.log(provider)
 		res.locals.categories = await db.categories.findAll()
 		res.locals.provider = provider
