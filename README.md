@@ -50,5 +50,16 @@ _Tomamos como referencia estas distintas webs, dado que encontramos una buena ex
 
 * [**Trello**](https://trello.com/b/B3IgY5xb/sprint-2)
 
+
+
+## Login Database 📖
+
+| User                      | Password | Role  |
+| ------------------------- | -------- | ----- |
+| prueba@gmail.com          | 123456   | admin |
+| ogainforth4@cafepress.com | Joaquin1 | user  |
+
+
+
 ---
 
