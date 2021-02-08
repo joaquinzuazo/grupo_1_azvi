@@ -1,4 +1,4 @@
-![](logo.jpg)
+
 
 
 
@@ -43,5 +43,22 @@ _Tomamos como referencia estas distintas webs, dado que encontramos una buena ex
 - [Mercado Libre](https://www.mercadolibre.com.ar)
 - [RapiHogar](https://www.rapihogar.com.ar/)
 - [Home-Solution](https://homesolution.net/ar/?track=)
+
+
+
+## Tablero de trabajo 📖
+
+* [**Trello**](https://trello.com/b/B3IgY5xb/sprint-2)
+
+
+
+## Login Database 📖
+
+| User                      | Password | Role  |
+| ------------------------- | -------- | ----- |
+| prueba@gmail.com          | 123456   | admin |
+| ogainforth4@cafepress.com | Joaquin1 | user  |
+
+
 
 ---
