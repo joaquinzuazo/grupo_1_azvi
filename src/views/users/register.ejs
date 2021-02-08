@@ -3,9 +3,25 @@
 
 <main class="article-container-main">
 	<div class="article-container-informacion">
-		<div class="article-container-titulo">Registrate</div>
+		 
 		<form class="article-container-form" action="/register" method="POST">
-			<input class="article-container-input" type="email" value="<%=body.email%> " name="email" placeholder="Dirección de E-mail" />
+		<div class="form-container-input">	<input autocomplete="new-text" class="article-container-input" type="text" value="<%=body.name%>" name="name" placeholder="Nombre" /><i class=" form-icon fas fa-user"></i></div>
+			<% if(errors.name) {%>
+
+				<p class="validationMessage">
+					<i class="validationMessage--i fas fa-exclamation-triangle"></i><%=errors.name.msg%>
+				</p>
+	
+				<% }%>
+				<div class="form-container-input"><input autocomplete="new-text" class="article-container-input"  type="text" name="lastname" value="<%=body.lastname%>" placeholder="Apellido" /><i class="form-icon fas fa-user"></i></div>
+			<% if(errors.lastname) {%>
+
+				<p class="validationMessage">
+					<i class="validationMessage--i fas fa-exclamation-triangle"></i><%=errors.lastname.msg%>
+				</p>
+	
+				<% }%>
+			<div class="form-container-input"><input autocomplete="new-email" class="article-container-input" type="email" value="<%=body.email%> " name="email" placeholder="Dirección de E-mail" /><i class="form-icon far fa-envelope"></i></div>
 
 			<% if(errors.email) {%>
 
@@ -15,7 +31,7 @@
 
 			<% }%>
 
-			<input class="article-container-input" type="password" name="password" placeholder="Contraseña" />
+			<div class="form-container-input"><input autocomplete="new-password" class="article-container-input" type="password" name="password" placeholder="Contraseña" /><i class="form-icon fas fa-unlock-alt"></i></div>
 			<% if(errors.password) {%>
 
 			<p class="validationMessage">
@@ -23,30 +39,19 @@
 			</p>
 
 			<% }%>
-			<input class="article-container-input" type="text" value="<%=body.name%>" name="name" placeholder="Nombre" />
-			<% if(errors.name) {%>
-
-				<p class="validationMessage">
-					<i class="validationMessage--i fas fa-exclamation-triangle"></i><%=errors.name.msg%>
-				</p>
+			
+			
+<div class="form-container-input">
 	
-				<% }%>
-			<input class="article-container-input"  type="text" name="lastname" value="<%=body.lastname%>" placeholder="Apellido" />
-			<% if(errors.lastname) {%>
-
-				<p class="validationMessage">
-					<i class="validationMessage--i fas fa-exclamation-triangle"></i><%=errors.lastname.msg%>
-				</p>
-	
-				<% }%>
-
-				<select class="article-container-input" name="localidad" >
-					<option value="em"   hidden    >Localidad</option>
-					<option value="Chubut" <% if (body.localidad=='Chubut') {%> selected<%}%>>Chubut</option>
-					<option value="Rawson" <% if (body.localidad=='Rawson') {%> selected<%}%> >Rawson</option>
-					<option value="Cordoba Capital" <% if (body.localidad=='Cordoba Capital') {%> selected<%}%>>Cordoba Capital</option>
-					<option value="La Plata" <% if (body.localidad==='La Plata') {%> selected<%}%>>La Plata</option>
-				</select>
+					<select class="article-container-input containerSelect" name="localidad" >
+						<option value="em"   hidden    >Localidad</option>
+						<option value="Chubut" <% if (body.localidad=='Chubut') {%> selected<%}%>>Chubut</option>
+						<option value="Rawson" <% if (body.localidad=='Rawson') {%> selected<%}%> >Rawson</option>
+						<option value="Cordoba Capital" <% if (body.localidad=='Cordoba Capital') {%> selected<%}%>>Cordoba Capital</option>
+						<option value="La Plata" <% if (body.localidad==='La Plata') {%> selected<%}%>>La Plata</option>
+					</select>
+					<i class="form-icon fas fa-city"></i>
+</div>
 				<% if(errors.localidad) {%>
 
 					<p class="validationMessage">
@@ -55,7 +60,7 @@
 		
 					<% }%>
 			 
-			<button type="submit" class="container-button">Registrar</button>
+			<button type="submit" class="container-button">Registrate</button>
 			<%if(typeof mensaje=="string") {%>
 			<p class="article-container-form-text"><%=mensaje%></p>
 			<%}%>

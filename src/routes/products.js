@@ -7,6 +7,7 @@ var router = express.Router()
 const multer = require('multer')
 const path = require('path')
 const userCheck = require('../middlewares/userCheckMiddleware')
+const { urlencoded } = require('express')
 
 const storage = multer.diskStorage({
 	destination: function (req, file, cb) {
@@ -30,14 +31,19 @@ router.get('/category/:category', productsController.index)
 router.get('/create', userCheck.admin, productsController.create)
 router.post('/create', upload.any(), productsController.save)
 
-router.get('/edit',userCheck.admin,   productsController.edit)
-//fix => poner checks de admin
-router.get('/edit/:providerId',  productsController.editForm)
+/* ADMIN PAGES */
+ 
+router.get('/edit', userCheck.admin, productsController.edit)
+router.get('/edit/:providerId',userCheck.admin,  productsController.editForm)
 router.put('/:providerId/edit', upload.any(), productsController.update)
 router.post('/edit', userCheck.admin,  productsController.searchProducts)
-router.delete('/:providerId/delete', productsController.delete)
+router.delete('/:providerId/delete',userCheck.admin, productsController.delete)
 
 router.get('/contact', userCheck.admin, productsController.messages)
 router.get('/contact/:messageId', userCheck.admin, productsController.messageDeleted)
+
+/*---------BUY PAGE => CUANDO EL USUARIO CONTRATA UN SERVICIO--------------*/
+
+router.get('/buy/:providerId',userCheck.loged, productsController.buy)
 
 module.exports = router

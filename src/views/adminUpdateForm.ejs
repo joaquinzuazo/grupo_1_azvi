@@ -2,7 +2,12 @@
 
 <h2 class="mainAdmin__title">Modificar Servicio</h2>
 <!-- fix => form action -->
-<form action="/products/<%=provider.id%>/edit?_method=PUT" method="POST" class="mainAdmin__form op-02" enctype="multipart/form-data">
+<form
+	action="/products/<%=provider.id%>/edit?_method=PUT"
+	method="POST"
+	class="mainAdmin__form op-02"
+	enctype="multipart/form-data"
+>
 	<h3 class="mainAdmin__subtitle">Datos personales</h3>
 	<div class="mainAdmin__container mainAdmin__container--borderOut">
 		<label for="name" class="mainAdmin__label">Nombre</label>
@@ -31,7 +36,7 @@
 
 			<%}else{%>
 
-			<option value="<%=categorie.id%>"  ><%=categorie.name%></option>
+			<option value="<%=categorie.id%>"><%=categorie.name%></option>
 
 			<%}%> <% }) %>
 		</select>
@@ -40,15 +45,33 @@
 	<div class="mainAdmin__container">
 		<label for="mainAdmin__select" class="mainAdmin__label">Localidad</label>
 		<select class="mainAdmin_select" name="location" id="mainAdmin__select">
-			 
 
-			<option value="Chubut">Chubut</option>
-			<option value="Rawson">Rawson</option>
-			<option value="Cordoba">Cordoba</option>
-			<option value="La Plata">La Plata</option>
+			<% locations.forEach(location=>{%> <% if(location==provider.location){%>
+
+			<option value="<%=location%>" selected><%=location%></option>
+
+			<%}else{%>
+
+			<option value="<%=location%>"><%=location%></option>
+
+			<%}%> <% }) %>
 		</select>
 	</div>
 	<div class="mainAdmin__textarea">
+		<label for="mainAdmin__select" class="mainAdmin__label">Score</label>
+		<select class="mainAdmin_select" name="score" id="mainAdmin__select">
+			<%for(let i = 1 ; i <= 5 ; i++){ %> <% if (i == provider.score) {%>
+
+			<option value="<%=i%>" selected><%=i%></option>
+
+			<% }else{%>
+			<option value="<%=i%>"><%=i%></option>
+
+			<% } %> <% } %>
+		</select>
+
+		<label for="title" class="mainAdmin__label">Titulo</label>
+		<input required type="text" id="title" name="title" placeholder="Titulo" value="<%=provider.services.title%>" />
 		<label for="description">Descripcion</label>
 		<textarea name="description" id="description" cols="30" rows="5" maxlength="200">
 <%=provider.services.description %></textarea

@@ -21,6 +21,7 @@
 		<% bestest.forEach(best =>{%> 
 
 			<article class="main__recomendedCard">
+				<i class="main__recomendedi"><i class="fas fa-globe-americas"></i>   <%= best.location %> </i>
 				<a class="main__recomendedA" href="/products/detail/<%=best.id%>">
 				<h4><%=best.name%> </h4>
 				<div class="main__ref"><img class="main__recomendedImage" src="<%=best.image%>" alt="">
@@ -58,38 +59,38 @@
 	<div id="categories" class="main__subtitle">CATEGORIAS</div>
 
 	<section  class="categories">
-		<article class="categories__category">
+		<a class="categories__category" href="products/category/carpinteria">
 			<img src="images/categories/carpinteria.svg" alt="" class="categories__icon" />
-			<a href="products/category/carpinteria" class="categories__subtitle">Carpinteria</a>
-		</article>
-		<article class="categories__category">
+			<p href="products/category/carpinteria" class="categories__subtitle">Carpinteria</p>	
+		</a>
+		<a class="categories__category"  href="products/category/acc">
 			<img src="images/categories/acc.svg" alt="" class="categories__icon" />
-			<a href="products/category/acc" class="categories__subtitle">Acc.</a>
-		</article>
-		<article class="categories__category">
+			<p   class="categories__subtitle">Acc.</p> 			
+		</a>
+		<a class="categories__category" href="products/category/plomeria">
 			<img src="images/categories/plomeria.svg" alt="" class="categories__icon" />
-			<a href="products/category/plomeria" class="categories__subtitle">Plomeria</a>
-		</article>
-		<article class="categories__category">
+			<p   class="categories__subtitle">Plomeria</p>		
+		</a>
+		<a class="categories__category" href="products/category/pintura">
 			<img src="images/categories/pintura.svg" alt="" class="categories__icon" />
-			<a href="products/category/pintura" class="categories__subtitle">Pintura</a>
-		</article>
-		<article class="categories__category">
+			<p   class="categories__subtitle">Pintura</p>			
+		</a>
+		<a class="categories__category" href="products/category/cerrajeria">
 			<img src="images/categories/cerrajeria.svg" alt="" class="categories__icon" />
-			<a href="products/category/cerrajeria" class="categories__subtitle">Cerrajeria</a>
-		</article>
-		<article class="categories__category">
+			<p  class="categories__subtitle">Cerrajeria</p>		
+		</a>
+		<a class="categories__category"  href="products/category/lavarropas">
 			<img src="images/categories/lavarropas.svg" alt="" class="categories__icon" />
-			<a href="products/category/lavarropas" class="categories__subtitle">Lavarropas</a>
-		</article>
-		<article class="categories__category">
+			<p class="categories__subtitle">Lavarropas</p>		
+		</a>
+		<a class="categories__category" href="products/category/heladeras">
 			<img src="images/categories/heladeras.svg" alt="" class="categories__icon" />
-			<a href="products/category/heladeras" class="categories__subtitle">Heladeras</a>
-		</article>
-		<article class="categories__category">
+			<p  class="categories__subtitle">Heladeras</p>		
+		</a>
+		<a class="categories__category" href="products/category/mecanico">
 			<img src="images/categories/Mecanico.svg" alt="" class="categories__icon" />
-			<a href="products/category/mecanica" class="categories__subtitle">Mecanica</a>
-		</article>
+			<p  class="categories__subtitle">Mecanica</p>			
+		</a>
 	</section>
 </main>
 

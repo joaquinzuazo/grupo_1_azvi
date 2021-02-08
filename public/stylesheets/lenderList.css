@@ -96,6 +96,9 @@ BODY
 */
 
 .container-lender{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     background-color: #2C3E50;
     padding: 20px;
     min-height: 100vh;
@@ -106,6 +109,7 @@ BODY
    font-size: 1.5rem;
    color: white;
    font-weight: 400;
+   width: 100%;
    display: flex;
    align-items: center;
 }
@@ -117,7 +121,6 @@ BODY
 
 
  
-
  
 
 
@@ -158,6 +161,21 @@ BODY
 
 }
 
+.stars-contact{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.stars{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
 
 
  
@@ -167,7 +185,9 @@ BODY
 .container-lender-buttom{
     color: white;
     background-color:#ff5252 ;
-    display: block;
+    width: 70%;
+    display: flex;
+    justify-content: center;
     padding: 5px;
     border-radius: 4px;
     margin: 10px 0;
@@ -320,6 +340,12 @@ footer
          width: 300px;
         margin: 25px  ;
        
+    }
+    .box-lender{
+        display: flex;
+        flex-wrap: wrap;
+        width: 40%;
+        justify-content: center;
     }
 
     .container-lender-body-1:hover{
