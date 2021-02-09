@@ -127,19 +127,20 @@ const usersController = {
 	},
 
 	showHistoryShopping: async (req, res) => {
-		// fix => bloque try catch  y setear mensage si no contrato nada
 		const userId = res.locals.userLog.id
-	 
-		const userProviders = await db.Users.findByPk(userId, {
-			include: { association: 'providers', include: { association: 'categories' } },
-		})
 
-	 
+		try {
+			const userProviders = await db.Users.findByPk(userId, {
+				include: { association: 'providers', include: { association: 'categories' } },
+			})
 
-		res.locals.providers = userProviders.providers
+			res.locals.providers = userProviders.providers
 
-		res.render('users/shopping', { title: 'Mis Compras', style: 'shopping' })
-		 
+			res.render('users/shopping', { title: 'Mis Compras', style: 'shopping' })
+		} catch (error) {
+			res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
+			console.log(error);
+		}
 	},
 }
 

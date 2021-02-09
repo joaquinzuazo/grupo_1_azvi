@@ -62,6 +62,7 @@ const productsController = {
 				include: [{ association: 'categories' }, { association: 'services' }],
 			})
 			if (providerFind) {
+				 
 				res.render('productDetail', {
 					title: `Azvi ${req.params.id}`,
 					style: 'productos',
@@ -78,21 +79,7 @@ const productsController = {
 			res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
 			console.log(error)
 		}
-
-		// return res.send(providerFind)
-
-		// const productId = products.find((product) => product.id == req.params.id)
-
-		// if (!productId) {
-		// 	return res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
-		// }
-
-		// res.render('productDetail', {
-		// 	title: `Azvi ${req.params.id}`,
-		// 	style: 'productos',
-		// 	product: productId,
-		// 	titleCategory: productId.category.toUpperCase(),
-		// })
+ 
 	},
 
 	save: (req, res) => {
@@ -136,11 +123,14 @@ const productsController = {
 		try {
 			if (req.files[0]) {
 				const image = req.files[0].filename
-				await db.providers.update({...updateTotal, image}, {
-					where: {
-						id: providerId,
-					},
-				})
+				await db.providers.update(
+					{ ...updateTotal, image },
+					{
+						where: {
+							id: providerId,
+						},
+					}
+				)
 			} else {
 				await db.providers.update(updateTotal, {
 					where: {
@@ -265,14 +255,15 @@ const productsController = {
 		const providerId = req.params.providerId
 		const userId = res.locals.userLog.id
 
-		const user = await db.Users.findByPk(userId)
-		await user.addProvider([providerId])
-		 
-		
+		try{
+			const user = await db.Users.findByPk(userId)
+			await user.addProvider([providerId])
 
+		}catch(error){
+			res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
+			console.log(error);
+		}
 
-		// const result = await db.Shopping.create({ userId, providerId })
-		// fix=> hacer pagina de compras/historial?
 		res.redirect('/users/shopping')
 	},
 }

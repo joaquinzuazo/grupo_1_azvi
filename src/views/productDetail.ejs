@@ -35,6 +35,9 @@
       <p class="container-service-text">
         <%= product.services.description %> 
       </p>
+      <p class="container-service-text">
+       Pecio minimo <strong>$<%=product.price%> </strong>
+      </p>
     </div>
   
 
@@ -44,19 +47,19 @@
   </div>
 </div>
   
-
-	<div class="container-opinions">
+<!-- fix => Faltaría en la db informacion sobre los comentarios u calificaciones -->
+<!-- se borra el ejs porque no se comenta  -->
+	<!-- <div class="container-opinions">
     <div class="container-opinions-subtitle">
     <h2>Ultimas calificaciones  <i class="fas fa-comments"></i></h2>
     </div>
     <div class="container-opinions-chat">
-      <!-- fix => Faltaría en la db informacion sobre los comentarios u calificaciones -->
-      <div class="opinions"><p>Excelente <%= product.name %> lo volvería a contratar</p></div>
-      <div class="opinions"><p>Para destacar la puntualidad de <%= product.name %></p></div>
-      <div class="opinions"><p>¡El mejor servicio de <%= product.category %>!</p></div>
+      <div class="opinions"><p>Excelente  lo volvería a contratar</p></div>
+      <div class="opinions"><p>Para destacar la puntualidad de  </p></div>
+      <div class="opinions"><p>¡El mejor servicio de  !</p></div>
       <div class="opinions"><p>Totalmente recomendado</p></div>
     </div>
-	</div>
+	</div> -->
 
 
 </main>
