@@ -1,6 +1,4 @@
-![](logoAzvi.png)
-
-
+![](B:\Full_stack_digital\integrador\grupo_1_azvi\public\images\logoAzvi.png)
 
 # Proyecto del grupo AZVI 🚀
 
@@ -12,7 +10,7 @@ _Repositorio del grupo 1 para proyecto integrador de Digital House._
 
 _AZVI brindará una conexión entre proveedores de servicios y sus potenciales clientes._
 _¿Qué queremos lograr? Reemplazar el boca-en-boca por un nuevo paradigma, lograr que nuestros clientes tengan siempre a mano y en cualquier lugar un listado de proveedores de servicios (plomeros, gasistas, electricistas, pintores ¡y muchos más!)_
-_En base a los proveedores cada uno se va a hacer un usuario donde colocara detalle de informacion personal, foto y lugar de trabajo. A medida que vayan cumpliendo con su labor el cliente va a poder colocar la calificacion y comentarios. En la misma pagina se vera reflejado las referencias de precios entre el personal dentro.  (para poder filtrar búsqueda según presupuesto)_
+_En base a los proveedores cada uno se va a hacer un usuario donde colocara detalle de información personal, foto y lugar de trabajo. A medida que vayan cumpliendo con su labor el cliente va a poder colocar la calificación y comentarios. En la misma pagina se vera reflejado las referencias de precios entre el personal dentro.  (para poder filtrar búsqueda según presupuesto)_
 
 ##### En resumen:
 - Cada proveedor podrá publicar y anunciar su servicio
@@ -20,8 +18,7 @@ _En base a los proveedores cada uno se va a hacer un usuario donde colocara deta
 
 
 
-
-## Integrantes ✒️
+## Integrantes :computer:
 
 _Somos estudiantes de Programación web Full Stack en_ [_Digital House Argentina_](https://www.digitalhouse.com/ar/curso/programacion-web-full-stack)
 
@@ -32,9 +29,9 @@ _Somos estudiantes de Programación web Full Stack en_ [_Digital House Argentina
 
 
 
-## Sitios de referencia 📖
+## Sitios de referencia :floppy_disk:
 
-_Tomamos como referencia estas distintas webs, dado que encontramos una buena experiencia de usuario en la navegación, comodidad de registro y adquisición de productos._
+_Tomamos como referencia estas distintas webs, dado que encontram	os una buena experiencia de usuario en la navegación, comodidad de registro y adquisición de productos._
 
 - [Tienda Mia](https://tiendamia.com/ar/)
 - [Amazon](https://www.amazon.com/)
@@ -46,19 +43,32 @@ _Tomamos como referencia estas distintas webs, dado que encontramos una buena ex
 
 
 
-## Tablero de trabajo 📖
+## Tablero de trabajo :pushpin:
 
 * [**Trello**](https://trello.com/b/B3IgY5xb/sprint-2)
 
 
 
-## Login Database 📖
+## Database -creación y carga de datos- :open_file_folder:
+
+*El archivo para importar 'data.sql' se encuentra en `src/database/files.`*
+
+
+
+## Login Database :pencil:
 
 | User                      | Password | Role  |
 | ------------------------- | -------- | ----- |
 | prueba@gmail.com          | 123456   | admin |
 | ogainforth4@cafepress.com | Joaquin1 | user  |
 
+
+
+## Datos útiles -pendientes de ejecución- :soon:
+
+*Para el sprint-7 realizaremos mejoras sobre:*
+
+- [ ] *Implementar una función de comentarios sobre los servicios de cada proveedor.*
 
 
 ---
