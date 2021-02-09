@@ -2,92 +2,94 @@
 
 <h2 class="mainAdmin__title">Modificar Servicio</h2>
 <!-- fix => form action -->
-<form
-	action="/products/<%=provider.id%>/edit?_method=PUT"
-	method="POST"
-	class="mainAdmin__form op-02"
-	enctype="multipart/form-data"
->
-	<h3 class="mainAdmin__subtitle">Datos personales</h3>
-	<div class="mainAdmin__container mainAdmin__container--borderOut">
-		<label for="name" class="mainAdmin__label">Nombre</label>
-		<input type="text" id="name" name="name" placeholder=" Nombre" value="<%=provider.name%>" />
-	</div>
-	<div class="mainAdmin__container mainAdmin__container--borderOut">
-		<label for="lastname" class="mainAdmin__label">Apellido</label>
-		<input type="text" id="lastname" name="lastname" placeholder="Apellido" value="<%=provider.lastname%>" />
-	</div>
-
-	<h3 class="mainAdmin__subtitle">Contacto</h3>
-	<div class="mainAdmin__container mainAdmin__container--borderOut">
-		<label for="phone" class="mainAdmin__label">Celular</label>
-		<input type="tel" name="cellphone" placeholder="Ingrese numero" value="<%=provider.cellphone%>" />
-	</div>
-	<div class="mainAdmin__container mainAdmin__container--borderOut">
-		<label for="email" class="mainAdmin__label">Email</label>
-		<input type="text" id="email" name="email" placeholder="email@mail.com" value="<%=provider.email%>" />
-	</div>
-	<div class="mainAdmin__container">
-		<label for="mainAdmin__select" class="mainAdmin__label">Categoria</label>
-		<select class="mainAdmin_select" name="categoryId" id="mainAdmin__select">
-			<% categories.forEach(categorie=>{%> <% if(categorie.id==provider.categorieId){%>
-
-			<option value="<%=categorie.id%>" selected><%=categorie.name%></option>
-
-			<%}else{%>
-
-			<option value="<%=categorie.id%>"><%=categorie.name%></option>
-
-			<%}%> <% }) %>
-		</select>
-	</div>
-
-	<div class="mainAdmin__container">
-		<label for="mainAdmin__select" class="mainAdmin__label">Localidad</label>
-		<select class="mainAdmin_select" name="location" id="mainAdmin__select">
-
-			<% locations.forEach(location=>{%> <% if(location==provider.location){%>
-
-			<option value="<%=location%>" selected><%=location%></option>
-
-			<%}else{%>
-
-			<option value="<%=location%>"><%=location%></option>
-
-			<%}%> <% }) %>
-		</select>
-	</div>
-	<div class="mainAdmin__block">
-		<div class="mainAdmin__textarea">
-			<label for="mainAdmin__select" class="mainAdmin__label">Score</label>
-			<select class="mainAdmin_select--score" name="score" id="mainAdmin__select">
-				<%for(let i = 1 ; i <= 5 ; i++){ %> <% if (i == provider.score) {%>
+<div class="minhe">
+	<form
+		action="/products/<%=provider.id%>/edit?_method=PUT"
+		method="POST"
+		class="mainAdmin__form "
+		enctype="multipart/form-data"
+	>
+		<h3 class="mainAdmin__subtitle">Datos personales</h3>
+		<div class="mainAdmin__container mainAdmin__container--borderOut">
+			<label for="name" class="mainAdmin__label">Nombre</label>
+			<input type="text" id="name" name="name" placeholder=" Nombre" value="<%=provider.name%>" />
+		</div>
+		<div class="mainAdmin__container mainAdmin__container--borderOut">
+			<label for="lastname" class="mainAdmin__label">Apellido</label>
+			<input type="text" id="lastname" name="lastname" placeholder="Apellido" value="<%=provider.lastname%>" />
+		</div>
 	
-				<option value="<%=i%>" selected><%=i%></option>
+		<h3 class="mainAdmin__subtitle">Contacto</h3>
+		<div class="mainAdmin__container mainAdmin__container--borderOut">
+			<label for="phone" class="mainAdmin__label">Celular</label>
+			<input type="tel" name="cellphone" placeholder="Ingrese numero" value="<%=provider.cellphone%>" />
+		</div>
+		<div class="mainAdmin__container mainAdmin__container--borderOut">
+			<label for="email" class="mainAdmin__label">Email</label>
+			<input type="text" id="email" name="email" placeholder="email@mail.com" value="<%=provider.email%>" />
+		</div>
+		<div class="mainAdmin__container">
+			<label for="mainAdmin__select" class="mainAdmin__label">Categoria</label>
+			<select class="mainAdmin_select" name="categoryId" id="mainAdmin__select">
+				<% categories.forEach(categorie=>{%> <% if(categorie.id==provider.categorieId){%>
 	
-				<% }else{%>
-				<option value="<%=i%>"><%=i%></option>
+				<option value="<%=categorie.id%>" selected><%=categorie.name%></option>
 	
-				<% } %> <% } %>
+				<%}else{%>
+	
+				<option value="<%=categorie.id%>"><%=categorie.name%></option>
+	
+				<%}%> <% }) %>
 			</select>
-	
-			<label for="title" class="mainAdmin__label">Titulo</label>
-			<input required type="text" id="title" name="title" placeholder="Titulo" value="<%=provider.services.title%>" />
-			<label for="description">Descripcion</label>
-			<textarea name="description" id="description" cols="30" rows="5" maxlength="200"><%=provider.services.description %></textarea>
 		</div>
 	
-		<div class="mainAdmin__container mainAdmin__container--photo">
-			<label for="photo" class="mainAdmin__label">Agrega foto</label>
-			<input readonly class="photo" type="file" id="photo" name="photo" placeholder="Apellido" />
-		</div>
+		<div class="mainAdmin__container">
+			<label for="mainAdmin__select" class="mainAdmin__label">Localidad</label>
+			<select class="mainAdmin_select" name="location" id="mainAdmin__select">
 	
-		<button class="mainAdmin__submit">Modificar</button>
-	</div>
-</form>
-<!-- fix=> arreglar el metodo de delete para que responda por la ruta -->
-<form class="mainAdmin__form" action="/products/<%=provider.id%>/delete?_method=DELETE" method="POST">
-	<button class="mainAdmin__submit mainAdmin__red">Eliminar</button>
-</form>
+				<% locations.forEach(location=>{%> <% if(location==provider.location){%>
+	
+				<option value="<%=location%>" selected><%=location%></option>
+	
+				<%}else{%>
+	
+				<option value="<%=location%>"><%=location%></option>
+	
+				<%}%> <% }) %>
+			</select>
+		</div>
+		<div class="mainAdmin__block">
+			<div class="mainAdmin__textarea">
+				<label for="mainAdmin__select" class="mainAdmin__label">Score</label>
+				<select class="mainAdmin_select--score" name="score" id="mainAdmin__select">
+					<%for(let i = 1 ; i <= 5 ; i++){ %> <% if (i == provider.score) {%>
+		
+					<option value="<%=i%>" selected><%=i%></option>
+		
+					<% }else{%>
+					<option value="<%=i%>"><%=i%></option>
+		
+					<% } %> <% } %>
+				</select>
+		
+				<label for="title" class="mainAdmin__label">Titulo</label>
+				<input required type="text" id="title" name="title" placeholder="Titulo" value="<%=provider.services.title%>" />
+				<label for="description">Descripcion</label>
+				<textarea name="description" id="description" cols="30" rows="5" maxlength="200"><%=provider.services.description %></textarea>
+			</div>
+		
+			<div class="mainAdmin__container mainAdmin__container--photo">
+				<label for="photo" class="mainAdmin__label">Agrega foto</label>
+				<input readonly class="photo" type="file" id="photo" name="photo" placeholder="Apellido" />
+			</div>
+		
+			<button class="mainAdmin__submit">Modificar</button>
+		</div>
+	</form>
+	<!-- fix=> arreglar el metodo de delete para que responda por la ruta -->
+	<form class="mainAdmin__form" action="/products/<%=provider.id%>/delete?_method=DELETE" method="POST">
+		<button class="mainAdmin__submit mainAdmin__red">Eliminar</button>
+	</form>
+</div>
 
 <%-include('partials/footer')%>

@@ -1,0 +1,41 @@
+<%- include('../partials/head')%> <%- include('../partials/header')%>
+
+<main class="shoppingMain">
+	<section class="cardsContainer">
+		<% if(locals.providers.length != 0) {%> <% providers.forEach(provider=>{%>
+		<article class="cardContainer">
+			<div class="card__flex">
+			    <div class="containerImg">
+                    <img src="/images/categories/<%=provider.categories.name%>.svg" alt="" class="cardContainer__imgCategorie" />
+                    <img src="/<%=provider.image%>" alt="" class="cardContainer__img" />
+                </div>
+                <div class="containerInfo">
+                    <div class="cardContainer__info">Nombre</div>
+    
+                    <div class="cardContainer__info   info--margin"><%=provider.name%></div>
+               
+                
+                    <div class="cardContainer__info">Apellido</div>
+    
+                    <div class="cardContainer__info info--margin"><%=provider.lastname%></div>
+                </div>
+			</div>
+            <div class="containerInfo">
+                <div class="cardContainer__info">Celular</div>
+
+                <div class="cardContainer__info   info--margin"><%=provider.cellphone%><a href=https://api.whatsapp.com/send?phone=<%=provider.cellphone%>&text=hola,%20<%=provider.name%>
+                    " ><i class="icon icon-w fab fa-whatsapp"></i></a></div>
+           
+            
+                <div class="cardContainer__info">Email</div>
+
+                <div class="cardContainer__info info--margin"><%=provider.email%><a href="mailto:<%=provider.email%>"><i class="icon fas fa-envelope"></i></a></div>
+            </div>
+
+
+			
+		</article>
+		<% }) %> <% }%>
+	</section>
+</main>
+<%-include('../partials/footer')%>

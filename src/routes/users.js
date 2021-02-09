@@ -34,4 +34,8 @@ router.post('/users/data',upload.any(),usersController.editProfile)
 
 router.put('/user/data',usersController.editProfileFields)
 
+/*---------------------- pagina de compras ---------------------*/
+
+router.get('/users/shopping',userCheck.loged,usersController.showHistoryShopping)
+
 module.exports = router

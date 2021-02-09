@@ -265,9 +265,15 @@ const productsController = {
 		const providerId = req.params.providerId
 		const userId = res.locals.userLog.id
 
-		const result = await db.Shopping.create({ userId, providerId })
+		const user = await db.Users.findByPk(userId)
+		await user.addProvider([providerId])
+		 
+		
+
+
+		// const result = await db.Shopping.create({ userId, providerId })
 		// fix=> hacer pagina de compras/historial?
-		res.redirect(result)
+		res.redirect('/users/shopping')
 	},
 }
 

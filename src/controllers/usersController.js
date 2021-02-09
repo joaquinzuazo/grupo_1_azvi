@@ -20,7 +20,12 @@ const usersController = {
 		const errors = validationResult(req)
 
 		if (!errors.isEmpty()) {
-			return res.render('users/register', { title: 'AZVI', style: 'register', errors: errors.mapped(), body: req.body })
+			return res.render('users/register', {
+				title: 'AZVI',
+				style: 'register',
+				errors: errors.mapped(),
+				body: req.body,
+			})
 		}
 		// sequelize -------------
 		db.Users.findOne({ where: { email: req.body.email } })
@@ -119,6 +124,22 @@ const usersController = {
 			.catch((error) => {
 				console.log(error)
 			})
+	},
+
+	showHistoryShopping: async (req, res) => {
+		// fix => bloque try catch  y setear mensage si no contrato nada
+		const userId = res.locals.userLog.id
+	 
+		const userProviders = await db.Users.findByPk(userId, {
+			include: { association: 'providers', include: { association: 'categories' } },
+		})
+
+	 
+
+		res.locals.providers = userProviders.providers
+
+		res.render('users/shopping', { title: 'Mis Compras', style: 'shopping' })
+		 
 	},
 }
 
