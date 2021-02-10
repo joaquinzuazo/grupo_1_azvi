@@ -1,16 +1,8 @@
-const fs = require('fs')
-const path = require('path')
-const getID = require('./helpers/getID')
-const productsJson = fs.readFileSync(path.join(__dirname, '../data/products.json'))
 
-const products = JSON.parse(productsJson)
-
-const productsFilePath = path.join(__dirname, '../data/products.json')
 
 /*---------------------- db and sequelize required ---------------------*/
 /*---------------------- Op required for operations ---------------------*/
 const db = require('../database/models')
-const { locals } = require('../app')
 const sequelize = db.sequelize
 const { Op } = db.Sequelize
 
@@ -19,11 +11,7 @@ const LOCATION_USERS_PROVIDERS = ['Rawson', 'Chubut', 'Cordoba Capital', 'La Pla
 
 const productsController = {
 	index: (req, res) => {
-		//json
 
-		//const productsByCategory = products.filter((product) => product.category == req.params.category)
-
-		//database
 
 		const categoryName = req.params.category
 		db.categories
@@ -41,14 +29,7 @@ const productsController = {
 			.catch(function (err) {
 				console.log(err)
 			})
-		//
 
-		// res.render('lenderList', {
-		// 	title: `Azvi-${req.params.category}`,
-		// 	style: 'lenderList',
-		// 	products: productsByCategory,
-		// 	titleCategory: req.params.category.toUpperCase(),
-		// })
 	},
 
 	create: (req, res) => {

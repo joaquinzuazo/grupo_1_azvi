@@ -1,8 +1,5 @@
-const fs = require('fs')
-const path = require('path')
-const productsJson = fs.readFileSync(path.join(__dirname, '../data/products.json'))
 
-const products = JSON.parse(productsJson)
+
 
 /*---------------------- db and sequelize required ---------------------*/
 

@@ -1,7 +1,7 @@
-const fs = require('fs')
-const path = require('path')
-const usersPathFile = path.join(__dirname, '..', 'data', 'users.json')
-const users = JSON.parse(fs.readFileSync(usersPathFile, { encoding: 'utf-8' }))
+
+
+
+
 const bcrypt = require('bcrypt')
 const { validationResult } = require('express-validator')
 
