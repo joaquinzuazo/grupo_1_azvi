@@ -60,7 +60,7 @@ _Tomamos como referencia estas distintas webs, dado que encontram	os una buena e
 | User                      | Password | Role  |
 | ------------------------- | -------- | ----- |
 | prueba@gmail.com          | 123456   | admin |
-| ogainforth4@cafepress.com | Joaquin1 | user  |
+| user1@azvi.com            | 123456   | user  |
 
 
 

@@ -11,8 +11,6 @@ const LOCATION_USERS_PROVIDERS = ['Rawson', 'Chubut', 'Cordoba Capital', 'La Pla
 
 const productsController = {
 	index: (req, res) => {
-
-
 		const categoryName = req.params.category
 		db.categories
 			.findOne({
