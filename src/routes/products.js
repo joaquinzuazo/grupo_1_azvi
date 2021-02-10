@@ -24,7 +24,7 @@ router.get('/productCart', productsController.productCart)
 router.post('/productCart', productsController.productCartJoin)
 router.post('/productCart/join/unite', productsController.productCartJoinForm)
 
-router.get('/detail/:id', productsController.productDetail)
+router.get('/detail/:id',userCheck.loged, productsController.productDetail)
 
 router.get('/category/:category', productsController.index)
 
@@ -33,9 +33,8 @@ router.post('/create', upload.any(), productsController.save)
 
 /* ADMIN PAGES */
  
-router.get('/edit', userCheck.admin, productsController.edit)
-router.get('/edit/:providerId',   productsController.editForm)
-// router.get('/edit/:providerId',userCheck.admin,  productsController.editForm)
+router.get('/edit', userCheck.admin, productsController.edit) 
+router.get('/edit/:providerId',userCheck.admin,  productsController.editForm)
 router.put('/:providerId/edit', upload.any(), productsController.update)
 router.post('/edit', userCheck.admin,  productsController.searchProducts)
 router.delete('/:providerId/delete',userCheck.admin, productsController.delete)

@@ -27,20 +27,15 @@
 			<div class="mainAdmin__container mainAdmin__container--borderOut">
 				<input required type="text" id="email" name="email" placeholder="email@mail.com" value=<%=userLog.email%> />
 				<i class="form-icon far fa-envelope"></i>
-			</div>
-
-			<div class="mainAdmin__container">
-				<label for="mainAdmin__select" class="mainAdmin__label">Localidad</label>
-				<select class="mainAdmin_select" name="localidad" id="mainAdmin__select">
-					<option value="">Localidad</option>
-
-					<option value="Chubut">Chubut</option>
-					<option value="Rawson">Rawson</option>
-					<option value="Cordoba Capital">Cordoba Capital</option>
-					<option value="La Plata">La Plata</option>
-				</select>
 				<button class="mainAdmin__submit">Modificar</button>
 			</div>
+			<!-- fix => agregar columna de localidad y que persista el dato en el formulario -->
+			<!-- <div class="mainAdmin__container">
+				<label for="mainAdmin__select" class="mainAdmin__label">Localidad</label>
+				<select class="mainAdmin_select" name="localidad" id="mainAdmin__select">
+				 
+				</select>
+			</div> -->
 		</form>
 	</div>
 </main>

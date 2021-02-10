@@ -7,6 +7,9 @@ const { validationResult } = require('express-validator')
 
 const db = require('../database/models') // PARA SEQUELIZE
 
+/*---------------------- array de localidades para persistir la data en los forms ---------------------*/
+ 
+
 const usersController = {
 	loginForm: (req, res) => {
 		res.render('users/login', { title: 'AZVI', style: 'login' })
@@ -87,6 +90,7 @@ const usersController = {
 		})
 	},
 	profile: (req, res, next) => {
+		 
 		res.render('users/userData', { title: 'Mis Datos', style: 'userDataForm', session: res.locals.userLog })
 	},
 	editProfile: (req, res, next) => {

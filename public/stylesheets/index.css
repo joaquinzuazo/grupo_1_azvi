@@ -315,7 +315,7 @@ a {
 .header_userImage{
 	 
 	margin-left: 10px;
-	 
+		border-radius: 50%; 
 }
 
 .header_floatmenu{
