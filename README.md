@@ -51,7 +51,7 @@ _Tomamos como referencia estas distintas webs, dado que encontram	os una buena e
 
 ## Database -creación y carga de datos- :open_file_folder:
 
-*El archivo para importar 'data.sql' se encuentra en `src/database/files.`*
+*El archivo para importar 'azvi.sql' se encuentra en `src/database/files.`*
 
 
 
