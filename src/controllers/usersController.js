@@ -63,6 +63,11 @@ const usersController = {
 	},
 
 	login: (req, res) => {
+		let errores=validationResult(req);
+		if (!errores.isEmpty()) {
+            return res.render('users/login', {mensaje:errores.errors[0].msg, style: 'login', title: 'AZVI'})
+        }
+
 		db.Users.findOne({ where: { email: req.body.email } }).then((user) => {
 			if (user) {
 				const passIsTrue = bcrypt.compareSync(req.body.password, user.password)

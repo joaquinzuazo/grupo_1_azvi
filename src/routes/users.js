@@ -1,5 +1,6 @@
 const express = require('express');
 const validate = require('../controllers/helpers/getValidations');
+const logValidate = require('../controllers/helpers/logValidations');
 const router = express.Router()
 
 const usersController = require('../controllers/usersController');
@@ -24,7 +25,7 @@ router.get('/register', userCheck.user, usersController.registerForm)
 
 router.post('/register',validate() ,usersController.register , usersController.login)
 
-router.post('/users/login',  usersController.login)
+router.post('/users/login', logValidate.login, usersController.login)
 
 router.get('/logout',usersController.logout)
 
