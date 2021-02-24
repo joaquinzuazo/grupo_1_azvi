@@ -7,9 +7,10 @@
 	<%if(typeof mensaje=="string") {%>
 		<p class="article-container-form-regis"><i class="fas fa-exclamation-circle" style="color: rgb(231, 231, 23);"> </i>  <%=mensaje%></p>
 		<%}%>
+		<p class="article-container-form-regis" id="article-container-form-regis-error"></p>
 		<form class="article-container-form" action="/users/login" method="POST">
-			<div class="form-container-input"><input class="containerForm__input" name="email" type="Usuario" placeholder="Email" /><i class="form-icon far fa-envelope"></i></div>
-			<div class="form-container-input"><input class="containerForm__input"  name="password" type="Password" placeholder="Contraseña" />
+			<div class="form-container-input"><input class="containerForm__input" name="email" type="Usuario" placeholder="Email" id="email" /><i class="form-icon far fa-envelope"></i></div>
+			<div class="form-container-input"><input class="containerForm__input"  name="password" type="Password" placeholder="Contraseña" id="pass" />
 				<i class="form-icon fas fa-unlock-alt"></i></div>
 
 			<div class="form-container-remember">
@@ -30,6 +31,6 @@
 
  
  
-  
+<script src="/javascripts/logValidations.js"></script>
 </body>
 </html>
