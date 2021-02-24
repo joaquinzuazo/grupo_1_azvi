@@ -195,10 +195,41 @@ color:#1BD741;
 	margin-left: 10px;
 }
 
-.header_floatmenu{
-	display: none;
-}
 
+.header_floatmenu{
+	position: absolute;
+    top: 65px;
+    font-size: 16px;
+    width: 200px;
+    /* left: 0; */
+    display: none;
+    flex-direction: column;
+    background: #1f2d3a;
+    padding: 20px;
+    right: -200px;
+    z-index: 100;
+	transition: right .5s;
+}
+.header_floatmenu.showMenu{
+	animation: showMenu .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	display: flex;
+	right: 0;
+
+}
+ 
+@keyframes showMenu {
+	from{
+		right: -200px;
+	}
+	to{
+		right: 0;
+	}
+}
+.header_floatmenu-item {
+    margin: 10px 0;
+	color: #ff5252;
+
+}
 .header_containerfloat{
 	display: flex;
 	align-items: center;
@@ -254,6 +285,53 @@ color:#1BD741;
         font-size: 21px;
         
     }
+    /* desplegable menu */
+
+	.header_containerfloat {
+		position: relative;
+		z-index: 10;
+	}
+	.header_containerfloat a {
+		display: block;
+		color: #ff5252;
+
+		width: 100%;
+	}
+	.header_floatmenu {
+		font-size: 14px;
+		font-weight: 700;
+		position: absolute;
+		display: none;
+		background-color: #1f2d3a;
+		 top: unset;
+		 right: unset;
+		padding: 10px;
+		border-radius: 0 0 5px 5px;
+		min-width: 300px;
+		 
+
+	}
+	.header_floatmenu-item {
+		margin: 10px 0;
+	}
+
+	.header_containerfloat:hover .header_floatmenu {
+		display: initial;
+		animation: show 0.3s forwards ease;
+		z-index: -1;
+	}
+
+	@keyframes show {
+		from {
+			 
+			top: 0;
+		}
+		to {
+			top: 50%;
+			 
+		}
+	}
+
 }
 
 
@@ -280,49 +358,7 @@ color:#1BD741;
 		font-size: 14px;
 	}
 	
-	/* desplegable menu */
-
-	.header_containerfloat {
-		position: relative;
-		z-index: 10;
-	}
-	.header_containerfloat a {
-		display: block;
-		color: #ff5252;
-
-		width: 100%;
-	}
-	.header_floatmenu {
-		font-size: 14px;
-		font-weight: 700;
-		position: absolute;
-		display: none;
-		background-color: #1f2d3a;
-		padding: 10px;
-		border-radius: 0 0 5px 5px;
-		min-width: 300px;
-
-	}
-	.header_floatmenu-item {
-		margin: 10px 0;
-	}
-
-	.header_containerfloat:hover .header_floatmenu {
-		display: initial;
-		animation: show 0.3s forwards ease;
-		z-index: -1;
-	}
-
-	@keyframes show {
-		from {
-			 
-			top: 0;
-		}
-		to {
-			top: 50%;
-			 
-		}
-	}
+	
 
 
 
