@@ -5,6 +5,7 @@ window.addEventListener('load', function () {
 		let errores = []
 		let ulErrores = document.querySelector('#article-container-form-regis-error')
         let campoNombre= document.querySelector('.name')
+        let campoCelular = document.querySelector('.phone')
 		let campoEmail = document.querySelector('#email')
 		let emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
@@ -13,6 +14,9 @@ window.addEventListener('load', function () {
 		}
         if(campoNombre.length < 5){
             errores.push('El nombre deberá tener al menos 5 caracteres')
+        }
+        if (campoCelular == ''){
+            errores.push('Colocar un número de celular')
         }
 
 		if (!emailRegex.test(campoEmail.value)) {
