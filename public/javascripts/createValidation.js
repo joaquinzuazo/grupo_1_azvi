@@ -4,8 +4,8 @@ window.addEventListener('load', function () {
 		e.preventDefault()
 		let errores = []
 		let ulErrores = document.querySelector('#article-container-form-regis-error')
-        let campoNombre= document.querySelector('.name')
-        let campoCelular = document.querySelector('.phone')
+        let campoNombre= document.querySelector('#name')
+        let campoCelular = document.querySelector('#phone')
 		let campoEmail = document.querySelector('#email')
 		let emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
@@ -18,6 +18,7 @@ window.addEventListener('load', function () {
         if (campoCelular == ''){
             errores.push('Colocar un número de celular')
         }
+
 
 		if (!emailRegex.test(campoEmail.value)) {
 			errores.push('Ingrese un email con formato valido.')
