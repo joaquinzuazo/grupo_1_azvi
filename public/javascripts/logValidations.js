@@ -4,7 +4,6 @@ window.addEventListener('load', function () {
 		e.preventDefault()
 		let errores = []
 		let ulErrores = document.querySelector('#article-container-form-regis-error')
-		let campoNombre= document.querySelector('#mainAdmin__label.nombre')
 		let campoEmail = document.querySelector('#email')
 		let campoPass = document.querySelector('#pass')
 		let emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i

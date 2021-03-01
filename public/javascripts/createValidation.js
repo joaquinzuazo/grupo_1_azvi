@@ -15,7 +15,7 @@ window.addEventListener('load', function () {
         if(campoNombre.length < 5){
             errores.push('El nombre deberá tener al menos 5 caracteres')
         }
-        if (campoCelular == ''){
+        if (campoCelular == ''|| campoCelular == Number){
             errores.push('Colocar un número de celular')
         }
 
