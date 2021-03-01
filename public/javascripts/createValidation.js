@@ -18,7 +18,7 @@ window.addEventListener('load', function () {
         if (campoCelular == '' && campoCelular == Number){
             errores.push('Colocar un número de celular')
         }
-
+// Facu aquino
 
 		if (!emailRegex.test(campoEmail.value)) {
 			errores.push('Ingrese un email con formato valido.')
