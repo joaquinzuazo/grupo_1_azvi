@@ -4,11 +4,11 @@
 <main class="article-container-main">
 	<div class="article-container-informacion">
 		 
-		<form class="article-container-form" action="/register" method="POST">
+		<form id='form-register' class="article-container-form" action="/register" method="POST">
 		<div class="form-container-input">	<input autocomplete="new-text" class="article-container-input" type="text" value="<%=body.name%>" name="name" placeholder="Nombre" /><i class=" form-icon fas fa-user"></i></div>
 			<% if(errors.name) {%>
 
-				<p class="validationMessage">
+				<p class="validationMessage validate-name">
 					<i class="validationMessage--i fas fa-exclamation-triangle"></i><%=errors.name.msg%>
 				</p>
 	
@@ -67,5 +67,9 @@
 		</form>
 	</div>
 </main>
+
+
+<script src="javascripts/validator.min.js"></script>
+<script src="javascripts/validation.js"></script>
 <%-include('../partials/footer')%>
 
