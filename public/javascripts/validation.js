@@ -66,7 +66,7 @@ inputs.forEach(input=>{
 })
 
 form.addEventListener('submit', (e) => {
-	e.preventDefault()
+	 
 
 	const errors = getValidation(inputs)
 	if (errors) {
