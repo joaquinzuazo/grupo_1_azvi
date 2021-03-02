@@ -137,7 +137,31 @@ body{
     padding-left: 30px;
     margin: 15px 0;
     border-radius: 4px;
+     
 }
+
+/* input error */
+.article-container-input.moveError{
+animation: move .3s ease-in-out;
+}
+@keyframes move{
+    25%{
+        transform: translateX(-2px);
+    }
+    50%{
+        transform: translateX(2px);
+
+    }
+    75%{
+        transform: translateX(-2px);
+
+    }
+    100%{
+        transform: translateX(2px);
+
+    }
+}
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:focus,
@@ -165,6 +189,7 @@ input:-webkit-autofill:active {
 .form-container-input {
  
 	position: relative;
+    margin: 8px 0;
 }
 
 .form-icon {
