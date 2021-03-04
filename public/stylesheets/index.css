@@ -317,7 +317,8 @@ a {
 	margin-left: 10px;
 		border-radius: 50%; 
 }
-/* fix => copiar en todos los estilos */
+/*float menu */
+
 
 .header_floatmenu{
 	position: absolute;
@@ -353,7 +354,7 @@ a {
 	color: #ff5252;
 
 }
-/* fix => copiar en todos los estilos */
+/*float menu */
 
 
 .header_containerfloat{
@@ -396,7 +397,7 @@ a {
 	/* fix => copiar en todos los estilos */
 	.header_floatmenu {
 		font-size: 14px;
-		font-weight: 700;
+		/* font-weight: 700; */
 		position: absolute;
 		display: none;
 		background-color: #1f2d3a;
