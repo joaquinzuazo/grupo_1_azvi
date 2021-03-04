@@ -39,4 +39,9 @@ router.put('/user/data',usersController.editProfileFields)
 
 router.get('/users/shopping',userCheck.loged,usersController.showHistoryShopping)
 
+// test
+
+
+router.get('/users/emailExists',usersController.checkEmail )
+
 module.exports = router

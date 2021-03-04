@@ -3,6 +3,7 @@ window.addEventListener('load', function () {
 	formulario.addEventListener('submit', function (e) {
 		e.preventDefault()
 		let errores = []
+		// fix => tomi  i  fijarse que no esta este id en la vista adminAdd.ejs
 		let ulErrores = document.querySelector('#article-container-form-regis-error')
         let campoNombre= document.querySelector('#name')
         let campoCelular = document.querySelector('#phone')
@@ -18,7 +19,7 @@ window.addEventListener('load', function () {
         if (campoCelular == '' && campoCelular == Number){
             errores.push('Colocar un número de celular')
         }
-// Facu aquino
+
 
 		if (!emailRegex.test(campoEmail.value)) {
 			errores.push('Ingrese un email con formato valido.')

@@ -1,14 +1,9 @@
-
-
-
-
 const bcrypt = require('bcrypt')
 const { validationResult } = require('express-validator')
 
 const db = require('../database/models') // PARA SEQUELIZE
 
 /*---------------------- array de localidades para persistir la data en los forms ---------------------*/
- 
 
 const usersController = {
 	loginForm: (req, res) => {
@@ -66,10 +61,10 @@ const usersController = {
 	},
 
 	login: (req, res) => {
-		let errores=validationResult(req);
+		let errores = validationResult(req)
 		if (!errores.isEmpty()) {
-            return res.render('users/login', {mensaje:errores.errors[0].msg, style: 'login', title: 'AZVI'})
-        }
+			return res.render('users/login', { mensaje: errores.errors[0].msg, style: 'login', title: 'AZVI' })
+		}
 
 		db.Users.findOne({ where: { email: req.body.email } }).then((user) => {
 			if (user) {
@@ -95,7 +90,6 @@ const usersController = {
 		})
 	},
 	profile: (req, res, next) => {
-		 
 		res.render('users/userData', { title: 'Mis Datos', style: 'userDataForm', session: res.locals.userLog })
 	},
 	editProfile: (req, res, next) => {
@@ -148,8 +142,15 @@ const usersController = {
 			res.render('users/shopping', { title: 'Mis Compras', style: 'shopping' })
 		} catch (error) {
 			res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
-			console.log(error);
+			console.log(error)
 		}
+	},
+	checkEmail: async (req, res) => {
+		console.log(req.query)
+
+		const user = await db.Users.findOne({ where: { email: req.query.email } })
+		// console.log(user);
+		res.send({ emailExists: user ? true : false })
 	},
 }
 

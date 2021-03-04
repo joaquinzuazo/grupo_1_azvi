@@ -46,4 +46,6 @@ router.get('/contact/:messageId', userCheck.admin, productsController.messageDel
 
 router.get('/buy/:providerId',userCheck.loged, productsController.buy)
 
+
+
 module.exports = router
