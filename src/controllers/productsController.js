@@ -245,6 +245,10 @@ const productsController = {
 
 		res.redirect('/users/shopping')
 	},
+	paymentPage: (req,res)=>{
+
+		res.render('paymentPage/payment',{title:'Paga tu servicio',style:'payment', providerId: req.params.providerId})
+	}
 }
 
 module.exports = productsController

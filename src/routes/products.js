@@ -47,5 +47,9 @@ router.get('/contact/:messageId', userCheck.admin, productsController.messageDel
 router.get('/buy/:providerId',userCheck.loged, productsController.buy)
 
 
+/*---------PAYMENTE PAGE => CUANDO EL USUARIO PAGA--------------*/
+router.get('/payment/:providerId', userCheck.loged ,productsController.paymentPage)
+
+
 
 module.exports = router

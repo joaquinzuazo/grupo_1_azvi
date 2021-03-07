@@ -61,6 +61,7 @@ const usersController = {
 	},
 
 	login: (req, res) => {
+		 
 		let errores = validationResult(req)
 		if (!errores.isEmpty()) {
 			return res.render('users/login', { mensaje: errores.errors[0].msg, style: 'login', title: 'AZVI' })
@@ -72,7 +73,7 @@ const usersController = {
 				if (passIsTrue) {
 					req.session.user = { ...user['dataValues'], password: '' }
 					if (req.body.remember) {
-						res.cookie('remember', req.session.user, { maxAge: 90000 })
+						res.cookie('remember', req.session.user, { maxAge: 9000000 })
 					}
 					res.redirect('/')
 				} else {
