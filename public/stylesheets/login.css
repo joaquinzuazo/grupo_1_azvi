@@ -276,6 +276,31 @@ input:-webkit-autofill:active {
 	display: flex;
 	align-items: center;
 }
+/* icon password */
+
+.form-icon-password{
+	left: initial;
+	right: 8px;
+	cursor: pointer;
+	 /* transform-origin: 75% 75% ; */
+	 
+}
+.form-icon-password.form-icon-efffect{
+	animation: rotateIcon .3s ease-in;
+}
+@keyframes rotateIcon {
+	from {
+		 
+
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+
+	}
+}
+
+
 
 @media (min-width: 960px) {
 	/******  HEADER  *****/
