@@ -113,7 +113,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
-	 
+	 position: relative;
 	max-width: 350px;
     align-self: center;
 }
@@ -220,6 +220,7 @@ input:-webkit-autofill:active {
 }
 
 .mainAdmin__submit {
+	cursor: pointer;
 	padding: 12px;
 	background-color: #6486A9;
 	border: 0;
@@ -357,8 +358,20 @@ margin: 0;
 	align-items: center;
 }
  
+/* error input file */
+.validationMessage{
+	position: absolute;
+	bottom: -5px;
+	color: tomato;
+    font-size: 14px;
+    font-weight: 300;
+}
+.validationMessage--i{
+    
+    margin-right: 5px;
+    color: rgb(199, 199, 26);
 
-
+}
 
 
 
