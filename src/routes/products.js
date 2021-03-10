@@ -33,7 +33,7 @@ router.post('/create', upload.any(), productsController.save)
 
 /* ADMIN PAGES */
  
-router.get('/edit', userCheck.admin, productsController.edit) 
+router.get('/edit', userCheck.admin, productsController.edit)  
 router.get('/edit/:providerId',userCheck.admin,  productsController.editForm)
 router.put('/:providerId/edit', upload.any(), productsController.update)
 router.post('/edit', userCheck.admin,  productsController.searchProducts)
@@ -45,11 +45,5 @@ router.get('/contact/:messageId', userCheck.admin, productsController.messageDel
 /*---------BUY PAGE => CUANDO EL USUARIO CONTRATA UN SERVICIO--------------*/
 
 router.get('/buy/:providerId',userCheck.loged, productsController.buy)
-
-
-/*---------PAYMENTE PAGE => CUANDO EL USUARIO PAGA--------------*/
-router.get('/payment/:providerId', userCheck.loged ,productsController.paymentPage)
-
-
 
 module.exports = router

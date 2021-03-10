@@ -2,36 +2,43 @@ window.addEventListener('load', function () {
 	let formulario = document.querySelector('form')
 	formulario.addEventListener('submit', function (e) {
 		e.preventDefault()
-		let errores = []
-		// fix => tomi  i  fijarse que no esta este id en la vista adminAdd.ejs
-		let ulErrores = document.querySelector('#article-container-form-regis-error')
-        let campoNombre= document.querySelector('#name')
-        let campoCelular = document.querySelector('#phone')
-		let campoEmail = document.querySelector('#email')
-		let emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
-
-		if (campoNombre.value == '') {
-			errores.push('El nombre no puede estar vacio.')
+		let errores = {
+				nombre: "",
+				apellido: "",
+				phone: "",
+				email: "",
 		}
-        if(campoNombre.length < 5){
-            errores.push('El nombre deberá tener al menos 5 caracteres')
-        }
-        if (campoCelular == '' && campoCelular == Number){
-            errores.push('Colocar un número de celular')
-        }
 
 
-		if (!emailRegex.test(campoEmail.value)) {
-			errores.push('Ingrese un email con formato valido.')
+		let campoNombre = document.querySelector(".name");
+		if (campoNombre.value == ""){
+			errores.nombre = "El campo de Nombre tiene que estar completo";
+		} else if (campoNombre.value.length < 5){
+			errores.nombre = "El campo de Nombre debe tener al menos 5 caracteres";
+		}
+
+		let campoApellido = document.querySelector(".lastname")
+		if (campoApellido.value == ""){
+			errores.apellido = "El campo de Apellido tiene que estar completo";
+		} else if (campoApellido.value.length < 5){
+			errores.nombre = "El campo de Apellido debe tener al menos 5 caracteres";
+		}
+
+		let campoCelular = document.querySelector(".phone")
+		if (campoCelular.value == '' || campoCelular != Number){
+			errores.phone = 'El campo no puede estar vacio y tiene que ser solo numeros'
+		}
+
+		let emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+		if (!emailRegex.test(campoEmail.value)){
+			errores.email = "Ingrese un email con formato valido.";
 		}
 
 		if (errores.length > 0) {
-			ulErrores.innerHTML = ''
+			errores.innerHTML = ''
 			for (error of errores) {
-				ulErrores.innerHTML += `<p style="font-size:14px"><i class="fas fa-exclamation-triangle" style="color: rgb(199, 199, 26); font-size:12px;"></i>  ${error}</p>`
+				ulErrores.innerHTML += `Error`
 			}
-            
-            `<img src=${informacion.data[i].images.url}>`
 		} else [this.submit()]
 	})
 })
