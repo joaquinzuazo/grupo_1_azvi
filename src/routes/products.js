@@ -7,7 +7,7 @@ var router = express.Router()
 const multer = require('multer')
 const path = require('path')
 const userCheck = require('../middlewares/userCheckMiddleware')
-const { urlencoded } = require('express')
+ 
 
 const storage = multer.diskStorage({
 	destination: function (req, file, cb) {
@@ -24,7 +24,7 @@ router.get('/productCart', productsController.productCart)
 router.post('/productCart', productsController.productCartJoin)
 router.post('/productCart/join/unite', productsController.productCartJoinForm)
 
-router.get('/detail/:id',userCheck.loged, productsController.productDetail)
+router.get('/detail/:id',  productsController.productDetail)
 
 router.get('/category/:category', productsController.index)
 
@@ -43,7 +43,7 @@ router.get('/contact', userCheck.admin, productsController.messages)
 router.get('/contact/:messageId', userCheck.admin, productsController.messageDeleted)
 
 /*---------BUY PAGE => CUANDO EL USUARIO CONTRATA UN SERVICIO--------------*/
-
 router.get('/buy/:providerId',userCheck.loged, productsController.buy)
+router.get('/payment/:providerId', userCheck.loged ,productsController.paymentPage)
 
 module.exports = router
