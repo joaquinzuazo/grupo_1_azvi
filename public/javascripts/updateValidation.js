@@ -42,7 +42,7 @@ window.addEventListener("load", ()=>{
         }
 
         if (errores.length > 0) {
-            
+            errors.innerHTML =''
             errores.forEach((error)=>{
                 errors.innerHTML +=  "<li>" + error + "</li>"
                 errors.style.color = "red"
