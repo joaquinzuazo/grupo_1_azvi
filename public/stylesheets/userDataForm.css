@@ -373,7 +373,31 @@ margin: 0;
 
 }
 
+ 
+ /* input file avatar */
+#avatar_file::-webkit-file-upload-button{
+	visibility: hidden;
+}
 
+.mainAdmin__inputfileContainer{
+	position: relative;
+	
+}
+
+.mainAdmin__inputfileContainer--button{
+	position: absolute;
+	 top: -5px;
+	/* bottom: 2px; */
+	padding:  8px; 
+	text-align: center;
+	width: 133px;
+	/* height: 32px; */
+	/* background-color: #7599bd; */
+	cursor: pointer;
+	border-radius: 4px;
+	background: transparent;
+	border:0.1px solid #7599bd;
+}
 
 /* MEDIAS QUERIES */
 
@@ -473,7 +497,7 @@ margin: 0;
 		font-size: 18px;
 		max-height: 50px;
 		cursor: pointer;
-		margin: 20px;
+		/* margin: 20px; */
 	}
 
 	/******  FOOTER  *****/

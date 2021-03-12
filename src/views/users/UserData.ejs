@@ -4,9 +4,9 @@
 <main class="mainAdmin">
 	<div class="mainAdmin_personalImage">
 		<h2 class="mainAdmin__title">Avatar</h2>
-		<img class="mainAdmin__avatarImg" src="/images/users/<%=userLog.image%>" alt="">
+		 <img class="mainAdmin__avatarImg" src="/images/users/<%=userLog.image%>" alt=""> 
 		<form class="mainAdmin_personalImage_form" method="POST" action="/users/data" enctype="multipart/form-data">
-			<input id="avatar_file" type="file" name="avatar" required accept="image/png, image/jpeg">
+			<div class="mainAdmin__inputfileContainer"><div class="mainAdmin__inputfileContainer--button">Subi tu foto</div><input id="avatar_file" type="file" name="avatar" required accept="image/png, image/jpeg"></div>
 			<button type="submit" class="mainAdmin__submit">Modificar</button>
 			<p class="validationMessage">
 			 
