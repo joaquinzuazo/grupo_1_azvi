@@ -31,12 +31,18 @@ const printErrorInput = (input, callback) => {
 /*---------------------- check email ---------------------*/
 
 const checkEmail = async (email, input) => {
-	const response = await fetch(`users/emailExists?email=${email}`)
+	console.log(email)
+	const response = await fetch(`users/emailExists`, {
+		method: 'POST',
+		body: JSON.stringify({ email: email }),
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	})
+	 
 	const { emailExists } = await response.json()
 
 	if (emailExists) {
-		console.log('existe')
-
 		input.parentNode.insertAdjacentHTML('beforeend', errorBlock(ERROR_MESSAGES.emailExists))
 	}
 }

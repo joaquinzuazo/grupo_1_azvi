@@ -146,11 +146,11 @@ const usersController = {
 			console.log(error)
 		}
 	},
-	checkEmail: async (req, res) => {
-		console.log(req.query)
+	checkEmail:   async (req, res) => {
+		 
 
-		const user = await db.Users.findOne({ where: { email: req.query.email } })
-		// console.log(user);
+		const user = await db.Users.findOne({ where: { email: req.body.email } })
+		 
 		res.send({ emailExists: user ? true : false })
 	},
 }

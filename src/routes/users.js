@@ -42,6 +42,6 @@ router.get('/users/shopping',userCheck.loged,usersController.showHistoryShopping
 // test
 
 
-router.get('/users/emailExists',usersController.checkEmail )
+router.post('/users/emailExists',usersController.checkEmail )
 
 module.exports = router
