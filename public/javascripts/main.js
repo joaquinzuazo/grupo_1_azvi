@@ -15,3 +15,4 @@ headerContainer.addEventListener('click', (e) => {
 body.addEventListener('click', (e) => {
 	headerMenu.classList.remove('showMenu')
 })
+

@@ -8,7 +8,7 @@ window.addEventListener("load", ()=>{
     form.addEventListener("submit", (e)=>{
         e.preventDefault();
         
-        console.log("hola")
+        
 
         let name = qs("#name")
         let lastname =  qs("#lastname")
