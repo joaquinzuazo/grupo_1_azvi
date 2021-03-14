@@ -7,6 +7,7 @@ window.addEventListener('load', function () {
 				apellido: "",
 				phone: "",
 				email: "",
+				descripcion: "",
 		}
 
 
@@ -32,6 +33,13 @@ window.addEventListener('load', function () {
 		let emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 		if (!emailRegex.test(campoEmail.value)){
 			errores.email = "Ingrese un email con formato valido.";
+		}
+
+		let campoDescripcion = document.querySelector(".description");
+		if (campoDescripcion.value == ""){
+			errores.descripcion = "El campo de Descripcion tiene que estar completo";
+		} else if (campoNombre.value.length < 40){
+			errores.nombre = "El campo de Descripcion debe tener al menos 40 caracteres";
 		}
 
 		if (errores.length > 0) {
