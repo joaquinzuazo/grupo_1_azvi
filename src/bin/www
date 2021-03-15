@@ -27,7 +27,7 @@ var server = http.createServer(app);
  */
 
 server.listen(port,()=>{
-  const users = [{user:'prueba@gmail.com', password:'123456' , role:'admin'},{user:'ogainforth4@cafepress.com', password:'Joaquin1' , role:'user'}]
+  const users = [{user:'prueba@gmail.com', password:'123456' , role:'admin'},{user:'user1@azvi.com', password:'123456' , role:'user'}]
   console.table(users)
   console.log(chalk.bold('Server on port 3000 =>  http://localhost:3000/'));
    
