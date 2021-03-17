@@ -21,13 +21,13 @@ window.addEventListener("load", ()=>{
         if (name.value == ""){
             errores.push ("El campo de Nombre tiene que estar completo") 
         } else if (name.value.length < 3){
-            errores.push ("El campo de Nombre debe tener al menos 5 caracteres") ;
+            errores.push ("El campo de Nombre debe tener al menos 3 caracteres") ;
         }
 
         if (lastname.value == ""){
             errores.push ("El campo de Apellido tiene que estar completo") ;
         } else if (lastname.value.length < 3){
-            errores.push ("El campo de Apellido debe tener al menos 5 caracteres") ;
+            errores.push ("El campo de Apellido debe tener al menos 3 caracteres") ;
         }
 
         if (cellphone.value == ''){
@@ -45,7 +45,7 @@ window.addEventListener("load", ()=>{
             errors.innerHTML =''
             errores.forEach((error)=>{
                 errors.innerHTML +=  "<li>" + error + "</li>"
-                errors.style.color = "red"
+                errors.style.color ="white"
             })
         } else [form.submit()]
     })
