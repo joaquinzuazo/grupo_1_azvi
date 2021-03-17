@@ -20,13 +20,13 @@ window.addEventListener("load", ()=>{
         let errores = []
         if (name.value == ""){
             errores.push ("El campo de Nombre tiene que estar completo") 
-        } else if (name.value.length < 5){
+        } else if (name.value.length < 3){
             errores.push ("El campo de Nombre debe tener al menos 5 caracteres") ;
         }
 
         if (lastname.value == ""){
             errores.push ("El campo de Apellido tiene que estar completo") ;
-        } else if (lastname.value.length < 5){
+        } else if (lastname.value.length < 3){
             errores.push ("El campo de Apellido debe tener al menos 5 caracteres") ;
         }
 
