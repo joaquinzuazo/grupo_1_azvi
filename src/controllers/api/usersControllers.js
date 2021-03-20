@@ -1,9 +1,9 @@
 let db = require('../../database/models')
 
-let productsControllers = {
+let usersControllers = {
  list: function(req, res){
      
- }
+ },
 }
 
-module.exports = productsControllers
+module.exports = usersControllers
