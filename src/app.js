@@ -8,6 +8,7 @@ const session = require('express-session')
 
 /*---api-sprint-8---*/
 var apiUsersRouter = require('./routes/api/users');
+var apiProductsRouter = require('./routes/api/products');
 
 /*---------------------- routes required ---------------------*/
 
@@ -46,6 +47,7 @@ app.use('/', usersRouter)
 
 /*---api-sprint-8---*/
 app.use('/api/users', apiUsersRouter);
+app.use('/api/products', apiProductsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
