@@ -6,6 +6,9 @@ var logger = require('morgan')
 const method = require('method-override');
 const session = require('express-session')
 
+/*---api-sprint-8---*/
+var apiUsersRouter = require('./routes/api/users');
+
 /*---------------------- routes required ---------------------*/
 
 var indexRouter = require('./routes/index')
@@ -40,6 +43,9 @@ app.use(authMiddleware)
 app.use('/', indexRouter)
 app.use('/products', productsRouter)
 app.use('/', usersRouter)
+
+/*---api-sprint-8---*/
+app.use('/api/users', apiUsersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
