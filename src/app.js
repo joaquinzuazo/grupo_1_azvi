@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser')
 var logger = require('morgan')
 const method = require('method-override');
 const session = require('express-session')
-
+const cors = require('cors');
 /*---api-sprint-8---*/
 var apiUsersRouter = require('./routes/api/users');
 var apiProductsRouter = require('./routes/api/products');
@@ -30,6 +30,7 @@ app.set('view engine', 'ejs')
 
 // app.use(logger('dev'))
 app.use(express.json())
+app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(method('_method'))
