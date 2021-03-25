@@ -9,7 +9,7 @@ const cors = require('cors');
 /*---api-sprint-8---*/
 var apiUsersRouter = require('./routes/api/users');
 var apiProductsRouter = require('./routes/api/products');
-var apiCategoryRouter = require('./routes/api/category');
+var apiCategoriesRouter = require('./routes/api/categories');
 
 /*---------------------- routes required ---------------------*/
 
@@ -50,7 +50,7 @@ app.use('/', usersRouter)
 /*---api-sprint-8---*/
 app.use('/api/users', apiUsersRouter);
 app.use('/api/products', apiProductsRouter);
-app.use('/api/category', apiCategoryRouter);
+app.use('/api/categories', apiCategoriesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
