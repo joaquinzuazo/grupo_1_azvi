@@ -1,7 +1,8 @@
 const refactorProduct = (data = []) => {
-	const response = data.map(({ id, name, lastname, categories, services }) => ({
+	const response = data.map(({ id, name, lastname, categories, services,image }) => ({
 		id,
 		name,
+		image,
 		lastname,
 		categories,
 		description: services.description,
