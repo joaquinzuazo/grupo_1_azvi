@@ -22,7 +22,7 @@ const validateCreditCard = (numbers, inp) => {
 const validateName = (name, inp) => {
 	// console.log(name)
 	// console.log(regexName.test(name))
-	const isValidName = regexName.test(name)
+	const isValidName = name.match(regexName)
 	if (!isValidName) {
 		const errorElement = document.querySelector(`.error_${inp.name}`)
 		errorElement.innerHTML = errorHtml(errorMessage.name)
