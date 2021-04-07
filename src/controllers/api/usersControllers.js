@@ -10,7 +10,7 @@ let usersControllers = {
 
      const response = {
          count, 
-         users: userDetail,
+         users: usersDetails,
      }                                 
      res.send(response)
  },
