@@ -37,21 +37,30 @@ let productsControllers = {
 	productDetail: async (req, res) => {
 		try {
 			const providerId = req.params.id
-			const providerFind = await db.providers.findByPk(providerId, {
+			const providerDetail={id, name, lastname, categories, services,image} = await db.providers.findByPk(providerId, {
 				include: [{ association: 'categories' }, { association: 'services' }],
 			})
 
+
 			const answer = {
 				meta:{
-					total: providerFind.length,
+					status:200,
 					url:req.originalUrl
 				},
-				providerFind
+				data:{
+					id,
+					name,
+					image,
+					lastname,
+					categories,
+					description: services.description,
+					detail:`api/products/${id}`
+				}
 			}
 
-			if (providerFind) {
+			if (providerDetail) {
 				 
-				res.json(providerFind)
+				res.json(answer)
 			} else {
 				return res.render('error2', {
 					title: 'Error',
