@@ -74,33 +74,33 @@ let productsControllers = {
 		}
  
 	},
-	// async latest (req, res){
+	 latest: async (req, res)=>{
 
-	// 	try{
-    //     const ultimos = await db.providers.findAll({
-	// 		order: [
-	// 			['createdAt', 'DESC']
-	// 		],
-	// 		limit: 1
-	// 	});
+		try{
+        const ultimos = await db.providers.findAll({
+			order: [
+				['createdAt', 'DESC']
+			],
+			limit: 1
+		});
 
-    //     ultimos.forEach(last => {
-    //         last.setDataValue("endpoint", "/api/products/latest/" + last.id)
-    //     });
+        ultimos.forEach(last => {
+            last.setDataValue("endpoint", "/api/products/latest/" + last.id)
+        });
 
-    //     let answer = {
-    //         meta:{
-    //             total: ultimos.length,
-    //             endpoint: "/api/products/latest"
-    //         },
-    //         ultimos
-    //     }
-    //     res.json(answer)
-    //     }
-    //     catch{
-    //         (err)=> console.log(err)
-    //     }
-	// }
+        let answer = {
+            meta:{
+                total: ultimos.length,
+                endpoint: "/api/products/latest"
+            },
+            ultimos
+        }
+        res.json(answer)
+        }
+        catch{
+            (err)=> console.log(err)
+        }
+	}
 }
 
 module.exports = productsControllers
