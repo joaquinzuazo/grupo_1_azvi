@@ -34,6 +34,37 @@ let productsControllers = {
 			res.status(500).json({ msg: 'Algo salio mal intenta mas tarde' })
 		}
 	},
+	productDetail: async (req, res) => {
+		try {
+			const providerId = req.params.id
+			const providerFind = await db.providers.findByPk(providerId, {
+				include: [{ association: 'categories' }, { association: 'services' }],
+			})
+
+			const answer = {
+				meta:{
+					total: providerFind.length,
+					url:req.originalUrl
+				},
+				providerFind
+			}
+
+			if (providerFind) {
+				 
+				res.json(providerFind)
+			} else {
+				return res.render('error2', {
+					title: 'Error',
+					style: 'error',
+					message: 'Lo sentimos no encontramos tu provedor',
+				})
+			}
+		} catch (error) {
+			res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
+			console.log(error)
+		}
+ 
+	}
 }
 
 module.exports = productsControllers
