@@ -61,13 +61,7 @@ let productsControllers = {
 			if (providerDetail) {
 				 
 				res.json(answer)
-			} else {
-				return res.render('error2', {
-					title: 'Error',
-					style: 'error',
-					message: 'Lo sentimos no encontramos tu provedor',
-				})
-			}
+			} 
 		} catch (error) {
 			res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
 			console.log(error)
