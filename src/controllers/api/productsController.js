@@ -82,13 +82,7 @@ let productsControllers = {
             last.setDataValue("endpoint", "/api/products/latest/" + last.id)
         });
 
-        let answer = {
-            meta:{
-                total: ultimos.length,
-                endpoint: "/api/products/latest"
-            },
-            ultimos
-        }
+        let answer = ultimos
         res.json(answer)
         }
         catch{
