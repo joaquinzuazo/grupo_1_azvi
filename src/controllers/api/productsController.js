@@ -8,7 +8,7 @@ let productsControllers = {
 	allProducts: async (req = request, res = response) => {
 		try {
 			const { page = null } = req.query
-			console.log({ page })
+			// console.log({ page })
 			const { count, rows: products } = await db.providers.findAndCountAll({
 				include: [{ association: 'categories' }, { association: 'services' }],
 				offset: page * 10,
