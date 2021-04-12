@@ -63,13 +63,5 @@ _Tomamos como referencia estas distintas webs, dado que encontram	os una buena e
 | user1@azvi.com            | 123456   | user  |
 
 
-
-## Datos útiles -pendientes de ejecución- :soon:
-
-*Para el sprint-7 realizaremos mejoras sobre:*
-
-- [ ] *Implementar una función de comentarios sobre los servicios de cada proveedor.*
-
-
 ---
 
