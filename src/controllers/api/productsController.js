@@ -8,7 +8,7 @@ let productsControllers = {
 	allProducts: async (req = request, res = response) => {
 		try {
 			const { page = null } = req.query
-			console.log({ page })
+			// console.log({ page })
 			const { count, rows: products } = await db.providers.findAndCountAll({
 				include: [{ association: 'categories' }, { association: 'services' }],
 				offset: page * 10,
@@ -61,46 +61,34 @@ let productsControllers = {
 			if (providerDetail) {
 				 
 				res.json(answer)
-			} else {
-				return res.render('error2', {
-					title: 'Error',
-					style: 'error',
-					message: 'Lo sentimos no encontramos tu provedor',
-				})
-			}
+			} 
 		} catch (error) {
 			res.render('error2', { title: 'Error', style: 'error', message: 'Lo sentimos algo salio mal' })
 			console.log(error)
 		}
  
 	},
-	// async latest (req, res){
+	 latest: async (req, res)=>{
 
-	// 	try{
-    //     const ultimos = await db.providers.findAll({
-	// 		order: [
-	// 			['createdAt', 'DESC']
-	// 		],
-	// 		limit: 1
-	// 	});
+		try{
+        const ultimos = await db.providers.findAll({
+			order: [
+				['createdAt', 'DESC']
+			],
+			limit: 1
+		});
 
-    //     ultimos.forEach(last => {
-    //         last.setDataValue("endpoint", "/api/products/latest/" + last.id)
-    //     });
+        ultimos.forEach(last => {
+            last.setDataValue("endpoint", "/api/products/latest/" + last.id)
+        });
 
-    //     let answer = {
-    //         meta:{
-    //             total: ultimos.length,
-    //             endpoint: "/api/products/latest"
-    //         },
-    //         ultimos
-    //     }
-    //     res.json(answer)
-    //     }
-    //     catch{
-    //         (err)=> console.log(err)
-    //     }
-	// }
+        let answer = ultimos
+        res.json(answer)
+        }
+        catch{
+            (err)=> console.log(err)
+        }
+	}
 }
 
 module.exports = productsControllers
