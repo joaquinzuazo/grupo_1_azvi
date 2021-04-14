@@ -44,7 +44,7 @@ window.addEventListener("load", ()=>{
         if (errores.length > 0) {
             errors.innerHTML =''
             errores.forEach((error)=>{
-                errors.innerHTML +=  "<li>" + error + "</li>"
+                errors.innerHTML +=  `<li> <i class="fas fa-exclamation-triangle" style="color: rgb(199, 199, 26); font-size:12px;"></i>  ${error} </li>`
                 errors.style.color ="white"
             })
         } else [form.submit()]
