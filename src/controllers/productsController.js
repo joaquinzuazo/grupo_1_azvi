@@ -70,6 +70,7 @@ const productsController = {
 				cellphone: req.body.phone,
 				location: req.body.localidad,
 				score: 3,
+				price:400,
 				categorieId: req.body.category,
 				image: req.files[0].filename,
 			})
